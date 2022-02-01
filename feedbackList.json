@@ -1,0 +1,14 @@
+{
+    "reports": [
+        {
+            "number": 0,
+            "user": "The funny one in the group",
+            "issue": "lol"
+        },
+        {
+            "number": 1,
+            "user": "The funny one in the group",
+            "issue": "hlo"
+        }
+    ]
+}

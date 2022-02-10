@@ -320,6 +320,9 @@ client.on("message", async (message) => {
         else if (command === "rest") {
             client.commands.get("rest").execute(message, args, Discord, f, o, user);
         }
+        else if (command === "sell") {
+            client.commands.get("sell").execute(message, args, Discord, user);
+        }
         else if (command.startsWith("trinkets") || command.startsWith("tr")) {
             if (command.startsWith("trinkets") && message.content.slice(10)) var pageNum = parseInt(message.content.slice(10));
             else if (command.startsWith("tr") && message.content.slice(4)) var pageNum = parseInt(message.content.slice(4));

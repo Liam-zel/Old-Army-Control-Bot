@@ -3,8 +3,8 @@
   {
    "username": "the funny one",
    "userID": "461059264388005889",
-   "daily": 80285,
-   "weekly": -27271,
+   "daily": 80216,
+   "weekly": -27340,
    "createdAt": "15/11/2021",
    "multiplier": 1.37,
    "armyEfficiency": 14,
@@ -351,8 +351,8 @@
     {
      "number": 1,
      "invadingArea": 0,
-     "lootGold": 38,
-     "lootXP": 28,
+     "lootGold": 1935,
+     "lootXP": 1092,
      "possibleEnemies": [
       "Rock",
       "Stick",
@@ -362,14 +362,14 @@
       "Wolf"
      ],
      "enemiesSlain": [
-      0,
+      154,
+      56,
+      98,
+      56,
       28,
-      0,
-      0,
-      0,
-      0
+      28
      ],
-     "total": 28
+     "total": 420
     }
    ],
    "areas": [
@@ -384,17 +384,29 @@
      "name": "Test Trinket",
      "bonus": 5,
      "bonusType": "Army kills",
-     "strength": 15,
+     "strength": 43,
      "dropRate": 100,
      "max": 1000
+    },
+    {
+     "name": "Test",
+     "dropRate": 100,
+     "sellValue": 0,
+     "amount": 154
+    },
+    {
+     "name": "Feather",
+     "dropRate": 100,
+     "sellValue": 0,
+     "amount": 15
     }
    ]
   },
   {
    "username": "GD JOE",
    "userID": "710412758541402234",
-   "daily": 55020,
-   "weekly": 55020,
+   "daily": 54951,
+   "weekly": 54951,
    "createdAt": "15/11/2021",
    "multiplier": 1,
    "armyEfficiency": 1,
@@ -585,8 +597,8 @@
   {
    "username": "amy <3",
    "userID": "707542668116492399",
-   "daily": 61833,
-   "weekly": 61833,
+   "daily": 61764,
+   "weekly": 61764,
    "createdAt": "25/12/2021",
    "multiplier": 1,
    "armyEfficiency": 1,

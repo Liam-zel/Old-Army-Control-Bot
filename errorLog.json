@@ -9974,6 +9974,13 @@
             "message": "ReferenceError: client is not defined",
             "line": "Object.execute (C:\\Users\\Home PC\\Desktop\\Discord Bots\\Army Control Bot\\commands\\uptime.js:10:28)",
             "user": "the funny one"
+        },
+        {
+            "ErrorNum": 177,
+            "date": "02/10/2022",
+            "message": "ReferenceError: prefix is not defined",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/sell.js:19:42)",
+            "user": "the funny one"
         }
     ]
 }

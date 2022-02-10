@@ -10,6 +10,7 @@ module.exports = {
     ],
     execute(message, args, Discord, f, commands, prefix, client) {
         const helpEmbed =  new Discord.MessageEmbed()
+        .setAuthor(message.author.username + "#" + message.author.discriminator, message.author.avatarURL())
         .setColor(botColour)
         .setTimestamp();
 
@@ -29,7 +30,7 @@ module.exports = {
             var me = client.users.cache.get('461059264388005889');
             var mehaha = me.username + "#" + me.discriminator;
 
-            helpEmbed.setDescription("[Invite](https://discord.com/oauth2/authorize?client_id=812674338112274453&scope=bot&permissions=1342491737-hyperlink-markdown)" + "\n" + 
+            helpEmbed.setDescription("[Invite the bot to your own server!](https://discord.com/oauth2/authorize?client_id=812674338112274453&scope=bot&permissions=1342491737-hyperlink-markdown)" + "\n" + 
             "**Got a question or need help?**\nSend a message to: `" + mehaha + "`");
             helpEmbed.addField("**__Command list__**", allcommands, false);
             helpEmbed.setFooter("type '" + prefix + "help {command name}' to learn a command!");
@@ -55,7 +56,7 @@ module.exports = {
                         helpEmbed.setDescription("{} = required\n[] = optional");
                         helpEmbed.setTitle("**__" + command.name.toUpperCase() + "__**");
                         helpEmbed.addField("**Description**", command.description); // description
-                        helpEmbed.addField("**Aliases**", command.alias); // aliases
+                        helpEmbed.addField("**Aliases**", command.alias); // aliases        profileEmbed.setAuthor(message.author.username + "#" + message.author.discriminator, message.author.avatarURL())
 
                         var examples = "";
                         for (var i = 0; i < command.examples.length; i++) {
@@ -68,7 +69,7 @@ module.exports = {
             }
         }
         
-        message.reply(helpEmbed);
+        message.channel.send(helpEmbed);
     }
 }
 

@@ -264,14 +264,25 @@ client.on("message", async (message) => {
 
     const user = f.findUser(message, prefix);
     const userIdle = f.findIdle(message, prefix);
+    
+    const args = message.content.slice(prefix.length).split(/ +/);
+    const command = args.shift().toLowerCase();
+    
+    // completely ripped from the internet and not even in a file idc
+    if (command === "start") {
+        var hasAccount = false;
+        for (var i = 0; i < client.data.users.length; i++) {
+            if (client.data.users[i].userID == message.author.id) return;
+        }
+        client.commands.get("start").execute(message, args, f, client, Discord);
+        return;
+    }
 
-    if (user == false) { // So users without an account dont crash the bot
+    if (user === undefined) { // So users without an account dont crash the bot
         message.reply("You need an account to do that!\n do: `" + prefix + "start` to create an account!");
         return;
     } 
 
-    const args = message.content.slice(prefix.length).split(/ +/);
-    const command = args.shift().toLowerCase();
 
     try {
         if (command === "loot" || command === "l") {
@@ -342,18 +353,13 @@ client.on("message", async (message) => {
         else if (command === "weekly") {
             client.commands.get("weekly").execute(message, args, Discord, f, o, user); 
         }
-        // completely ripped from the internet and not even in a file idc
         else if (command === 'ping') {  
             client.commands.get("ping").execute(message, args, client); 
 
         }
-        else if (command === "start") {
-            var hasAccount = false;
-            for (var i = 0; i < client.data.users.length; i++) {
-                if (client.data.users[i].userID == message.author.id) return;
-            }
-            client.commands.get("start").execute(message, args, f, client, Discord);
-        }
+        // else if (command === 'trade') {  
+        //     client.commands.get("trade").execute(message, args, Discord, user, client); 
+        // }
         else if (command === "uptime") {
             client.commands.get("uptime").execute(message, args, Discord, client);
         }

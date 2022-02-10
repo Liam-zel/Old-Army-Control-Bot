@@ -1,4 +1,4 @@
-const { Areas, botColour } = require("../objects.js");
+const { Areas, botColour, prefix } = require("../objects.js");
 
 module.exports = {
     name: "start",

@@ -9,6 +9,7 @@ TODO:
 - have a better start account message, maybe an embed with a little artwork on it
 - fix trinkets
 - make area level ups actually do something
+- update inventory command with buttons
 
 
 COLOUR: #ecf23f (lime)

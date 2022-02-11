@@ -9981,6 +9981,41 @@
             "message": "ReferenceError: prefix is not defined",
             "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/sell.js:19:42)",
             "user": "the funny one"
+        },
+        {
+            "ErrorNum": 178,
+            "date": "02/11/2022",
+            "message": "ReferenceError: arr is not defined",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/sell.js:26:9)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 179,
+            "date": "02/11/2022",
+            "message": "TypeError: item.map is not a function",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/sell.js:26:21)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 180,
+            "date": "02/11/2022",
+            "message": "TypeError: item.map is not a function",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/sell.js:26:30)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 181,
+            "date": "02/11/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading '0')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/sell.js:30:40)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 182,
+            "date": "02/11/2022",
+            "message": "ReferenceError: arr is not defined",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/sell.js:31:13)",
+            "user": "the funny one"
         }
     ]
 }

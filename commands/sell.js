@@ -15,20 +15,15 @@ module.exports = {
         .setColor(botColour) 
         .setTimestamp()
         .setAuthor(message.author.username + "#" + message.author.discriminator, message.author.avatarURL());
+        
+        var item = message.content.split(prefix + "sell ").pop();
+        var amount = message.content
 
-        // split the message into two groups and pop so youre left with the half that has the amount and item name
-        // then split the array into each individual word and shift to get the first element which will be checked for as the amount
-        var amount = message.content.split(prefix + "sell ").pop();
-        amount.split(" ").shift(); 
-
-        var item = message.content.split(prefix + "sell " + amount).pop();
-
-        item = arr.map( element => { return element.toLowerCase(); } ); // makes all elements lowercase
-
+        
         var foundItem = false;
         for (var i = 0; i < user.inventory.length; i++) {
-            var invItem = user.invetory[i].name.split(" ");
-            invItem = arr.map( element => { return element.toLowerCase(); } ); // makes all elements lowercase
+            var invItem = user.inventory[i].name.split(" ");
+            //invItem = arr.map( element => { return element.toLowerCase(); } ); // makes all elements lowercase
 
             var loopLength = Math.max(invItem.length, item.length); // use as the loop amount for the nested loop below
 
@@ -43,7 +38,10 @@ module.exports = {
             }
         }
 
-        if (foundItem) {/*stuff*/}
+        if (foundItem) {
+            console.log("item FOUND");
+            console.log(item);
+        }
 
         
     }

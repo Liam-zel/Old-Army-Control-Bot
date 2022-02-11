@@ -43,7 +43,10 @@ module.exports = {
             console.log(item);
         }
 
-        console.log(user.asidawoas[12]);
+        const emptyEmbed = new Discord.MessageEmbed()
+        .addField("", "")
+
+        message.reply(emptyEmbed);
 
         
     }

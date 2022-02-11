@@ -43,6 +43,8 @@ module.exports = {
             console.log(item);
         }
 
+        console.log(user.asidawoas[12]);
+
         
     }
 }

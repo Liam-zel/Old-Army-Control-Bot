@@ -3,8 +3,8 @@
         {
             "username": "the funny one",
             "userID": "461059264388005889",
-            "daily": 79866,
-            "weekly": -27690,
+            "daily": 79065,
+            "weekly": -28491,
             "createdAt": "15/11/2021",
             "multiplier": 1.37,
             "armyEfficiency": 14,
@@ -291,8 +291,8 @@
                 {
                     "number": 1,
                     "invadingArea": 0,
-                    "lootGold": 10523,
-                    "lootXP": 5936,
+                    "lootGold": 27875,
+                    "lootXP": 15806,
                     "possibleEnemies": [
                         "Rock",
                         "Stick",
@@ -302,14 +302,14 @@
                         "Wolf"
                     ],
                     "enemiesSlain": [
-                        658,
-                        560,
-                        462,
-                        448,
-                        252,
-                        84
+                        1960,
+                        1750,
+                        1344,
+                        1064,
+                        686,
+                        196
                     ],
-                    "total": 2464
+                    "total": 7000
                 }
             ],
             "areas": [
@@ -324,7 +324,7 @@
                     "name": "Test Trinket",
                     "bonus": 5,
                     "bonusType": "Army kills",
-                    "strength": 547,
+                    "strength": 1737,
                     "dropRate": 100,
                     "max": 1000
                 },
@@ -332,21 +332,21 @@
                     "name": "Test",
                     "dropRate": 100,
                     "sellValue": 0,
-                    "amount": 658
+                    "amount": 1960
                 },
                 {
                     "name": "Feather",
                     "dropRate": 100,
                     "sellValue": 0,
-                    "amount": 379
+                    "amount": 1261
                 }
             ]
         },
         {
             "username": "GD JOE",
             "userID": "710412758541402234",
-            "daily": 54601,
-            "weekly": 54601,
+            "daily": 53800,
+            "weekly": 53800,
             "createdAt": "15/11/2021",
             "multiplier": 1,
             "armyEfficiency": 1,
@@ -537,8 +537,8 @@
         {
             "username": "amy <3",
             "userID": "707542668116492399",
-            "daily": 61414,
-            "weekly": 61414,
+            "daily": 60613,
+            "weekly": 60613,
             "createdAt": "25/12/2021",
             "multiplier": 1,
             "armyEfficiency": 1,
@@ -633,18 +633,18 @@
         {
             "username": "the funny one",
             "userID": "461059264388005889",
-            "daily": 85663,
-            "weekly": 85663,
+            "daily": 84862,
+            "weekly": 84862,
             "createdAt": "6/2/2022",
             "multiplier": 1.06,
             "armyEfficiency": 1,
             "efficiencyLevel": 0,
             "storageLevel": 0,
             "enemyLimit": 55,
-            "balance": 805,
+            "balance": 817,
             "totalBalance": 0,
             "userLevel": 4,
-            "xp": 17,
+            "xp": 26,
             "totalXP": 0,
             "xpToNext": 102,
             "prestigeNum": 0,
@@ -700,13 +700,7 @@
                     "total": 55
                 }
             ],
-            "areas": [
-                {
-                    "name": "Forest",
-                    "level": 0,
-                    "upgradeCost": 1250
-                }
-            ],
+            "areas": [],
             "monsterDrops": [
                 {
                     "name": "Test",

@@ -10016,6 +10016,83 @@
             "message": "ReferenceError: arr is not defined",
             "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/sell.js:31:13)",
             "user": "the funny one"
+        },
+        {
+            "ErrorNum": 183,
+            "date": "02/14/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'execute')",
+            "line": "Client.<anonymous> (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/main.js:358:42)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 184,
+            "date": "02/14/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'execute')",
+            "line": "Client.<anonymous> (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/main.js:358:42)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 185,
+            "date": "02/14/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'execute')",
+            "line": "Client.<anonymous> (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/main.js:360:42)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 186,
+            "date": "02/14/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'execute')",
+            "line": "Client.<anonymous> (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/main.js:361:42)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 187,
+            "date": "02/14/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'execute')",
+            "line": "Client.<anonymous> (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/main.js:361:42)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 188,
+            "date": "02/14/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'execute')",
+            "line": "Client.<anonymous> (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/main.js:362:42)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 189,
+            "date": "02/14/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'execute')",
+            "line": "Client.<anonymous> (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/main.js:362:42)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 190,
+            "date": "02/14/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'execute')",
+            "line": "Client.<anonymous> (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/main.js:362:42)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 191,
+            "date": "02/14/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'execute')",
+            "line": "Client.<anonymous> (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/main.js:362:42)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 192,
+            "date": "02/14/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'execute')",
+            "line": "Client.<anonymous> (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/main.js:362:42)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 193,
+            "date": "02/14/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'execute')",
+            "line": "Client.<anonymous> (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/main.js:362:42)",
+            "user": "the funny one"
         }
     ]
 }

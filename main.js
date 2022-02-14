@@ -57,14 +57,6 @@ var randomColor = Math.floor(Math.random()*16777215).toString(16); // random Emb
 
 client.login('ODEyNjc0MzM4MTEyMjc0NDUz.YDEL9A.TKfyBIygQmJSM0M23FiOjwCWQ9U');
 
-client.commands = new Discord.Collection();
-
-const commandFiles = fs.readdirSync('./commands');
-for(const file of commandFiles) {
-    const command = require(`./commands/${file}`);
-    client.commands.set(command.name, command);
-}
-
 
 require('discord-buttons')(client);
 const { MessageActionRow, MessageButton } = require('discord-buttons');
@@ -73,7 +65,17 @@ const { MessageActionRow, MessageButton } = require('discord-buttons');
 
 
 client.on("ready", ()=> {
+    // load commands into collection
+    client.commands = new Discord.Collection();
+
+    const commandFiles = fs.readdirSync('./commands');
+    for(const file of commandFiles) {
+        const command = require(`./commands/${file}`);
+        client.commands.set(command.name, command);
+    }
+
     console.log("\nBot online!")
+
 
     client.user.setPresence({
         status: "online",
@@ -285,6 +287,8 @@ client.on("message", async (message) => {
     } 
 
 
+    console.log(client.commands);
+
     try {
         if (command === "loot" || command === "l") {
             client.commands.get("loot").execute(message, args, Discord, f, user, client);
@@ -366,6 +370,9 @@ client.on("message", async (message) => {
         // }
         else if (command === "uptime") {
             client.commands.get("uptime").execute(message, args, Discord, client);
+        }
+        else if (command === "zzz") {
+            client.commands.get("zzz").execute(message, args);
         }
     }
 

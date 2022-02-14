@@ -3,19 +3,20 @@ const { Areas } = require("../objects");
 const { botColour } = require("../main");
 
 module.exports = {
-    name: "rest",
-    description: "Give your active armies a rest!\nGives xp and has a 30 second cooldown",
+    name: "weekly",
+    description: "Gain a weekly reward of money and xp!",
     alias: "None",
     cooldowns: [],
-    examples: ["rest"],
+    examples: ["weekly"],
     execute(message, args, Discord, f, o, user) {
-        var cooldowns = module.exports.cooldowns;
+        if (user.weekly > 0) {
+            // the weekly property is stored in seconds and ticks down by 1 every second in main
+            var hours = Math.trunc((user.weekly / 60) / 60); // seconds divided by 60^2 gives the hours
+            var minutes = Math.floor(user.weekly / 60) - (hours * 60); // seconds divided by 60 gives minutes, the minutes are subtracted by 60 * hours show minutes left, not minutes in total (down to 59 minutes or less)
+            var seconds = user.weekly - ((minutes * 60) + (hours * 60 * 60)); // user.weekly is already stored in seconds, the other parts are to get it down to 59 seconds or less
 
-        for (var i = 0; i < cooldowns.length; i++) {
-            if (cooldowns[i].userID === message.author.id) {
-                message.reply("You have to wait " + cooldowns[i].timer + "s until you can use this command again!");
-                return;
-            }
+            message.reply("You cant redeem your weekly reward yet!\nYou need to wait " + hours + " hours " + minutes + " minutes " + seconds + " seconds");
+            return;
         }
 
         // REWARD
@@ -28,78 +29,32 @@ module.exports = {
             }
         }
 
-        var enemy = o.Areas[areaNum].monsters[o.Areas[areaNum].monsters.length - 2]; // find second strongest enemy in strongest unlocked area
+        var enemy = o.Areas[areaNum].monsters[o.Areas[areaNum].monsters.length - 1];
 
-        var rand = Math.random();
+        var xpReward = Math.round(enemy.xpEarn * 140 * (user.multiplier + 0.1)); // reward from same enemy 140 times
+        var goldReward = Math.round(enemy.goldEarn * 220 * (user.multiplier + 0.25)); // reward from same enemy 220 times
 
-        var xpReward = Math.round(enemy.xpEarn * (user.multiplier + rand)); 
-        var goldReward = Math.round(enemy.goldEarn * (user.multiplier + rand)); 
+        const xpBar = f.createProgressBar(5, 15, user.xp, user.xpToNext, "blue", xpReward); // min_length, max_length, current, goal, colour
 
-        const xpBar = f.createProgressBar(5, 15, user.xp, user.xpToNext, "blue", xpReward); // min_length, max_length, current, goal
-
-        const restEmbed = new Discord.MessageEmbed()
+        const weeklyEmbed = new Discord.MessageEmbed()
         .setAuthor(message.author.username + "#" + message.author.discriminator, message.author.avatarURL())
-        .setColor(botColour) 
-        .setTimestamp();
-
-        // sleeping tiers
-        if (rand < 0.20) {
-            restEmbed.addField("Resting Results!", "Your army had a rough rest and you earned: `" + xpReward + "xp`" + 
-            "\n**" + user.xp + "xp + " + xpReward + "xp = " + (xpReward + user.xp) + "xp**", false)
-        }
-
-        else if (rand < 0.40) {
-            restEmbed.addField("Resting Results!", "Your army awoke from their slumber and you earned: `" + xpReward + "xp`" + 
-            "\n**" + user.xp + "xp + " + xpReward + "xp = " + (xpReward + user.xp) + "xp**", false)
-        }
-
-        else if (rand < 0.75) {
-            restEmbed.addField("Resting Results!", "Your army woke up and felt well rested and refreshedm, you earned: `" + xpReward + "xp`" + 
-            "\n**" + user.xp + "xp + " + xpReward + "xp = " + (xpReward + user.xp) + "xp**", false)
-        }
-
-        else {
-            restEmbed.addField("Resting Results!", "Your army slept like babies and felt ready to take on any beast, you earned: `" + xpReward + "xp`" + 
-            "\n**" + user.xp + "xp + " + xpReward + "xp = " + (xpReward + user.xp) + "xp**", false)
-        }
-
-        var currentXP = user.xp + xpReward;
-        var XPTONEXT = user.xpToNext;
-
-         if (currentXP.toString().length > 15) { currentXP = currentXP.toExponential(1); }
-        else { currentXP = f.addComma(currentXP); } 
-
-        if (XPTONEXT.toString().length > 15) { XPTONEXT = XPTONEXT.toExponential(1); }
-        else { XPTONEXT = f.addComma(XPTONEXT); }
-
-        restEmbed.addField(currentXP + "xp / " + XPTONEXT + "xp", xpBar, false);
+        .setColor(botColour)
+        .setTimestamp()
+        .addField("You redeemed your weekly!", "*Gold Reward* | **$" + f.addComma(goldReward) + "**\n" +
+        "*XP Reward* | **" + f.addComma(xpReward) + "xp**\n\n" + 
+        f.addComma(user.xp + xpReward) + "xp / " + f.addComma(user.xpToNext) + "xp\n" + xpBar, false)
 
         user.xp += xpReward;
         user.balance += goldReward;
-        if (user.xp >= user.xpToNext) f.updateLevel(user, message, Areas);
 
-        cooldowns[cooldowns.length] = {
-            userID: message.author.id,
-            timer: 60,
-        }
+        message.reply(weeklyEmbed);
+
+        if (user.xp >= user.xpToNext) f.updateLevel(user, message, o.Areas);
+
+        user.weekly = 604800; // seconds in a week
 
         f.updateUser();
-        message.reply(restEmbed);
     }
 }
-
-
-var tickDown = setInterval(() => {
-    for (var i = 0; i < module.exports.cooldowns.length; i++) {
-        module.exports.cooldowns[i].timer--;
-
-
-        if (module.exports.cooldowns[i].timer < 1) {
-            module.exports.cooldowns.splice(0, 1); // oldest element is first so delete
-        }
-    }
-
-}, 1000);
-
 
 console.log("weekly.js loaded");

@@ -32,4 +32,4 @@ module.exports = {
     }
 }
 
-console.log("invite.js loaded");
+console.log("uptime.js loaded");

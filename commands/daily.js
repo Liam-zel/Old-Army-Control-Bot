@@ -2,7 +2,7 @@ const { botColour } = require("../main");
 
 module.exports = {
     name: "daily",
-    description: "Gain a daily reward!",
+    description: "Gain a daily reward of money and xp!",
     alias: "none",
     examples: ["daily"],
     execute(message, args, Discord, f, o, user) {
@@ -12,7 +12,7 @@ module.exports = {
             var minutes = Math.floor(user.daily / 60) - (hours * 60); // seconds divided by 60 gives minutes, the minutes are subtracted by 60 * hours show minutes left, not minutes in total (down to 59 minutes or less)
             var seconds = user.daily - ((minutes * 60) + (hours * 60 * 60)); // user.weekly is already stored in seconds, the other parts are to get it down to 59 seconds or less
 
-            message.reply("You cant redeem your daily yet!\nYou need to wait " + hours + " hours " + minutes + " minutes " + seconds + " seconds");
+            message.reply("You cant redeem your daily reward yet!\nYou need to wait " + hours + " hours " + minutes + " minutes " + seconds + " seconds");
             return;
         }
 

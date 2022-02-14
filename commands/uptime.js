@@ -26,7 +26,7 @@ module.exports = {
         .setTitle("__Bot Uptime:__ :robot:")
         .setTimestamp()
         .setColor(botColour)    
-        .setDescription("This current session has lasted: " + duration);
+        .setDescription("This current session has lasted: " + duration + `\nLatency is ${Math.round(client.ws.ping)}ms`);
 
         message.channel.send(uptimeEmbed);
     }

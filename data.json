@@ -1,1 +1,728 @@
-{}
+{
+    "users": [
+        {
+            "username": "the funny one",
+            "userID": "461059264388005889",
+            "daily": 76445,
+            "weekly": -31111,
+            "createdAt": "15/11/2021",
+            "multiplier": 1.37,
+            "armyEfficiency": 14,
+            "efficiencyLevel": 13,
+            "storageLevel": 329,
+            "enemyLimit": 14817,
+            "balance": 9574232,
+            "totalBalance": 36174,
+            "userLevel": 14,
+            "xp": 2012692,
+            "totalXP": 0,
+            "xpToNext": 9007199254740900,
+            "prestigeNum": 3,
+            "prestigeCoins": 0,
+            "lastLoot": 1643565259793,
+            "lootFull": 1644818108959,
+            "inventory": [
+                {
+                    "name": "teaast",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": 9
+                }
+            ],
+            "trinkets": [
+                {
+                    "name": "Test Trinket",
+                    "bonus": 6805,
+                    "bonusType": "Army kills",
+                    "strength": 1361,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Test Trinket",
+                    "bonus": 4190,
+                    "bonusType": "Army kills",
+                    "strength": 838,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Test Trinket",
+                    "bonus": 4190,
+                    "bonusType": "Army kills",
+                    "strength": 838,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Test Trinket",
+                    "bonus": 4190,
+                    "bonusType": "Army kills",
+                    "strength": 838,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Test Trinket",
+                    "bonus": 4190,
+                    "bonusType": "Army kills",
+                    "strength": 838,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Test Trinket",
+                    "bonus": 4190,
+                    "bonusType": "Army kills",
+                    "strength": 838,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Test Trinket",
+                    "bonus": 4190,
+                    "bonusType": "Army kills",
+                    "strength": 838,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Test Trinket",
+                    "bonus": 4190,
+                    "bonusType": "Army kills",
+                    "strength": 838,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Test Trinket",
+                    "bonus": 4190,
+                    "bonusType": "Army kills",
+                    "strength": 838,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Test Trinket",
+                    "bonus": 4190,
+                    "bonusType": "Army kills",
+                    "strength": 838,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Test Trinket",
+                    "bonus": 4190,
+                    "bonusType": "Army kills",
+                    "strength": 838,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Test Trinket",
+                    "bonus": 4190,
+                    "bonusType": "Army kills",
+                    "strength": 838,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Test Trinket",
+                    "bonus": 4190,
+                    "bonusType": "Army kills",
+                    "strength": 838,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Test Trinket",
+                    "bonus": 4190,
+                    "bonusType": "Army kills",
+                    "strength": 838,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Test Trinket",
+                    "bonus": 4190,
+                    "bonusType": "Army kills",
+                    "strength": 838,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Test Trinket",
+                    "bonus": 4190,
+                    "bonusType": "Army kills",
+                    "strength": 838,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Ta52332453252353est Trinket",
+                    "bonus": 4190,
+                    "bonusType": "Army kills",
+                    "strength": 838,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Test Trinket",
+                    "bonus": 4190,
+                    "bonusType": "Army kills",
+                    "strength": 838,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Test Trinket",
+                    "bonus": 4190,
+                    "bonusType": "Army kills",
+                    "strength": 838,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Test Trinket",
+                    "bonus": 4190,
+                    "bonusType": "Army kills",
+                    "strength": 838,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Test Trinket",
+                    "bonus": 4190,
+                    "bonusType": "Army kills",
+                    "strength": 838,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Test Trinket",
+                    "bonus": 4190,
+                    "bonusType": "Army kills",
+                    "strength": 838,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Test Trinket",
+                    "bonus": 4190,
+                    "bonusType": "Army kills",
+                    "strength": 838,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Test Tasdasdasadsdasdsaasddasdasadsrinket",
+                    "bonus": 4190,
+                    "bonusType": "Army kills",
+                    "strength": 838,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Test Trinket",
+                    "bonus": 4190,
+                    "bonusType": "Army kills",
+                    "strength": 838,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Test Trinket",
+                    "bonus": 4190,
+                    "bonusType": "Army kills",
+                    "strength": 838,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Test Trinket",
+                    "bonus": 4190,
+                    "bonusType": "Army kills",
+                    "strength": 838,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Test Trinket",
+                    "bonus": 4190,
+                    "bonusType": "Army kills",
+                    "strength": 838,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Test Trinket",
+                    "bonus": 4190,
+                    "bonusType": "Army kills",
+                    "strength": 838,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Test Trinket",
+                    "bonus": 4190,
+                    "bonusType": "Army kills",
+                    "strength": 838,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Test Trinket",
+                    "bonus": 4190,
+                    "bonusType": "Army kills",
+                    "strength": 838,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Test asdsadsadasdsaTrinket",
+                    "bonus": 4190,
+                    "bonusType": "Army kills",
+                    "strength": 838,
+                    "dropRate": 100,
+                    "max": 1000
+                }
+            ],
+            "armies": [
+                {
+                    "number": 1,
+                    "invadingArea": 0,
+                    "lootGold": 60404,
+                    "lootXP": 34216,
+                    "possibleEnemies": [
+                        "Rock",
+                        "Stick",
+                        "Bird",
+                        "Bush",
+                        "Tree",
+                        "Wolf"
+                    ],
+                    "enemiesSlain": [
+                        4144,
+                        3612,
+                        2968,
+                        2170,
+                        1470,
+                        462
+                    ],
+                    "total": 14826
+                }
+            ],
+            "areas": [
+                {
+                    "name": "Forest",
+                    "level": 1,
+                    "upgradeCost": 2750
+                }
+            ],
+            "monsterDrops": [
+                {
+                    "name": "Test Trinket",
+                    "bonus": 5,
+                    "bonusType": "Army kills",
+                    "strength": 3599,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Test",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": 4144
+                },
+                {
+                    "name": "Feather",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": 2885
+                }
+            ]
+        },
+        {
+            "username": "GD JOE",
+            "userID": "710412758541402234",
+            "daily": 51180,
+            "weekly": 51180,
+            "createdAt": "15/11/2021",
+            "multiplier": 1,
+            "armyEfficiency": 1,
+            "efficiencyLevel": 0,
+            "storageLevel": 0,
+            "enemyLimit": 25,
+            "balance": 0,
+            "totalBalance": 361740,
+            "userLevel": 1,
+            "xp": 0,
+            "totalXP": 0,
+            "xpToNext": 45,
+            "prestigeNum": 0,
+            "prestigeCoins": 0,
+            "lastLoot": 4500,
+            "inventory": [
+                {
+                    "name": "test",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": -5000001
+                },
+                {
+                    "name": "teast",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": -4999892
+                },
+                {
+                    "name": "teaast",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": 51
+                },
+                {
+                    "name": "taest",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": -9999950
+                },
+                {
+                    "name": "atest",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": -19999924
+                },
+                {
+                    "name": "tesst",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": -19999923
+                },
+                {
+                    "name": "teasdsast",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": -19999923
+                },
+                {
+                    "name": "tesadsadssadt",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": -19999898
+                },
+                {
+                    "name": "tesdasdasdsasdaadsdasdasdast",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": 99
+                },
+                {
+                    "name": "asdasdasdtest",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": 100
+                },
+                {
+                    "name": "tefsfsfst",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": 100
+                },
+                {
+                    "name": "tesasfsafafst",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": 100
+                },
+                {
+                    "name": "teaaasdasfsafast",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": 100
+                },
+                {
+                    "name": "tegdfgsst",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": 100
+                },
+                {
+                    "name": "taasdasdadssafafassest",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": 100
+                },
+                {
+                    "name": "tgssgfdfgdsgfdgsdfsgdfgfdest",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": 100
+                },
+                {
+                    "name": "tFDASDSAFsafdfsaafdsfadsest",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": 100
+                },
+                {
+                    "name": "feather",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": 200
+                },
+                {
+                    "name": "test super 3000",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": 140
+                },
+                {
+                    "name": "teaast",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": -4999991
+                }
+            ],
+            "trinkets": [],
+            "armies": [
+                {
+                    "number": 0,
+                    "invadingArea": 0,
+                    "lootGold": 43,
+                    "lootXP": 36,
+                    "possibleEnemies": [
+                        "Rock",
+                        "Stick",
+                        "Bird",
+                        "Bush",
+                        "Tree",
+                        "Wolf"
+                    ],
+                    "enemiesSlain": [
+                        9,
+                        7,
+                        4,
+                        3,
+                        2,
+                        0
+                    ],
+                    "total": 25
+                }
+            ],
+            "monsterDrops": [
+                {
+                    "name": "test",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": 9
+                },
+                {
+                    "name": "Test Trinket",
+                    "bonus": 5,
+                    "bonusType": "Army kills",
+                    "strength": 7,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "feather",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": 4
+                }
+            ],
+            "lootFull": 1640097614886
+        },
+        {
+            "username": "amy <3",
+            "userID": "707542668116492399",
+            "daily": 57993,
+            "weekly": 57993,
+            "createdAt": "25/12/2021",
+            "multiplier": 1,
+            "armyEfficiency": 1,
+            "efficiencyLevel": 0,
+            "storageLevel": 0,
+            "enemyLimit": 25,
+            "balance": 30,
+            "totalBalance": -36174,
+            "userLevel": -69,
+            "xp": 24,
+            "totalXP": 0,
+            "xpToNext": 45,
+            "prestigeNum": 0,
+            "prestigeCoins": 0,
+            "lastLoot": 1640450961808,
+            "lootFull": 1640451025420,
+            "inventory": [
+                {
+                    "name": "test",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": 2
+                },
+                {
+                    "name": "test",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": 3
+                },
+                {
+                    "name": "test super 3000",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": 60
+                },
+                {
+                    "name": "massive tits",
+                    "dropRate": 100,
+                    "sellValue": 9999999,
+                    "amount": 308
+                }
+            ],
+            "trinkets": [],
+            "armies": [
+                {
+                    "number": 0,
+                    "invadingArea": 0,
+                    "lootGold": 43,
+                    "lootXP": 32,
+                    "possibleEnemies": [
+                        "Rock",
+                        "Stick",
+                        "Bird",
+                        "Bush",
+                        "Tree",
+                        "Wolf"
+                    ],
+                    "enemiesSlain": [
+                        10,
+                        7,
+                        8,
+                        3,
+                        1,
+                        0
+                    ],
+                    "total": 25
+                }
+            ],
+            "monsterDrops": [
+                {
+                    "name": "feather",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": 2
+                },
+                {
+                    "name": "Test Trinket",
+                    "bonus": 5,
+                    "bonusType": "Army kills",
+                    "strength": 2,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "test",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": 2
+                }
+            ]
+        },
+        {
+            "username": "the funny one",
+            "userID": "461059264388005889",
+            "daily": 82242,
+            "weekly": 82242,
+            "createdAt": "6/2/2022",
+            "multiplier": 1.06,
+            "armyEfficiency": 1,
+            "efficiencyLevel": 0,
+            "storageLevel": 0,
+            "enemyLimit": 55,
+            "balance": 817,
+            "totalBalance": 0,
+            "userLevel": 4,
+            "xp": 26,
+            "totalXP": 0,
+            "xpToNext": 102,
+            "prestigeNum": 0,
+            "prestigeCoins": 0,
+            "lastLoot": 1644127833690,
+            "lootFull": 1644546816947,
+            "inventory": [
+                {
+                    "name": "Test",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": 20
+                },
+                {
+                    "name": "Feather",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": 10
+                }
+            ],
+            "trinkets": [
+                {
+                    "name": "Test Trinket",
+                    "bonus": 30,
+                    "bonusType": "Army kills",
+                    "strength": 6,
+                    "dropRate": 100,
+                    "max": 1000
+                }
+            ],
+            "armies": [
+                {
+                    "number": 0,
+                    "invadingArea": 0,
+                    "lootGold": 117,
+                    "lootXP": 89,
+                    "possibleEnemies": [
+                        "Rock",
+                        "Stick",
+                        "Bird",
+                        "Bush",
+                        "Tree",
+                        "Wolf"
+                    ],
+                    "enemiesSlain": [
+                        21,
+                        14,
+                        10,
+                        6,
+                        4,
+                        0
+                    ],
+                    "total": 55
+                }
+            ],
+            "areas": [],
+            "monsterDrops": [
+                {
+                    "name": "Test",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": 21
+                },
+                {
+                    "name": "Test Trinket",
+                    "bonus": 5,
+                    "bonusType": "Army kills",
+                    "strength": 13,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Feather",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": 10
+                }
+            ]
+        }
+    ]
+}

@@ -64,8 +64,6 @@ const commandFiles = fs.readdirSync('./commands');
 for(const file of commandFiles) {
     const command = require(`./commands/${file}`);
     client.commands.set(command.name, command);
-
-    console.log(command);
 }
 
 require('discord-buttons')(client);

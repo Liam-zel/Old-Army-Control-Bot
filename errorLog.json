@@ -10107,6 +10107,13 @@
             "message": "TypeError: Cannot read properties of undefined (reading 'execute')",
             "line": "Client.<anonymous> (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/main.js:362:42)",
             "user": "the funny one"
+        },
+        {
+            "ErrorNum": 196,
+            "date": "02/16/2022",
+            "message": "RangeError [EMBED_FIELD_NAME]: MessageEmbed field names may not be empty.",
+            "line": "Function.normalizeField (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/node_modules/discord.js/src/structures/MessageEmbed.js:413:22)",
+            "user": "the funny one"
         }
     ]
 }

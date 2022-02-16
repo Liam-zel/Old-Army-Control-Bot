@@ -17,7 +17,8 @@ module.exports = {
         .setAuthor(message.author.username + "#" + message.author.discriminator, message.author.avatarURL());
         
         var item = message.content.split(prefix + "sell ").pop();
-        var amount = message.content
+
+        console.log(item);
 
         
         var foundItem = false;
@@ -42,12 +43,6 @@ module.exports = {
             console.log("item FOUND");
             console.log(item);
         }
-
-        const emptyEmbed = new Discord.MessageEmbed()
-        .addField("", "")
-
-        message.reply(emptyEmbed);
-
         
     }
 }

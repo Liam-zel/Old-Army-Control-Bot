@@ -1,4 +1,4 @@
-const { botColour, prefix } = require("../main");
+const { botColour, prefix } = require("../main.js");
 
 module.exports = {
     name: "help",
@@ -8,7 +8,7 @@ module.exports = {
     "help",
     "help loot",
     ],
-    execute(message, args, Discord, f, commands, prefix, client) {
+    execute(message, args, Discord, f, commands, client) {
         const helpEmbed =  new Discord.MessageEmbed()
         .setAuthor(message.author.username + "#" + message.author.discriminator, message.author.avatarURL())
         .setColor(botColour)

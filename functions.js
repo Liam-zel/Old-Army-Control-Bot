@@ -28,6 +28,21 @@ function createArmy(armyNum) {
     return army;
 }
 
+// CREATE AREA
+function createArea(areaNum) {
+    var area = { 
+        name: o.Areas[areaNum].name,
+        upgradeCost: o.Areas[areaNum].upgradeCost,
+        level: 0,
+        miniBoss: false,
+        megaBoss: false,
+        isMaxed: false,
+        multiplier: 1.0
+    } 
+
+    return area;
+}
+
 // UPDATE INVADING AREA
 function updateInvadingArea(armyNum, areaNum) {
     var army = {
@@ -432,5 +447,6 @@ function findImage(string) {
 
 
 // EXPORTS
-module.exports = {createArmy, updateInvadingArea, updateUser, updateIdle,  truncate, createProgressBar, findUser, findIdle, randomColor, addComma, updateLevel, shortenString, 
-                calculateAverageEarnings, addBonus, errorHandle, findImage};
+module.exports = {createArmy, createArea, updateInvadingArea, updateUser, 
+                updateIdle,  truncate, createProgressBar, findUser, findIdle, randomColor, addComma, 
+                updateLevel, shortenString, calculateAverageEarnings, addBonus, errorHandle, findImage};

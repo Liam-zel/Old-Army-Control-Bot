@@ -118,12 +118,15 @@ module.exports = {
                         // effects
                         if (user.areas[i].level === 1) {
                             effect = "You unlocked this area's **Mini Boss!**";
+                            user.areas[i].miniBoss = true;
                         }
                         else if (user.areas[i].level === 2) {
                             effect = "You unlocked this area's **Boss!**";
+                            user.areas[i].megaBoss = true;
                         }
                         else {
                             effect = "Monsters in this area now reward you **`1.5x` more!**";
+                            user.areasp[i].isMaxed = true;
                         }
                           
                         break;

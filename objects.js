@@ -64,15 +64,19 @@ class area {
         this.name = name;
         this.prestigeReq = prestigeReq;
         this.monsters = monsters;
-        this.level = level;
         this.upgradeCost = upgradeCost;
+        // this.level = 0;
+        // this.miniBoss = false;
+        // this.megaBoss = false;
+        // this.isMaxed = false;
+        // this.multiplier = 1.0;
     }
 }
 
 //                      NAME    PRESTIGE        ENEMIES
-var forest = new area("Forest",     0,      [rock, stick, bird, bush, tree, wolf], 0, 1250);
-var cave   = new area("Cave",       1,      [bat, scorpion, spider, batHorde, skeleton, bear], 0, 2000);
-var jungle = new area("Jungle",     3,      [centpide, toucan, snake, monkey, tiger, hippo], 0, 4800);
+var forest = new area("Forest",     0,      [rock, stick, bird, bush, tree, wolf], 1250);
+var cave   = new area("Cave",       1,      [bat, scorpion, spider, batHorde, skeleton, bear], 2000);
+var jungle = new area("Jungle",     3,      [centpide, toucan, snake, monkey, tiger, hippo], 4800);
 
 // Array of every Area
 var Areas = [forest, cave, jungle];

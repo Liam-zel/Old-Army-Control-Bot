@@ -6,10 +6,10 @@ TODO:
 - ways for members to interact with eachother
 - reinforce trinkets (upgrading them)
 - change item objects to store their functions there and not activate them on 'use' command (although use command allows for more control)
-- have a better start account message, maybe an embed with a little artwork on it
 - fix trinkets
 - make area level ups actually do something
 - update inventory command with buttons
+- Add image to start embed
 
 
 COLOUR: #ecf23f (lime)
@@ -160,7 +160,6 @@ var idle = setInterval(async function() {
 
             var army = user.armies[j];
             var invadePos = army.invadingArea;
-
             let enemyPos = Math.floor(Math.abs(Math.random() - Math.random()) * Areas[invadePos].monsters.length) 
             /* No idea how it works, but it makes it so the higher the number, the lower the chance
             In this specific case, the chances SHOULD be around:
@@ -172,10 +171,17 @@ var idle = setInterval(async function() {
             enemy 6: 2.8%
             */
 
+            // moves enemy to next strongest enemy if boss or mini boss isnt unlocked
+            if (user.areas[army.invadingArea].megaBoss == false && enemyPos == 5) enemyPos--;
+            if (user.areas[army.invadingArea].miniBoss == false && enemyPos == 4) enemyPos--;
+
             const enemy = Areas[invadePos].monsters[enemyPos];
-            
+
+
             // Update stats
             var multiplier = user.multiplier;
+            if (user.areas[army.invadingArea].isMaxed) multiplier *= 1.5;
+
             army.lootGold += Math.round(enemy.goldEarn * user.armyEfficiency * multiplier);
             army.lootXP += Math.round(enemy.xpEarn * user.armyEfficiency); // multiplier doesnt affect xp
 
@@ -293,7 +299,7 @@ client.on("message", async (message) => {
             client.commands.get("prestige").execute(message, args, Discord, f, user, client);
         }
         else if (command === "help") {
-            client.commands.get("help").execute(message, args, Discord, f, client.commands, prefix, client)
+            client.commands.get("help").execute(message, args, Discord, f, client.commands, client)
         }
         else if (command === "profile" || command === "p") {
             client.commands.get("profile").execute(message, args, Discord, f, user, client.data);
@@ -363,6 +369,9 @@ client.on("message", async (message) => {
         // }
         else if (command === "uptime") {
             client.commands.get("uptime").execute(message, args, Discord, client);
+        }
+        else if (command === "remove") {
+            client.commands.get("remove").execute(message, args, client, f);
         }
     }
 

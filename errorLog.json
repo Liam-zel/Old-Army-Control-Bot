@@ -10114,6 +10114,26 @@
             "message": "RangeError [EMBED_FIELD_NAME]: MessageEmbed field names may not be empty.",
             "line": "Function.normalizeField (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/node_modules/discord.js/src/structures/MessageEmbed.js:413:22)",
             "user": "the funny one"
+        },
+        {
+            "ErrorNum": 197,
+            "date": "02/22/2022",
+            "message": "RangeError [EMBED_FIELD_VALUE]: MessageEmbed field values may not be empty.",
+            "line": "Function.normalizeField (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/node_modules/discord.js/src/structures/MessageEmbed.js:415:23)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 198,
+            "date": "02/22/2022",
+            "message": "TypeError: message.mentions.first is not a function",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/remove.js:7:37)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 199,
+            "date": "02/22/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'toString')",
+            "line": "Object.createProgressBar (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/functions.js:120:17)"
         }
     ]
 }

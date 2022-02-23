@@ -39,13 +39,7 @@ module.exports = {
             inventory: [],
             trinkets: [],
             armies: [f.createArmy(0)],
-            areas: [ 
-                { 
-                    name: "Forest",
-                    level: 0,
-                    upgradeCost: Areas[0].upgradeCost
-                }  
-            ],
+            areas: [f.createArea(0)],
             monsterDrops: []
         }
 

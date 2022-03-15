@@ -4,6 +4,7 @@ const { botColour } = require("../main");
 
 module.exports = {
     name: "rest",
+    category: "game",
     description: "Give your active armies a rest!\nGives xp and has a minute long second cooldown",
     alias: "None",
     cooldowns: [],

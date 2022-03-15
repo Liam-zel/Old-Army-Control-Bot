@@ -1,7 +1,9 @@
-const { Areas, botColour, prefix } = require("../objects.js");
+const { Areas } = require("../objects.js");
+const { botColour, prefix} = require("../main.js");
 
 module.exports = {
     name: "start",
+    category: "game",
     description: "Register your account!",
     alias: "None",
     examples: ["start"],

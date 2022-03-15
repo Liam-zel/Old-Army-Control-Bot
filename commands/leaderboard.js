@@ -16,6 +16,7 @@ class userEmbed {
 
 module.exports = {
     name: "leaderboard",
+    category: "general",
     description: "Look at the highest levels across all servers!",
     alias: "`lb`",
     examples: ["leaderboard"],

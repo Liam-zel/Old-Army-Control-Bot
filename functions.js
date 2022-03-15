@@ -213,7 +213,7 @@ function findUser(message, prefix, findNum) {
 
     if (findNum == true) return profileNum;
 
-    if (!hasAccount && message.content != prefix + "start") return false; // so people without accounts dont crash the bot
+    if (!hasAccount && !message.content.startsWith(prefix + "start")) return false; // so people without accounts dont crash the bot
 
     const user = client.data.users[profileNum];
     return user;

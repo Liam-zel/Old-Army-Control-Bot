@@ -3,6 +3,7 @@ const { Areas } = require("../objects");
 
 module.exports = {
     name: "army",
+    category: "general",
     description: "See your armies and some stats about them!",
     alias: "`a`",
     examples: ["army", "a"],

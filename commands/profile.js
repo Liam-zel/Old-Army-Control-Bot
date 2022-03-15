@@ -2,6 +2,7 @@ var { prefix, botColour, client } = require("../main");
 
 module.exports = {
     name: "profile",
+    category: "general",
     description: "Shows your profile!\nHere you can see some cool stats and more.",
     alias: "`p`", 
     examples: ["profile [user]",

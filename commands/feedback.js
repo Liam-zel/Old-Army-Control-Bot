@@ -2,6 +2,7 @@ const { prefix } = require("../main.js");
 
 module.exports = {
     name: "feedback",
+    category: "misc",
     description: "for if you have any feedback to give or maybe a bug to report!",
     alias: "None",
     examples: ["feedback {message}", "feedback this bot is great!"],

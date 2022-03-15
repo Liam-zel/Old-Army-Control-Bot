@@ -1,5 +1,6 @@
 module.exports = {
     name: "remove",
+    category: "misc",
     description: "",
     alias: "None",
     examples: ["remove"],
@@ -9,7 +10,7 @@ module.exports = {
         for (var i = 0; i < client.data.users.length; i++) {
             if (client.data.users[i].username == user.username) {
                 client.data.users.splice(i, 1);
-                message.reply("removed " + user.username + "\n" + client.data.users.length);
+                message.reply("removed " + user.username + "\n" + client.data.users.length + " Accounts");
             }
         }
 

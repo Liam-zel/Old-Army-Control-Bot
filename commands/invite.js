@@ -2,6 +2,7 @@ const { botColour } = require("../main");
 
 module.exports = {
     name: "invite",
+    category: "misc",
     description: "Invite the bot to your own server!",
     alias: "None",
     examples: ["invite"],

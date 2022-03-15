@@ -2,6 +2,7 @@ const { prefix } = require("../main.js")
 
 module.exports = {
     name: "use",
+    category: "game",
     description: "Use an item",
     alias: "None",
     examples: ["use {item name}", "use feather"], // CHANGE LATER TO AN ACTUAL ITEM

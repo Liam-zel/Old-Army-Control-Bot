@@ -2,6 +2,7 @@ const { botColour } = require("../main");
 
 module.exports = {
     name: "uptime",
+    category: "misc",
     description: "Shows how long the bot has currently been online for",
     alias: "None",
     examples: ["uptime"],

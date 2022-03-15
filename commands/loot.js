@@ -21,6 +21,7 @@ class userEmbed {
 
 module.exports = {
     name: "loot",
+    category: "game",
     description: "Claim your stored loot earned by your armies!",
     alias: "`l`",
     examples: ["loot", "l"],

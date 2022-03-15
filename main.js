@@ -10,6 +10,7 @@ TODO:
 - make area level ups actually do something
 - update inventory command with buttons
 - Add image to start embed
+- Make distinction between item and trinket drops through header
 
 
 COLOUR: #ecf23f (lime)
@@ -266,23 +267,14 @@ client.on("message", async (message) => {
     if (message.author.bot) return;
     if (message.channel instanceof Discord.DMChannel) return;
 
-    const user = f.findUser(message, prefix);
+    const user = f.findUser(message, prefix, false);
     const userIdle = f.findIdle(message, prefix);
     
+    // completely ripped from the internet and not even in a file idc
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
-    
-    // completely ripped from the internet and not even in a file idc
-    if (command === "start") {
-        var hasAccount = false;
-        for (var i = 0; i < client.data.users.length; i++) {
-            if (client.data.users[i].userID == message.author.id) return;
-        }
-        client.commands.get("start").execute(message, args, f, client, Discord);
-        return;
-    }
 
-    if (user === undefined) { // So users without an account dont crash the bot
+    if (user === false) { // So users without an account dont crash the bot
         message.reply("You need an account to do that!\n do: `" + prefix + "start` to create an account!");
         return;
     } 
@@ -372,6 +364,14 @@ client.on("message", async (message) => {
         }
         else if (command === "remove") {
             client.commands.get("remove").execute(message, args, client, f);
+        }
+        else if (command === "start") {
+            var hasAccount = false;
+            for (var i = 0; i < client.data.users.length; i++) {
+                if (client.data.users[i].userID == message.author.id) return;
+            }
+            client.commands.get("start").execute(message, args, f, client, Discord);
+            return;
         }
     }
 

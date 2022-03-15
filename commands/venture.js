@@ -5,6 +5,7 @@ const costScale = 2.2;
 
 module.exports = {
     name: "venture",
+    category: "game",
     description: "Explore new areas or venture deeper in current ones for new foes!",
     alias: "`ven`",
     examples: [

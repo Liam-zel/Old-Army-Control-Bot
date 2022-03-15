@@ -2,6 +2,7 @@ const { prefix, botColour } = require("../main.js")
 
 module.exports = {
     name: "upgrade",
+    category: "game",
     description: "Upgrade your account and stats. Upgrades are essential to progress!",
     alias: "`up`",
     examples: [

@@ -2,6 +2,7 @@ const { botColour } = require("../main");
 
 module.exports = {
     name: "daily",
+    category: "game",
     description: "Gain a daily reward of money and xp!",
     alias: "none",
     examples: ["daily"],

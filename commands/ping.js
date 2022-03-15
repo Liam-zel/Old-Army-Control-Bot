@@ -1,6 +1,7 @@
 
 module.exports = {
     name: "ping",
+    category: "misc",
     description: "See latency between your commands and the bot.",
     alias: "None",
     examples: ["ping"],

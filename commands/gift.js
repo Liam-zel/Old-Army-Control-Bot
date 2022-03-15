@@ -2,6 +2,7 @@ var { prefix, botColour } = require("../main");
 
 module.exports = {
     name: "gift",
+    category: "game",
     description: "Give an item to someone!",
     alias: "None", 
     examples: ["gift {user} {amount} {item}", 

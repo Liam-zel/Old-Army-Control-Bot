@@ -2,6 +2,7 @@ const { botColour, prefix } = require("../main");
 
 module.exports = {
     name: "inventory",
+    category: "general",
     description: "See whats in your inventory.",
     alias: "`inv`",
     examples: ["inventory [page number]",

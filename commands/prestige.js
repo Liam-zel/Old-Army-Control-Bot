@@ -3,6 +3,7 @@ const { Areas } = require("../objects.js");
 
 module.exports = {
     name: "prestige",
+    category: "game",
     description: "Reset your progress for new rewards, foes and a special currency used to get powerful permanent upgrades!",
     alias: "None",
     examples: ["prestige"],

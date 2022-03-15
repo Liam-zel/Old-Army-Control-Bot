@@ -4,6 +4,7 @@ const { botColour } = require("../main");
 
 module.exports = {
     name: "weekly",
+    category: "game",
     description: "Gain a weekly reward of money and xp!",
     alias: "None",
     cooldowns: [],

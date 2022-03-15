@@ -56,6 +56,7 @@ function createPage(pageNum, user, totalPages, message) {
 
 module.exports = {
     name: "trinkets",
+    category: "general",
     description: "Shows all of your trinkets!",
     alias: "`tr`",
     activeEmbeds: [],

@@ -36,13 +36,14 @@ module.exports = {
             helpEmbed.setDescription("**Prefix: **" + prefix);
         
 
-            // commands is a collection, not an array, so you have to deal with it like this
+            // commands is a map, not an array, so you have to deal with it like this
             // the object stores all the data of the command but its 1 step out, so it stores command, see below (cant explain well, if you forget you will just have to run a for of loop with only 1 variable)
             // the command stores the actual command such as the name, description and execute
             for (var [object, command] of commands) {
                 if (command.category === "general")  generalCommands += "`" + command.name + "`, ";
                 else if (command.category === "game")   gameCommands += "`" + command.name + "`, ";
                 else if (command.category === "misc")   miscCommands += "`" + command.name + "`, ";
+
             }
 
             var me = client.users.cache.get('461059264388005889');

@@ -10174,6 +10174,104 @@
             "message": "TypeError: Cannot read properties of undefined (reading 'toLowerCase')",
             "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/sell.js:47:41)",
             "user": "the funny one"
+        },
+        {
+            "ErrorNum": 206,
+            "date": "03/16/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'length')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/help.js:47:43)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 207,
+            "date": "03/16/2022",
+            "message": "TypeError: commands.size is not a function",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/help.js:47:38)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 208,
+            "date": "03/30/2022",
+            "message": "RangeError [EMBED_FIELD_VALUE]: MessageEmbed field values may not be empty.",
+            "line": "Function.normalizeField (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/node_modules/discord.js/src/structures/MessageEmbed.js:415:23)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 209,
+            "date": "03/30/2022",
+            "message": "ReferenceError: invItem is not defined",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/sell.js:65:25)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 210,
+            "date": "03/30/2022",
+            "message": "TypeError: invItem.toLowerCase is not a function",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/sell.js:51:37)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 211,
+            "date": "03/30/2022",
+            "message": "TypeError: item.split is not a function",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/sell.js:38:14)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 212,
+            "date": "03/30/2022",
+            "message": "TypeError: item.split is not a function",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/sell.js:38:21)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 213,
+            "date": "03/30/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'toLowerCase')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/sell.js:53:55)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 214,
+            "date": "03/30/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'toLowerCase')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/sell.js:53:55)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 215,
+            "date": "03/30/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'toLowerCase')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/sell.js:53:55)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 216,
+            "date": "03/30/2022",
+            "message": "TypeError: user.inventory[itemPos].splice is not a function",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/sell.js:83:61)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 217,
+            "date": "03/30/2022",
+            "message": "TypeError: amount.parseInt is not a function",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/sell.js:18:25)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 218,
+            "date": "03/30/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'toLowerCase')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/sell.js:53:57)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 219,
+            "date": "03/30/2022",
+            "message": "TypeError: invItem.toLowerCase is not a function",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/sell.js:49:51)",
+            "user": "the funny one"
         }
     ]
 }

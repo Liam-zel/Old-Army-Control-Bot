@@ -3,8 +3,8 @@
   {
    "username": "GD JOE",
    "userID": "710412758541402234",
-   "daily": 50362,
-   "weekly": 50362,
+   "daily": 44242,
+   "weekly": 44242,
    "createdAt": "15/11/2021",
    "multiplier": 1,
    "armyEfficiency": 1,
@@ -195,8 +195,8 @@
   {
    "username": "amy <3",
    "userID": "707542668116492399",
-   "daily": 57175,
-   "weekly": 57175,
+   "daily": 51055,
+   "weekly": 51055,
    "createdAt": "25/12/2021",
    "multiplier": 1,
    "armyEfficiency": 1,
@@ -291,44 +291,38 @@
   {
    "username": "the funny one",
    "userID": "461059264388005889",
-   "daily": 86039,
-   "weekly": 86039,
+   "daily": 79919,
+   "weekly": 79919,
    "createdAt": "23/2/2022",
-   "multiplier": 1.02,
+   "multiplier": 1.06,
    "armyEfficiency": 1,
    "efficiencyLevel": 0,
    "storageLevel": 0,
-   "enemyLimit": 150,
-   "balance": 245,
+   "enemyLimit": 280,
+   "balance": 62.02,
    "totalBalance": 0,
-   "userLevel": 2,
-   "xp": 2,
+   "userLevel": 4,
+   "xp": 77,
    "totalXP": 0,
-   "xpToNext": 45,
+   "xpToNext": 102,
    "prestigeNum": 0,
    "prestigeCoins": 0,
-   "lastLoot": 1645785585937,
-   "lootFull": 0,
+   "lastLoot": 1648606051050,
+   "lootFull": 1648606753970,
    "inventory": [
     {
-     "name": "Test",
+     "name": "Test Feather",
      "dropRate": 100,
-     "sellValue": 0,
-     "amount": 7
-    },
-    {
-     "name": "Feather",
-     "dropRate": 100,
-     "sellValue": 0,
-     "amount": 6
+     "sellValue": 1.01,
+     "amount": 998
     }
    ],
    "trinkets": [
     {
      "name": "Test Trinket",
-     "bonus": 25,
+     "bonus": 155,
      "bonusType": "Army kills",
-     "strength": 5,
+     "strength": 31,
      "dropRate": 100,
      "max": 1000
     }
@@ -337,8 +331,8 @@
     {
      "number": 0,
      "invadingArea": 0,
-     "lootGold": 190,
-     "lootXP": 133,
+     "lootGold": 446,
+     "lootXP": 333,
      "possibleEnemies": [
       "Rock",
       "Stick",
@@ -348,14 +342,14 @@
       "Wolf"
      ],
      "enemiesSlain": [
-      23,
-      31,
-      35,
-      22,
+      92,
+      75,
+      60,
+      53,
       0,
       0
      ],
-     "total": 111
+     "total": 280
     }
    ],
    "areas": [
@@ -373,21 +367,21 @@
      "name": "Test Trinket",
      "bonus": 5,
      "bonusType": "Army kills",
-     "strength": 20,
+     "strength": 2,
      "dropRate": 100,
      "max": 1000
-    },
-    {
-     "name": "Feather",
-     "dropRate": 100,
-     "sellValue": 0,
-     "amount": 22
     },
     {
      "name": "Test",
      "dropRate": 100,
      "sellValue": 0,
-     "amount": 18
+     "amount": 2
+    },
+    {
+     "name": "Feather",
+     "dropRate": 100,
+     "sellValue": 0,
+     "amount": 2
     }
    ]
   }

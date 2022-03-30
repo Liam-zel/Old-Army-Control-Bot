@@ -3,8 +3,8 @@
         {
             "username": "GD JOE",
             "userID": "710412758541402234",
-            "daily": 50349,
-            "weekly": 50349,
+            "daily": 44227,
+            "weekly": 44227,
             "createdAt": "15/11/2021",
             "multiplier": 1,
             "armyEfficiency": 1,
@@ -195,8 +195,8 @@
         {
             "username": "amy <3",
             "userID": "707542668116492399",
-            "daily": 57162,
-            "weekly": 57162,
+            "daily": 51040,
+            "weekly": 51040,
             "createdAt": "25/12/2021",
             "multiplier": 1,
             "armyEfficiency": 1,
@@ -291,44 +291,31 @@
         {
             "username": "the funny one",
             "userID": "461059264388005889",
-            "daily": 86026,
-            "weekly": 86026,
+            "daily": 79904,
+            "weekly": 79904,
             "createdAt": "23/2/2022",
-            "multiplier": 1.02,
+            "multiplier": 1.06,
             "armyEfficiency": 1,
             "efficiencyLevel": 0,
             "storageLevel": 0,
-            "enemyLimit": 150,
-            "balance": 245,
+            "enemyLimit": 280,
+            "balance": 1070,
             "totalBalance": 0,
-            "userLevel": 2,
-            "xp": 2,
+            "userLevel": 4,
+            "xp": 77,
             "totalXP": 0,
-            "xpToNext": 45,
+            "xpToNext": 102,
             "prestigeNum": 0,
             "prestigeCoins": 0,
-            "lastLoot": 1645785585937,
-            "lootFull": 0,
-            "inventory": [
-                {
-                    "name": "Test",
-                    "dropRate": 100,
-                    "sellValue": 0,
-                    "amount": 7
-                },
-                {
-                    "name": "Feather",
-                    "dropRate": 100,
-                    "sellValue": 0,
-                    "amount": 6
-                }
-            ],
+            "lastLoot": 1648606051050,
+            "lootFull": 1648606753970,
+            "inventory": [],
             "trinkets": [
                 {
                     "name": "Test Trinket",
-                    "bonus": 25,
+                    "bonus": 155,
                     "bonusType": "Army kills",
-                    "strength": 5,
+                    "strength": 31,
                     "dropRate": 100,
                     "max": 1000
                 }
@@ -337,8 +324,8 @@
                 {
                     "number": 0,
                     "invadingArea": 0,
-                    "lootGold": 204,
-                    "lootXP": 143,
+                    "lootGold": 446,
+                    "lootXP": 333,
                     "possibleEnemies": [
                         "Rock",
                         "Stick",
@@ -348,14 +335,14 @@
                         "Wolf"
                     ],
                     "enemiesSlain": [
-                        25,
-                        31,
-                        35,
-                        26,
+                        92,
+                        75,
+                        60,
+                        53,
                         0,
                         0
                     ],
-                    "total": 117
+                    "total": 280
                 }
             ],
             "areas": [
@@ -373,21 +360,21 @@
                     "name": "Test Trinket",
                     "bonus": 5,
                     "bonusType": "Army kills",
-                    "strength": 20,
+                    "strength": 2,
                     "dropRate": 100,
                     "max": 1000
-                },
-                {
-                    "name": "Feather",
-                    "dropRate": 100,
-                    "sellValue": 0,
-                    "amount": 22
                 },
                 {
                     "name": "Test",
                     "dropRate": 100,
                     "sellValue": 0,
-                    "amount": 20
+                    "amount": 2
+                },
+                {
+                    "name": "Feather",
+                    "dropRate": 100,
+                    "sellValue": 0,
+                    "amount": 2
                 }
             ]
         }

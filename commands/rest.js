@@ -9,7 +9,7 @@ module.exports = {
     alias: "None",
     cooldowns: [],
     examples: ["rest"],
-    execute(message, args, Discord, f, o, user) {
+    execute(message, Discord, f, o, user) {
         var cooldowns = module.exports.cooldowns;
 
         for (var i = 0; i < cooldowns.length; i++) {
@@ -23,7 +23,7 @@ module.exports = {
         var areaNum = 0;
         for (var i = 0; i < o.Areas.length; i++) {
             // finding highest unlocked area
-            if (o.Areas[i].name === user.areas.pop()) {
+            if (o.Areas[i].name === user.areas[user.areas.length]) {
                 areaNum = i;
                 break;
             }
@@ -45,7 +45,7 @@ module.exports = {
 
         // sleeping tiers
         if (rand < 0.20) {
-            restEmbed.addField("Resting Results!", "Your army had a rough rest and you earned pathetic xp: `" + xpReward + "xp`" + 
+            restEmbed.addField("Resting Results!", "Your army had a rough rest and you earned \u2800*pathetic*\u2800 xp: `" + xpReward + "xp`" + 
             "\n**" + user.xp + "xp + " + xpReward + "xp = " + (xpReward + user.xp) + "xp**", false)
         }
 
@@ -55,12 +55,12 @@ module.exports = {
         }
 
         else if (rand < 0.85) {
-            restEmbed.addField("Resting Results!", "Your army woke up and felt well rested and refreshedm, you earned modest xp: `" + xpReward + "xp`" + 
+            restEmbed.addField("Resting Results!", "Your army woke up and felt well rested and refreshed, you earned __modest__ xp: `" + xpReward + "xp`" + 
             "\n**" + user.xp + "xp + " + xpReward + "xp = " + (xpReward + user.xp) + "xp**", false)
         }
 
         else {
-            restEmbed.addField("Resting Results!", "Your army slept soundly and felt ready to take on any beast, you earned outstanding xp: `" + xpReward + "xp`" + 
+            restEmbed.addField("Resting Results!", "Your army __Slept Soundly, Feeling Ready To Take On Any Beast__, you earned **__OUTSTANDING__** xp: `" + xpReward + "xp`" + 
             "\n**" + user.xp + "xp + " + xpReward + "xp = " + (xpReward + user.xp) + "xp**", false)
         }
 
@@ -77,15 +77,15 @@ module.exports = {
 
         user.xp += xpReward;
         //user.balance += goldReward;
-        if (user.xp >= user.xpToNext) f.updateLevel(user, message, Areas);
+        if (user.xp >= user.xpToNext) f.updateLevel(user, message, o.Areas);
 
         cooldowns[cooldowns.length] = {
             userID: message.author.id,
-            timer: 60,
+            timer: 60, // default 60 (seconds)
         }
 
         f.updateUser();
-        message.reply(restEmbed);
+        message.channel.send(restEmbed);
     }
 }
 

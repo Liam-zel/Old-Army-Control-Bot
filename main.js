@@ -1,17 +1,21 @@
 /*
 TODO:
-- buy / sell (not sure if needed yet)
+- buy
 - raid boss
 - side tasks
 - ways for members to interact with eachother
 - reinforce trinkets (upgrading them)
-- change item objects to store their functions there and not activate them on 'use' command (although use command allows for more control)
 - fix trinkets
-- make area level ups actually do something
-- update inventory command with buttons
 - Add image to start embed
-- Make distinction between item and trinket drops through header
+- Personalisation (little emojis that can be changed for profiles or something, embed colours)
+- Make starter earnings go to down to cents
 
+- change item objects to store their functions there and not activate them on 'use' command (although use command allows for more control)
+- Update items with descriptions
+- update ITEM command to show if an item is usable
+- Make distinction between item and trinket drops through header    
+- Update inventory command with buttons
+- Unique mob drop percentages?? (make array [item, droprate])
 
 COLOUR: #ecf23f (lime)
 
@@ -183,7 +187,7 @@ var idle = setInterval(async function() {
             var multiplier = user.multiplier;
             if (user.areas[army.invadingArea].isMaxed) multiplier *= 1.5;
 
-            army.lootGold += Math.round(enemy.goldEarn * user.armyEfficiency * multiplier);
+            army.lootGold += Math.round(enemy.goldEarn * Math.round(user.armyEfficiency/2) * multiplier);
             army.lootXP += Math.round(enemy.xpEarn * user.armyEfficiency); // multiplier doesnt affect xp
 
             army.enemiesSlain[enemyPos] += user.armyEfficiency;
@@ -196,7 +200,7 @@ var idle = setInterval(async function() {
             
             // Drops 
             for (var k = 0; k < enemy.drops.length; k++) {
-                if (Math.random() * 100 < enemy.drops[k].dropRate) {
+                if (Math.random() * 100 < enemy.dropRates[k] + (user.armyEfficiency/4)) {
                     var exists = false;
 
                     // I have to set these values to 1, as editing the amount (such as stacking them in the users inventory)
@@ -279,98 +283,140 @@ client.on("message", async (message) => {
         return;
     } 
 
-
     try {
+        // LOOT
         if (command === "loot" || command === "l") {
-            client.commands.get("loot").execute(message, args, Discord, f, user, client);
+            client.commands.get("loot").execute(message, Discord, f, user, client);
         }
+        // UPGRADE
         else if (command === "upgrade" || command === "up") {
-            client.commands.get("upgrade").execute(message, args, Discord, f, o, user, userIdle);
+            client.commands.get("upgrade").execute(message, Discord, f, o, user, userIdle);
         }
+        // PRESTIGE
         else if (command === "prestige") {
-            client.commands.get("prestige").execute(message, args, Discord, f, user, client);
+            client.commands.get("prestige").execute(message, Discord, f, user, client);
         }
-        else if (command === "help") {
-            client.commands.get("help").execute(message, args, Discord, f, client.commands, client)
+        // HELP
+        else if ((command === "help" || command === "h") || (command === "commands" || command === "c")) {
+            client.commands.get("help").execute(message, Discord, f, client.commands, client)
         }
+        // PROFILE
         else if (command === "profile" || command === "p") {
-            client.commands.get("profile").execute(message, args, Discord, f, user, client.data);
-        }
+            client.commands.get("profile").execute(message, Discord, f, user, client.data);
+        }   
+        // GIFT
         else if (command === "gift") {
-            client.commands.get("gift").execute(message, args, Discord, f, user, client.data);
+            client.commands.get("gift").execute(message, Discord, f, user, client.data);
         }
+        // TRAIN
         else if (command === "train") {
-            client.commands.get("train").execute(message, args, Discord, f, o, user);
+            client.commands.get("train").execute(message, Discord, f, o, user);
         }
-        else if (command.startsWith("venture") || command.startsWith("ven")) {
-            client.commands.get("venture").execute(message, args, Discord, f, user, client);
+        // VENTURE
+        else if (command === "venture" || command === "ven") {
+            client.commands.get("venture").execute(message, Discord, f, user, client);
         }
-        else if (command === "feedback") {
-            client.commands.get("feedback").execute(message, args, feedbackList, fs);
-        }
+        // USE
         else if (command === "use") {
-            client.commands.get("use").execute(message, args, f, user);
+            client.commands.get("use").execute(message, f, user);
         }
-        else if (command === "army" || command === "a") {
-            client.commands.get("army").execute(message, args, Discord, f, user);
+        // INVITE
+        else if (command === "invite") { 
+            client.commands.get("invite").execute(message, Discord, f, client.user.displayAvatarURL()); 
         }
-        else if (command === "invite") { // keep above inventory to be checked first
-            client.commands.get("invite").execute(message, args, Discord, f, client.user.displayAvatarURL()); 
+        // INVENTORY
+        else if (command === "inventory" || command === "inv") {            
+            client.commands.get("inventory").execute(message, Discord, f, user); 
         }
-        else if (command.startsWith("inventory") || command.startsWith("inv")) {
-            if (command.startsWith("inventory") && message.content.slice(11)) var pageNum = parseInt(message.content.slice(11));
-            else if (command.startsWith("inv") && message.content.slice(5)) var pageNum = parseInt(message.content.slice(5));
-            else var pageNum = 1;
-            
-            client.commands.get("inventory").execute(message, args, Discord, f, user, pageNum, client); 
-        }
+        // REST
         else if (command === "rest") {
-            client.commands.get("rest").execute(message, args, Discord, f, o, user);
+            client.commands.get("rest").execute(message, Discord, f, o, user);
         }
+        // ARMY
+        else if (command === "army" || command === "a") {
+            client.commands.get("army").execute(message, Discord, f, user);
+        }
+        // SELL
         else if (command === "sell") {
-            client.commands.get("sell").execute(message, args, Discord, f, user);
+            client.commands.get("sell").execute(message, Discord, f, user);
         }
-        else if (command.startsWith("trinkets") || command.startsWith("tr")) {
+        // TRINKETS
+        else if (command === "trinkets" || command === "tr") {
             if (command.startsWith("trinkets") && message.content.slice(10)) var pageNum = parseInt(message.content.slice(10));
             else if (command.startsWith("tr") && message.content.slice(4)) var pageNum = parseInt(message.content.slice(4));
             else var pageNum = 1;
 
-            client.commands.get("trinkets").execute(message, args, Discord, f, user, pageNum); 
+            client.commands.get("trinkets").execute(message, Discord, f, user, pageNum); 
         }
-        else if (command.startsWith("assign") || command.startsWith("ass")) {
+        // ASSIGN (ASS)
+        else if (command === "assign" || command === "ass") {
             var isAssign = false;
             if (message.content.split(" ").length > 1) isAssign = true; // if theres more than 1 element its an assign
 
-            client.commands.get("assign").execute(message, args, Discord, f, client, user, isAssign); 
+            client.commands.get("assign").execute(message, Discord, f, client, user, isAssign); 
         }
+        // LEADERBOARD
         else if (command === "leaderboard" || command === "lb") {
-            client.commands.get("leaderboard").execute(message, args, Discord, f, client, user); 
+            client.commands.get("leaderboard").execute(message, Discord, f, client, user); 
         }
+        // MONSTER
+        else if (command === "monster" || command === "mob") {
+            client.commands.get("monster").execute(message, Discord, f, o); 
+        }
+        // ITEM
+        else if (command === "item") {
+            client.commands.get("item").execute(message, Discord, f, o, command); 
+        }
+
+        // DAILY
         else if (command === "daily") {
-            client.commands.get("daily").execute(message, args, Discord, f, o, user); 
+            client.commands.get("daily").execute(message, Discord, f, o, user); 
         }
+        // WEEKLY
         else if (command === "weekly") {
-            client.commands.get("weekly").execute(message, args, Discord, f, o, user); 
+            client.commands.get("weekly").execute(message, Discord, f, o, user); 
         }
+        // PING
         else if (command === 'ping') {  
-            client.commands.get("ping").execute(message, args, client); 
+            client.commands.get("ping").execute(message, client); 
 
         }
-        // else if (command === 'trade') {  
-        //     client.commands.get("trade").execute(message, args, Discord, user, client); 
-        // }
+        // UPTIME
         else if (command === "uptime") {
-            client.commands.get("uptime").execute(message, args, Discord, client);
+            client.commands.get("uptime").execute(message, Discord, client);
         }
-        else if (command === "remove") {
-            client.commands.get("remove").execute(message, args, client, f);
+        // FEEDBACK
+        else if (command === "feedback") {
+            client.commands.get("feedback").execute(message, feedbackList, fs);
         }
+        // else if (command === 'trade') {  
+        //     client.commands.get("trade").execute(message, Discord, user, client); 
+        // }
+        
+        // ADMIN COMMANDS -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+        // REMOVE
+        else if ((command === "remove" || command === "re")&& message.author.id === "461059264388005889") { // my id :)
+            client.commands.get("remove").execute(message, client, f);
+        }
+        // LEVELUP
+        else if ((command === "levelup" || command === "lu") && message.author.id === "461059264388005889") { // my id :)
+            client.commands.get("levelup").execute(message, client, f);
+        }
+        // GIVE
+        else if ((command === "give" || command === "g") && message.author.id === "461059264388005889") { // my id :)
+            client.commands.get("give").execute(message, client, f);
+        }
+        else if ((command === "accounts" || command === "acc") && message.author.id === "461059264388005889") { // my id :)
+            client.commands.get("accounts").execute(message, Discord, client);
+        }
+
+        // START
         else if (command === "start") {
             var hasAccount = false;
             for (var i = 0; i < client.data.users.length; i++) {
                 if (client.data.users[i].userID == message.author.id) return;
             }
-            client.commands.get("start").execute(message, args, f, client, Discord);
+            client.commands.get("start").execute(message, f, client, Discord);
             return;
         }
     }

@@ -86,6 +86,14 @@ function truncate(x, precision) {
     return Math.floor(x * a) / a; 
 }
 
+// MONEYTRUNC
+function moneyTrunc(x) {
+    x *= 100
+    x = Math.floor(x)
+
+    return x;
+}
+
 // CREATE PROGRESS BAR
 function createProgressBar(min_Length, max_length, current, goal, barColour, earnings) {
     var { client } = require("./main.js");
@@ -273,10 +281,16 @@ function updateLevel(user, message, Areas) {
 
     var levelAmount = 0;
     var multiTotal = 0;
+
+    let levelScaling = 0
+
     while (user.xp >= user.xpToNext) {
         user.xp -= user.xpToNext;
         levelAmount++;
-        user.xpToNext = Math.ceil(user.xpToNext *= 1.5);
+        user.userLevel++;
+        user.xpToNext = Math.ceil(user.xpToNext * 1.5);
+
+        levelScaling += (user.userLevel) / 2
 
         // every 10 levels = +36% multi
         if (user.userLevel % 10 == 0) {
@@ -289,22 +303,24 @@ function updateLevel(user, message, Areas) {
             multiTotal += 0.02
         }
     }
- 
+
     // adds gold on level based on strongest enemy
     let enemyPos = Areas[user.armies.length -1].monsters.length - 1;
     let enemy = Areas[user.armies.length - 1].monsters[enemyPos]; 
 
-    let goldReward = (enemy.goldEarn * 10) * levelAmount;
+    let goldReward = Math.round(enemy.goldEarn * 10 * levelScaling); // note: Enemy earnings is stored in cents
     
-    // embed field
-    levelEmbed.addField("**You Leveled up __" + levelAmount + "__ times!** [lvl " + (user.userLevel + levelAmount) + "]", // bold because mobile doesnt do it by default
-    "*Multiplier bonus* | " + (truncate(user.multiplier + multiTotal, 2)) + "x  **[+" + truncate(multiTotal, 2) + "x]**" +
-    "\n\n*Reward* | **$" + goldReward + "**", false);
+    
 
-    user.userLevel += levelAmount;
+    // embed field
+    levelEmbed.addField("**You Leveled up __" + levelAmount + "__ times!** [lvl " + (user.userLevel) + "]", // bold because mobile doesnt do it by default
+    "*Multiplier bonus* | " + (truncate(user.multiplier + multiTotal, 2)) + "x  **[+" + truncate(multiTotal, 2) + "x]**" +
+    "\n\n*Reward* | **$" + (goldReward/100) + "**", false);
+
     user.multiplier += multiTotal;
 
     user.balance += goldReward;
+    user.totalBalance += Math.round(goldReward)
 
     user.multiplier = truncate(user.multiplier, 2);
 
@@ -448,5 +464,6 @@ function findImage(string) {
 
 // EXPORTS
 module.exports = {createArmy, createArea, updateInvadingArea, updateUser, 
-                updateIdle,  truncate, createProgressBar, findUser, findIdle, randomColor, addComma, 
-                updateLevel, shortenString, calculateAverageEarnings, addBonus, errorHandle, findImage};
+                updateIdle,  truncate, moneyTrunc, createProgressBar, findUser, findIdle, randomColor, 
+                addComma, updateLevel, shortenString, calculateAverageEarnings, addBonus, errorHandle, 
+                findImage};

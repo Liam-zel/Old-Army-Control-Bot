@@ -9,7 +9,14 @@ module.exports = {
     "inventory",
     "inventory 3"
     ],
-    execute(message, args, Discord, f, user, pageNum) {
+    execute(message, Discord, f, user) {
+        var pageNum = message.content.split(" ").pop()
+        pageNum = parseInt(pageNum, 10)
+
+        if (isNaN(pageNum)) {
+            pageNum = 1;
+        }
+
         contentAmount = 6;
         var totalPages = Math.ceil(user.inventory.length / contentAmount);
         if (totalPages == 0) totalPages = 1;
@@ -37,14 +44,12 @@ module.exports = {
             if (item == undefined) break;
 
             if (i % 2 == 0) { // NaN returns 0 (for when i == 0)
-                half1 += "**" + item.name + "** x" + user.inventory[i].amount + "\n" + 
-                "Drop rate: " + item.dropRate + "%\n" +
-                "Sell value: $" + item.sellValue + "\n\n";
+                half1 += "**" + item.name + "** `x" + user.inventory[i].amount + "`\n" + 
+                "Sell value: `$" + item.sellValue + "`\n\n";
             }
             else {
-                half2 += "**" + item.name + "** x" + user.inventory[i].amount + "\n" + 
-                "Drop rate: " + item.dropRate + "%\n" +
-                "Sell value: $" + item.sellValue + "\n\n";
+                half2 += "**" + item.name + "** `x" + user.inventory[i].amount + "`\n" + 
+                "Sell value: `$" + item.sellValue + "`\n\n";
             }
         }
 

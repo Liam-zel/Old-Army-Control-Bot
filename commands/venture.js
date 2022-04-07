@@ -13,7 +13,7 @@ module.exports = {
         "venture",
         "venture forest"
     ],
-    execute(message, args, Discord, f, user, client) {
+    execute(message, Discord, f, user, client) {
 
         const ventureEmbed = new Discord.MessageEmbed()
         ventureEmbed.setColor(botColour) 
@@ -91,6 +91,10 @@ module.exports = {
                 var effect;
     
                 var foundArea = false;
+
+                let oldBalance = user.balance;
+                let ventureCost = 0;
+
                 for (var i = 0; i < user.areas.length; i++) {
                     if (area.toLowerCase() == user.areas[i].name.toLowerCase()) {
                         foundArea = true;
@@ -106,9 +110,14 @@ module.exports = {
                             return;
                         }
 
+                        ventureCost = user.areas[i].upgradeCost*100 // balance is stored in cents
+
                         user.areas[i].level++;
-                        user.balance -= user.areas[i].upgradeCost;
+
+                        user.balance -= ventureCost; 
                         user.areas[i].upgradeCost *= costScale;
+                        // round decimal
+                        user.areas[i].upgradeCost = Math.round(user.areas[i].upgradeCost)
     
     
                         // images
@@ -127,7 +136,7 @@ module.exports = {
                         }
                         else {
                             effect = "Monsters in this area now reward you **`1.5x` more!**";
-                            user.areasp[i].isMaxed = true;
+                            user.areas[i].isMaxed = true;
                         }
                           
                         break;
@@ -140,7 +149,10 @@ module.exports = {
                 }
     
                 ventureEmbed.setTitle("You ventured further into the " + area.toUpperCase())
-                ventureEmbed.addField(area.toUpperCase() + " " + previousImage + " **-->** " + image, "You verntured further into the " + area.toLowerCase() + "!")
+                ventureEmbed.addField(area.toUpperCase() + " " + previousImage + " **-->** " + image,
+                                      "You verntured further into the " + area.toLowerCase() + "!\n" +
+                                      "`$" + (oldBalance/100) + "` - `$" + (ventureCost/100) + "` = `$" + (user.balance/100) + "`")
+
                 ventureEmbed.addField("\u200B", effect)
     
                 message.channel.send(ventureEmbed);

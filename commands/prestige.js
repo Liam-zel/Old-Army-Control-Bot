@@ -7,7 +7,7 @@ module.exports = {
     description: "Reset your progress for new rewards, foes and a special currency used to get powerful permanent upgrades!",
     alias: "None",
     examples: ["prestige"],
-    execute(message, args, Discord, f, user, client) {
+    execute(message, Discord, f, user, client) {
         var levelRequirement = 10 + 5 * user.prestigeNum;
         var profileNum = f.findUser(message, null, true);
         //var idleNum = f.findIdle(message, null, true);

@@ -22,7 +22,7 @@ module.exports = {
     examples: ["leaderboard"],
     activeEmbeds: [],
 
-    execute(message, args, Discord, f, client, user) {
+    execute(message, Discord, f, client, user) {
 
         class account {
             constructor(name, level, totalBalance) {

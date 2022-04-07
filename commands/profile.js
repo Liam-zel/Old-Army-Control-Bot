@@ -7,9 +7,9 @@ module.exports = {
     alias: "`p`", 
     examples: ["profile [user]",
     "profile",
-    "profile <@812674338112274453>"
+    "profile @Coolkid92"
     ],
-    execute(message, args, Discord, f, user, data) {
+    execute(message, Discord, f, user, data) {
 
         const profileEmbed = new Discord.MessageEmbed()
 
@@ -54,6 +54,11 @@ module.exports = {
         else if (mins > 0) timer = "**" + mins + " minutes " + secs + " seconds** until full";
         else timer = "**" + secs + " seconds** until full" 
 
+        // full bar
+        if (currentKills >= (user.enemyLimit * user.armies.length)) {
+            timer = "**FULL**"
+        }
+
         /* .addFields(
                 {name: "General", value: "\u200B", inline: false},
                 {name: "Balance:", value: "$" + user.balance, inline: true},
@@ -71,7 +76,7 @@ module.exports = {
 
         profileEmbed.addField(
         "**__General:__**", 
-        "**Balance:** $" + user.balance + "\n\n" + 
+        "**Balance:** $" + (user.balance / 100) + "\n\n" + 
         "**Prestige: **" + user.prestigeNum + "\n" + 
         "**Prestige Coins: **" + user.prestigeCoins + "\n" + 
         "**Creation Date: **" + user.createdAt, true)

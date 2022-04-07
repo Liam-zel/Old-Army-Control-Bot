@@ -18,7 +18,6 @@ class userEmbed {
 
 function createPage(pageNum, user, totalPages, message) {
 
-
     const trinketsEmbed = new Discord.MessageEmbed()
     .setColor(botColour)
     .setAuthor(message.author.username + "'s Trinkets", message.author.avatarURL())
@@ -65,7 +64,7 @@ module.exports = {
         "trinkets", 
         "trinkets 2"
     ],
-    execute(message, args, Discord, f, user, pageNum) {
+    execute(message, Discord, f, user, pageNum) {
 
         var totalPages = Math.ceil(user.trinkets.length / contentAmount);
 

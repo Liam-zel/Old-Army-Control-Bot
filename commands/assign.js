@@ -7,7 +7,7 @@ module.exports = {
     description: "You can assign your individual armies to invade certain areas!\nThis allows them to fight new foes and gain new loot!\n\n⚠️Assigning an army to a new area gets rid of their earnings! Make sure to loot to not lose anything!",
     alias: "`ass`",
     examples: ["assign [Army number] [Area]", "assign 0 forest"],
-    execute(message, args, Discord, f, client, user, isAssign) {
+    execute(message, Discord, f, client, user, isAssign) {
         const assignEmbed = new Discord.MessageEmbed()
         .setColor(botColour)
         .setAuthor(message.author.username + "#" + message.author.discriminator, message.author.avatarURL())

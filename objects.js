@@ -2,7 +2,7 @@ class trinket {
     constructor(name, bonus, bonusType, strength, dropRate, max) {
         this.name = name;
         this.bonus = bonus;
-        this.bonusType = bonusType;
+        this.bonusType = bonusType; 
         this.strength = strength; // basically just the amount
         this.dropRate = dropRate; // 100 == 100%
         this.max = max; // max bonus the trinket can stack up to
@@ -12,35 +12,50 @@ class trinket {
 var testTrinket = new trinket("Test Trinket", 5, "Army kills", 1, 100, 1000);
 
 class item {
-    constructor(name, dropRate, sellValue, amount, image) {
+    constructor(name, dropRate, sellValue, amount, description, use) {
         this.name = name;
-        this.dropRate = dropRate; // 100 == 100%
         this.sellValue = sellValue;
         this.amount = amount; // used for stacking items
+        this.description = description;
+        this.use = use;
     }
 }
 
-// (name, dropRate, sellvalue, amount)
-var feather = new item("Feather", 100, 0, 1);
-var test = new item("Test", 100, 0, 1);
-var rockShard = new item("Rock shard", 5, 1, 0)
+// (name, dropRate, sellvalue, amount, description)
+var feather = new item("Feather", 100, 200, 1, undefined, undefined);
+var test = new item("Test", 100, 1000, 100, undefined, undefined);
+var rockShard = new item("Rock shard", 550, 1, 0, undefined, undefined)
+
+var items = [feather, test, rockShard]
+
+// item Descriptions --------------------
+feather.description = "Plucked from a helpless peaceful bird, you monster."
+test.description = "HFDSKJFHDSLKFJHDSLFJDLZSFJASLIFJ SLDF OSDJF JSFSDOJHF"
+rockShard.description = "The rock had a family."
+
+
+// item functions ---------------
+test.use = function use() {
+    console.log("x")
+}
 
 class monster {
-    constructor(eName, goldEarn, xpEarn, drops) {
+    constructor(eName, goldEarn, xpEarn, drops, dropRates) {
         this.eName = eName;
-        this.goldEarn = goldEarn;
+        this.goldEarn = goldEarn; // ---------------- STORED IN CENTS ----------------
         this.xpEarn = xpEarn;
         this.drops = drops;
+        this.dropRates = dropRates; // 100 == 100%
     }
 }
 // Monsters
-// forest                     NAME             GOLD     XP      DROPS             
-var rock     = new monster ( "Rock",            1,      1,      [test],          );
-var stick    = new monster ( "Stick",           1,      1,      [testTrinket],   );
-var bird     = new monster ( "Bird",            2,      1,      [feather],       );
-var bush     = new monster ( "Bush",            3,      2,      [],              );
-var tree     = new monster ( "Tree",           10,      8,      [],              );
-var wolf     = new monster ( "Wolf",           20,     16,      [],              );
+// forest                     NAME              GOLD       XP          DROPS                     DROPRATES       
+var rock     = new monster ( "Rock",            10,        1,      [rockShard],                  [10]);
+var stick    = new monster ( "Stick",           15,        1,      [testTrinket],                [5]);
+var bird     = new monster ( "Bird",            30,        2,      [feather],                    [10]);
+var bush     = new monster ( "Bush",            45,        3,      [],                           []);
+var tree     = new monster ( "Tree",            100,       5,      [],                           []);
+var wolf     = new monster ( "Wolf",            250,      15,      [test, feather, rockShard],   [100, 85, 5]);
 
 // caves
 var bat      = new monster ( "Bat",             3,      1,      [],              );
@@ -60,7 +75,7 @@ var hippo    = new monster ( "Hippo",          62,     40,      [],             
 
 // Areas
 class area {
-    constructor(name, prestigeReq, monsters, level, upgradeCost) {
+    constructor(name, prestigeReq, monsters, upgradeCost) {
         this.name = name;
         this.prestigeReq = prestigeReq;
         this.monsters = monsters;
@@ -73,7 +88,7 @@ class area {
     }
 }
 
-//                      NAME    PRESTIGE        ENEMIES
+//                      NAME    PRESTIGE        ENEMIES (--> upgrade cost)
 var forest = new area("Forest",     0,      [rock, stick, bird, bush, tree, wolf], 1250);
 var cave   = new area("Cave",       1,      [bat, scorpion, spider, batHorde, skeleton, bear], 2000);
 var jungle = new area("Jungle",     3,      [centpide, toucan, snake, monkey, tiger, hippo], 4800);
@@ -81,4 +96,4 @@ var jungle = new area("Jungle",     3,      [centpide, toucan, snake, monkey, ti
 // Array of every Area
 var Areas = [forest, cave, jungle];
 
-module.exports = {Areas, item, trinket, area};
+module.exports = {Areas, item, trinket, area, items};

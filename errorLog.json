@@ -10272,6 +10272,300 @@
             "message": "TypeError: invItem.toLowerCase is not a function",
             "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/sell.js:49:51)",
             "user": "the funny one"
+        },
+        {
+            "ErrorNum": 220,
+            "date": "03/31/2022",
+            "message": "TypeError: message.mentions.first is not a function",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/give.js:10:37)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 221,
+            "date": "03/31/2022",
+            "message": "TypeError: message.split is not a function",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/give.js:20:38)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 222,
+            "date": "03/31/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'length')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/use.js:13:44)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 223,
+            "date": "03/31/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'x')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/use.js:26:14)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 224,
+            "date": "03/31/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'use')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/use.js:26:14)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 225,
+            "date": "03/31/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'use')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/use.js:26:14)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 226,
+            "date": "03/31/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'use')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/use.js:26:14)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 227,
+            "date": "03/31/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'use')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/use.js:26:14)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 228,
+            "date": "03/31/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading '0')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/venture.js:130:40)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 229,
+            "date": "03/31/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'use')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/use.js:26:14)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 230,
+            "date": "03/31/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'use')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/use.js:26:14)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 231,
+            "date": "03/31/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'use')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/use.js:26:14)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 232,
+            "date": "03/31/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'use')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/use.js:29:14)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 233,
+            "date": "03/31/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'use')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/use.js:29:14)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 234,
+            "date": "04/01/2022",
+            "message": "TypeError: (intermediate value).setTitle(...).setColour is not a function",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/accounts.js:26:10)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 235,
+            "date": "04/02/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'eName')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/monster.js:20:32)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 236,
+            "date": "04/02/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'eName')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/monster.js:20:32)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 237,
+            "date": "04/02/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'eName')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/monster.js:24:32)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 238,
+            "date": "04/02/2022",
+            "message": "ReferenceError: botColour is not defined",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/monster.js:41:19)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 239,
+            "date": "04/02/2022",
+            "message": "RangeError [EMBED_FIELD_VALUE]: MessageEmbed field values may not be empty.",
+            "line": "Function.normalizeField (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/node_modules/discord.js/src/structures/MessageEmbed.js:415:23)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 240,
+            "date": "04/02/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'monsters')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/monster.js:37:44)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 241,
+            "date": "04/02/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'toLowerCase')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/item.js:39:75)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 242,
+            "date": "04/02/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'toLowerCase')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/item.js:18:62)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 243,
+            "date": "04/02/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'toLowerCase')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/item.js:37:75)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 244,
+            "date": "04/02/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'toLowerCase')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/item.js:39:75)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 245,
+            "date": "04/02/2022",
+            "message": "TypeError: console.llg is not a function",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/item.js:40:29)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 246,
+            "date": "04/02/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'toLowerCase')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/item.js:42:75)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 247,
+            "date": "04/02/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'toLowerCase')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/item.js:40:75)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 248,
+            "date": "04/02/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'toLowerCase')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/item.js:40:75)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 249,
+            "date": "04/02/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'toLowerCase')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/item.js:43:61)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 250,
+            "date": "04/04/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'toLowerCase')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/item.js:43:61)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 251,
+            "date": "04/05/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'username')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/remove.js:12:55)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 252,
+            "date": "04/05/2022",
+            "message": "ReferenceError: Areas is not defined",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/train.js:79:68)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 253,
+            "date": "04/05/2022",
+            "message": "ReferenceError: enemyLimit is not defined",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/army.js:61:31)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 254,
+            "date": "04/05/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'username')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/remove.js:12:55)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 255,
+            "date": "04/05/2022",
+            "message": "ReferenceError: goldEarn is not defined",
+            "line": "Object.updateLevel (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/functions.js:296:9)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 256,
+            "date": "04/06/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'username')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/levelup.js:20:55)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 257,
+            "date": "04/06/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'username')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/levelup.js:20:55)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 258,
+            "date": "04/06/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'username')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/remove.js:12:55)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 259,
+            "date": "04/07/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'username')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/remove.js:12:55)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 260,
+            "date": "04/07/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'username')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/remove.js:12:55)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 261,
+            "date": "04/07/2022",
+            "message": "ReferenceError: ventureCost is not defined",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/venture.js:153:77)",
+            "user": "the funny one"
         }
     ]
 }

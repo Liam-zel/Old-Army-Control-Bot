@@ -3,8 +3,8 @@
         {
             "username": "GD JOE",
             "userID": "710412758541402234",
-            "daily": 44227,
-            "weekly": 44227,
+            "daily": -6940,
+            "weekly": -6940,
             "createdAt": "15/11/2021",
             "multiplier": 1,
             "armyEfficiency": 1,
@@ -195,15 +195,15 @@
         {
             "username": "amy <3",
             "userID": "707542668116492399",
-            "daily": 51040,
-            "weekly": 51040,
+            "daily": -127,
+            "weekly": -127,
             "createdAt": "25/12/2021",
             "multiplier": 1,
             "armyEfficiency": 1,
             "efficiencyLevel": 0,
             "storageLevel": 0,
             "enemyLimit": 25,
-            "balance": 30,
+            "balance": 99,
             "totalBalance": -36174,
             "userLevel": -69,
             "xp": 24,
@@ -291,41 +291,32 @@
         {
             "username": "the funny one",
             "userID": "461059264388005889",
-            "daily": 79904,
-            "weekly": 79904,
-            "createdAt": "23/2/2022",
-            "multiplier": 1.06,
-            "armyEfficiency": 1,
-            "efficiencyLevel": 0,
+            "daily": 85939,
+            "weekly": 85939,
+            "createdAt": "7/4/2022",
+            "multiplier": 1.02,
+            "armyEfficiency": 19,
+            "efficiencyLevel": 18,
             "storageLevel": 0,
-            "enemyLimit": 280,
-            "balance": 1070,
-            "totalBalance": 0,
-            "userLevel": 4,
-            "xp": 77,
+            "enemyLimit": 10,
+            "balance": 23020,
+            "totalBalance": 3020,
+            "userLevel": 2,
+            "xp": 4,
             "totalXP": 0,
-            "xpToNext": 102,
+            "xpToNext": 75,
             "prestigeNum": 0,
             "prestigeCoins": 0,
-            "lastLoot": 1648606051050,
-            "lootFull": 1648606753970,
+            "lastLoot": 1649307388474,
+            "lootFull": 1649307392502,
             "inventory": [],
-            "trinkets": [
-                {
-                    "name": "Test Trinket",
-                    "bonus": 155,
-                    "bonusType": "Army kills",
-                    "strength": 31,
-                    "dropRate": 100,
-                    "max": 1000
-                }
-            ],
+            "trinkets": [],
             "armies": [
                 {
                     "number": 0,
                     "invadingArea": 0,
-                    "lootGold": 446,
-                    "lootXP": 333,
+                    "lootGold": 459,
+                    "lootXP": 57,
                     "possibleEnemies": [
                         "Rock",
                         "Stick",
@@ -335,48 +326,28 @@
                         "Wolf"
                     ],
                     "enemiesSlain": [
-                        92,
-                        75,
-                        60,
-                        53,
+                        0,
+                        0,
+                        0,
+                        19,
                         0,
                         0
                     ],
-                    "total": 280
+                    "total": 19
                 }
             ],
             "areas": [
                 {
                     "name": "Forest",
-                    "level": 0,
-                    "miniBoss": false,
-                    "megaBoss": false,
+                    "upgradeCost": 6050,
+                    "level": 2,
+                    "miniBoss": true,
+                    "megaBoss": true,
                     "isMaxed": false,
                     "multiplier": 1
                 }
             ],
-            "monsterDrops": [
-                {
-                    "name": "Test Trinket",
-                    "bonus": 5,
-                    "bonusType": "Army kills",
-                    "strength": 2,
-                    "dropRate": 100,
-                    "max": 1000
-                },
-                {
-                    "name": "Test",
-                    "dropRate": 100,
-                    "sellValue": 0,
-                    "amount": 2
-                },
-                {
-                    "name": "Feather",
-                    "dropRate": 100,
-                    "sellValue": 0,
-                    "amount": 2
-                }
-            ]
+            "monsterDrops": []
         }
     ]
 }

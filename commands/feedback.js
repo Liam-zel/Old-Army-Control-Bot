@@ -6,8 +6,8 @@ module.exports = {
     description: "for if you have any feedback to give or maybe a bug to report!",
     alias: "None",
     examples: ["feedback {message}", "feedback this bot is great!"],
-    execute(message, args, feedbackList, fs) {
-        console.log("feedback!");
+    execute(message, feedbackList, fs) {
+        console.log("\n--Feedback!--\n");
         feedbackList.reports[feedbackList.reports.length] = {
             number: feedbackList.reports.length,
             user: message.author.username,

@@ -6,7 +6,7 @@ module.exports = {
     description: "Gain a daily reward of money and xp!",
     alias: "none",
     examples: ["daily"],
-    execute(message, args, Discord, f, o, user) {
+    execute(message, Discord, f, o, user) {
         if (user.daily > 0) {
             // the daily property is stored in seconds and ticks down by 1 every second in main
             var hours = Math.trunc((user.daily / 60) / 60); // seconds divided by 60^2 gives the hours
@@ -21,7 +21,7 @@ module.exports = {
         var areaNum = 0;
         for (var i = 0; i < o.Areas.length; i++) {
             // finding highest unlocked area
-            if (o.Areas[i].name === user.areas.pop()) {
+            if (o.Areas[i].name === user.area[user.areas.length - 1]) {
                 areaNum = i;
                 break;
             }
@@ -29,8 +29,8 @@ module.exports = {
 
         var enemy = o.Areas[areaNum].monsters[o.Areas[areaNum].monsters.length - 1];
 
-        var xpReward = Math.round(enemy.xpEarn * 60 * (user.multiplier + 0.1)); // reward from same enemy 60 times
-        var goldReward = Math.round(enemy.goldEarn * 100 * (user.multiplier + 0.25)); // reward from same enemy 100 times
+        var xpReward = Math.round(enemy.xpEarn * 10 * (user.multiplier + 0.1)); // reward from same enemy 10 times
+        var goldReward = Math.round(enemy.goldEarn * 40 * (user.multiplier + 0.25)); // reward from same enemy 40 times
 
         const xpBar = f.createProgressBar(5, 15, user.xp, user.xpToNext, "blue", xpReward); // min_length, max_length, current, goal, colour
 
@@ -43,7 +43,8 @@ module.exports = {
         f.addComma(user.xp + xpReward) + "xp / " + f.addComma(user.xpToNext) + "xp\n" + xpBar, false)
 
         user.xp += xpReward;
-        user.balance += goldReward;
+        user.balance += Math.round(goldReward);
+        user.totalBalance += Math.round(goldReward);
 
         message.reply(dailyEmbed);
 

@@ -7,7 +7,7 @@ module.exports = {
     description: "Register your account!",
     alias: "None",
     examples: ["start"],
-    execute(message, args, f, client, Discord, idleData) {
+    execute(message, f, client, Discord, idleData) {
         // account creation date
         var dateObj = new Date();
         var month = dateObj.getUTCMonth() + 1; //months from 1-12
@@ -27,13 +27,13 @@ module.exports = {
             armyEfficiency: 1,
             efficiencyLevel: 0,
             storageLevel: 0,
-            enemyLimit: 25,
+            enemyLimit: 10, // ENEMY LIMIT --------
             balance: 0,  
             totalBalance: 0,
             userLevel: 1,  
             xp: 0,
             totalXP: 0,
-            xpToNext: 30, 
+            xpToNext: 50, // XP -------- 
             prestigeNum: 0,
             prestigeCoins: 0,
             lastLoot: Date.now(),

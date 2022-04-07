@@ -9,7 +9,7 @@ module.exports = {
     alias: "None",
     cooldowns: [],
     examples: ["weekly"],
-    execute(message, args, Discord, f, o, user) {
+    execute(message, Discord, f, o, user) {
         if (user.weekly > 0) {
             // the weekly property is stored in seconds and ticks down by 1 every second in main
             var hours = Math.trunc((user.weekly / 60) / 60); // seconds divided by 60^2 gives the hours
@@ -24,7 +24,7 @@ module.exports = {
         var areaNum = 0;
         for (var i = 0; i < o.Areas.length; i++) {
             // finding highest unlocked area
-            if (o.Areas[i].name === user.areas.pop()) {
+            if (o.Areas[i].name === user.areas[user.areas.length - 1]) {
                 areaNum = i;
                 break;
             }
@@ -32,8 +32,8 @@ module.exports = {
 
         var enemy = o.Areas[areaNum].monsters[o.Areas[areaNum].monsters.length - 1];
 
-        var xpReward = Math.round(enemy.xpEarn * 140 * (user.multiplier + 0.1)); // reward from same enemy 140 times
-        var goldReward = Math.round(enemy.goldEarn * 220 * (user.multiplier + 0.25)); // reward from same enemy 220 times
+        var xpReward = Math.round(enemy.xpEarn * 50 * (user.multiplier + 0.1)); // reward from same enemy 50 times
+        var goldReward = Math.round(enemy.goldEarn * 175 * (user.multiplier + 0.25)); // reward from same enemy 175 times
 
         const xpBar = f.createProgressBar(5, 15, user.xp, user.xpToNext, "blue", xpReward); // min_length, max_length, current, goal, colour
 
@@ -41,12 +41,13 @@ module.exports = {
         .setAuthor(message.author.username + "#" + message.author.discriminator, message.author.avatarURL())
         .setColor(botColour)
         .setTimestamp()
-        .addField("You redeemed your weekly!", "*Gold Reward* | **$" + f.addComma(goldReward) + "**\n" +
+        .addField("You redeemed your weekly!", "*Gold Reward* | **$" + f.addComma(goldReward/100) + "**\n" +
         "*XP Reward* | **" + f.addComma(xpReward) + "xp**\n\n" + 
         f.addComma(user.xp + xpReward) + "xp / " + f.addComma(user.xpToNext) + "xp\n" + xpBar, false)
 
         user.xp += xpReward;
-        user.balance += goldReward;
+        user.balance += Math.round(goldReward);
+        user.totalBalance += Math.round(goldReward)
 
         message.reply(weeklyEmbed);
 

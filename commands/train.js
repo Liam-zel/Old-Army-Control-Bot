@@ -8,7 +8,7 @@ module.exports = {
     alias: "None",
     cooldowns: [],
     examples: ["train"],
-    execute(message, args, Discord, f, o, user) {
+    execute(message, Discord, f, o, user) {
         var cooldowns = module.exports.cooldowns;
 
         for (var i = 0; i < cooldowns.length; i++) {
@@ -22,7 +22,7 @@ module.exports = {
         var areaNum = 0;
         for (var i = 0; i < o.Areas.length; i++) {
             // finding highest unlocked area
-            if (o.Areas[i].name === user.areas.pop()) {
+            if (o.Areas[i].name === user.areas[user.areas.length]) {
                 areaNum = i;
                 break;
             }
@@ -44,7 +44,7 @@ module.exports = {
 
         // training tiers
         if (rand < 0.20) {
-            trainEmbed.addField("Training Results!", "Your army stumbled about like drunkards and got little done, you got pitiful xp: `" + xpReward + "xp`" + 
+            trainEmbed.addField("Training Results!", "Your army stumbled about like drunkards and got little done, you got \u2800*pitiful*\u2800 xp: `" + xpReward + "xp`" + 
             "\n**" + user.xp + "xp + " + xpReward + "xp = " + (xpReward + user.xp) + "xp**", false)
         }
 
@@ -54,12 +54,12 @@ module.exports = {
         }
 
         else if (rand < 0.85) {
-            trainEmbed.addField("Training Results!", "Your army trained long and hard with great brawn, earning you moderate xp: `" + xpReward + "xp`" + 
+            trainEmbed.addField("Training Results!", "Your army trained long and hard with great brawn, earning you __moderate__ xp: `" + xpReward + "xp`" + 
             "\n**" + user.xp + "xp + " + xpReward + "xp = " + (xpReward + user.xp) + "xp**", false)
         }
 
         else {
-            trainEmbed.addField("Training Results!", "Your army had incredible energy running through them, able to train like it was their last time, you earned notable xp: `" + xpReward + "xp`" + 
+            trainEmbed.addField("Training Results!", "Your army __Had Incredible Energy Running Through Them__, able to train like it was their last time, you earned **__NOTABLE__** xp: `" + xpReward + "xp`" + 
             "\n**" + user.xp + "xp + " + xpReward + "xp = " + (xpReward + user.xp) + "xp**", false)
         }
 
@@ -76,7 +76,7 @@ module.exports = {
 
         user.xp += xpReward;
         //user.balance += goldReward;
-        if (user.xp >= user.xpToNext) f.updateLevel(user, message, Areas);
+        if (user.xp >= user.xpToNext) f.updateLevel(user, message, o.Areas);
 
         cooldowns[cooldowns.length] = {
             userID: message.author.id,
@@ -84,7 +84,7 @@ module.exports = {
         }
 
         f.updateUser();
-        message.reply(trainEmbed);
+        message.channel.send(trainEmbed);
     }
 }
 

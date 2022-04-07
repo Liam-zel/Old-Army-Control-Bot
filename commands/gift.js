@@ -10,7 +10,7 @@ module.exports = {
     "gift <@!461059264388005889> max rock", 
     "gift <@!461059264388005889> half twig"
     ],
-    execute(message, args, Discord, f, user, data) {
+    execute(message, Discord, f, user, data) {
 
         if (message.content.split(" ").length < 2) { // didnt mention users
             message.reply("Who do you want to gift to?\nTo gift go: `" + prefix + "gift {user} {amount} {item}`");

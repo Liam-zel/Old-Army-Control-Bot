@@ -9,7 +9,7 @@
 const { botColour, prefix } = require("../main.js");
 
 
-var description = "{} = required\n[] = optional";
+var footer = "{} = required\n[] = optional";
 
 module.exports = {
     name: "help",
@@ -20,7 +20,7 @@ module.exports = {
     "help",
     "help loot",
     ],
-    execute(message, args, Discord, f, commands, client) {
+    execute(message, Discord, f, commands, client) {
         const helpEmbed =  new Discord.MessageEmbed()
         .setAuthor(message.author.username + "#" + message.author.discriminator, message.author.avatarURL())
         .setColor(botColour)
@@ -72,14 +72,14 @@ module.exports = {
 
             // cant find command
             if (!isCommand) {
-                helpEmbed.setDescription(description);
+                helpEmbed.setFooter(footer);
                 helpEmbed.addField("\u200B", "Either that command doesn't exist or you've typed it wrong.\nYou need to type: `" + prefix + "help {Command Name}`, you can't use an alias of a command!")
             }
 
             else {
                 for (var [object, command] of commands) {
                     if (message.content === prefix + "help " + command.name) {
-                        helpEmbed.setDescription(description);
+                        helpEmbed.setFooter(footer);
                         helpEmbed.setTitle("**__" + command.name.toUpperCase() + "__**");
                         helpEmbed.addField("**Category**", command.category); // category
                         helpEmbed.addField("**Description**", command.description); // description

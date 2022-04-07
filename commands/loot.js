@@ -27,7 +27,7 @@ module.exports = {
     examples: ["loot", "l"],
     activeEmbeds: [],
 
-    async execute(message, args, Discord, f, user) {
+    async execute(message, Discord, f, user) {
 
         const imageGuild = client.guilds.cache.get("766586576230154270");
         const images = imageGuild.emojis.cache;
@@ -52,12 +52,8 @@ module.exports = {
 
         // add up gold and xp from all armies
         for (var i = 0; i < armies.length; i++) {
-            for (var j = 0; j < armies[i].enemiesSlain.length; j++) {
-
-                totalGold += Areas[i].monsters[j].goldEarn * armies[i].enemiesSlain[j];
-                totalXP += Areas[i].monsters[j].xpEarn * armies[i].enemiesSlain[j];
-
-            }
+            totalGold += armies[i].lootGold;
+            totalXP += armies[i].lootXP;
         }
 
 
@@ -74,9 +70,6 @@ module.exports = {
 
             var enemyData1 = "\u200B";
             var enemyData2 = "\u200B";
-
-            var armyGold = 0;
-            var armyXP = 0;
 
             var skip = false;
 
@@ -100,9 +93,6 @@ module.exports = {
                 }
 
                 if (skip) break;
-
-                armyGold += Areas[c_army.invadingArea].monsters[i].goldEarn * c_army.enemiesSlain[i];
-                armyXP += Areas[c_army.invadingArea].monsters[i].xpEarn * c_army.enemiesSlain[i];
 
                 try {
                     var image = images.find(emoji => emoji.name === c_army.possibleEnemies[i]).toString(); 
@@ -135,12 +125,9 @@ module.exports = {
                 c_army.enemiesSlain[i] = 0;
 
             }
-            armies[armyNum].lootGold = 0;
-            armies[armyNum].lootXP = 0;
-            armies[armyNum].total = 0;
 
-            lootEmbed.addField("\u200B", "**__Army Earnings:__** `$" + armyGold + "` | `" + armyXP + "xp`");
-            lootEmbed.addField("\u200B", "**__Total:__** `$" + totalGold + "` | `" + totalXP + "xp`");
+            lootEmbed.addField("\u200B", "**__Army Earnings:__** `$" + (armies[armyNum].lootGold/100) + "` | `" + armies[armyNum].lootXP + "xp`");
+            lootEmbed.addField("\u200B", "**__Total:__** `$" + (totalGold/100) + "` | `" + totalXP + "xp`");
 
             if (user.xp.toString().length > 15) {
                 lootEmbed.addField("\u200B", "**Level: **" + user.userLevel + "\n" 
@@ -150,6 +137,10 @@ module.exports = {
                 lootEmbed.addField("\u200B", "**Level: **" + user.userLevel + "\n" 
                 + f.addComma(Math.round(user.xp + totalXP)) + "xp / " + f.addComma(user.xpToNext) + "xp\n" + f.createProgressBar(5, 15, user.xp, user.xpToNext, "blue", totalXP));
             }
+
+            armies[armyNum].lootGold = 0;
+            armies[armyNum].lootXP = 0;
+            armies[armyNum].total = 0;
 
             return lootEmbed;
         }
@@ -275,9 +266,9 @@ module.exports = {
         .addFields(
             {name: "**Time: **", value: timer, inline: true},
             {name: "**Total killed: **", value: totalKilled, inline: true},
-            {name: "**Earnings: **", value: "`$" + totalGold + "` | `" + totalXP + "xp`", inline: true},
+            {name: "**Earnings: **", value: "`$" + (totalGold/100) + "` | `" + totalXP + "xp`", inline: true},
             {name: "**Drops: **", value: "You obtained `" + dropAmount + "` monster drops!", inline: true},
-            {name: "\u200B", value: "**Average gold per army: **`$" + avgGold + "`", inline: true},
+            {name: "\u200B", value: "**Average gold per army: **`$" + (avgGold/100) + "`", inline: true},
             {name: "\u200B", value: "**Average xp per army: **`" + avgXP + "xp`", inline: true}
 
         );
@@ -337,13 +328,13 @@ module.exports = {
         user.lastLoot = Date.now();
 
         // add money & xp
-        user.balance += totalGold;
+        user.balance += Math.round(totalGold); // truncate doesnt work to get rid of infinite decimals idk why fuck floating points
         user.xp += Math.round(totalXP);
+        user.totalBalance += Math.round(totalGold)
 
         if (user.xp >= user.xpToNext) f.updateLevel(user, message, Areas);
 
         f.updateUser();
-
 
 
 

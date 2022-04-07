@@ -6,31 +6,28 @@ module.exports = {
     description: "Use an item",
     alias: "None",
     examples: ["use {item name}", "use feather"], // CHANGE LATER TO AN ACTUAL ITEM
-    execute(message, args, user, useableItems) {
-        var itemName = message.content.slice(5); // cuts off "+use " and leaves the item name 
+    execute(message, f, user) {
+        var itemName = message.content.split(" ").pop();
+        var item = undefined;
 
-        // checks to see if item is in inventory
-        var inInventory = false;
+        for (let i = 0; i < user.inventory.length; i++) {
+            // found item
+            if (itemName === user.inventory[i].name) { 
+                console.log(itemName)
+                console.log(user.inventory[i])
 
-        for (var i = 0; i < user.inventory.length; i++) {
-            if (itemName == user.inventory[i].name) { inInventory = true; break; }
+                item = user.inventory[i]
+                break; 
+            }
         }
-        if (!inInventory) {
+
+        if (item = undefined) {
             message.reply("You don't have that item!");
             return;
         }
 
-        switch(itemName) {
-            case "feather":
-                console.log("You used the feather item!");
-                break;
-            case "test":
-                console.log("You used the test item!");
-                break;
-            default:
-                console.log("did you type that right?");
-                break;
-        }
+        item.use();
+
     }
 }
 

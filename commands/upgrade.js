@@ -11,20 +11,23 @@ module.exports = {
         "upgrade storage 10",
         "upgrade eff max"
     ],
-    execute(message, args, Discord, f, o, user) {
+    execute(message, Discord, f, o, user) {
 
-        var armyCost = 3500;
-        var prestigeRequirment = 1;
+        
+        var storageScale = 50;
+        var storageCost = 75 + (storageScale * user.storageLevel);
 
-        for (var i = 1; i < user.armies.length; i++) {
-            armyCost = Math.floor(armyCost * 2.5);
-            prestigeRequirment++;
-        }
+        var efficiencyScale = 1.3
+        var effStartCost = 35
+        var efficiencyCost = Math.floor(effStartCost * Math.pow(efficiencyScale, user.efficiencyLevel));
+        
+        // var armyCost = 3500;
+        // var prestigeRequirment = 1;
 
-        var storageCost = 100 + (50 * user.storageLevel);
-
-        var efficiencyCost = Math.floor(300 * Math.pow(1.1, user.efficiencyLevel));
-
+        // for (var i = 1; i < user.armies.length; i++) {
+        //     armyCost = Math.floor(armyCost * 2.5);
+        //     prestigeRequirment++;
+        // }
         // // Army
         // if (message.content.startsWith(prefix + "upgrade army") || message.content.startsWith(prefix + "up army")) {
         //     if (user.balance < armyCost) {
@@ -58,10 +61,10 @@ module.exports = {
 
             // turn string into an array seperated by spaces, return last element (amount);
             upgradeAmount = message.content.split(" ").pop();
-            if (message.content.split(" ").length == 2) upgradeAmount = 1;
+            upgradeAmount = parseInt(upgradeAmount, 10)
+            if (isNaN(upgradeAmount)) upgradeAmount = 1;
 
             if (upgradeAmount == "max") { max = true; upgradeAmount = 0; }
-            else if (upgradeAmount == false) upgradeAmount = 1; // if it is an emptry string, it will be false (checking for empty string doesnt work ¯\_(ツ)_/¯)
 
             // stored to show after upgrade
             var userBalanceTemp = user.balance;
@@ -73,27 +76,35 @@ module.exports = {
             // upgrading magic happens here
             if (!max) {
                 while(upgradeAmount > 0) {
-                    if ((user.balance - storageCost) < 0) break;
+                    if (user.balance - (storageCost*100) < 0) break;
 
                     user.enemyLimit += 25;
 
                     user.storageLevel++;
-                    user.balance -= storageCost;
 
-                    storageCost += 50;
-                    totalCost += storageCost;
+                    user.balance -= (storageCost * 100); // user balance is stored in cents
+                    user.balance = f.truncate(user.balance, 2)
+
+                    totalCost += storageCost*100;
+                    
+                    storageCost += storageScale;
 
                     upgradeAmount--;
                 }
             }
             else {
-                while(user.balance - storageCost > 0) {
+                while(user.balance - (storageCost*100) > 0) {
                     user.enemyLimit += 25;
 
                     user.storageLevel++;
-                    user.balance -= storageCost;
-                    storageCost += 50;
-                    totalCost += storageCost;
+
+                    user.balance -= (storageCost * 100); // user balance is stored in cents
+                    user.balance = f.truncate(user.balance, 2)
+
+                    totalCost += storageCost*100;
+
+                    storageCost += storageScale;
+
                     upgradeTemp++;
                 }
             }   
@@ -107,8 +118,8 @@ module.exports = {
             .setTimestamp()
             .setDescription("**Level [" + userLevelTemp + "] --> [" + user.storageLevel + "]** \n" + 
             "You increased your storage by `" + (25 * upgradeTemp) + "`!\n" + 
-            "*$" + f.addComma(userBalanceTemp) + " - $" + f.addComma(totalCost - 100) + 
-            " = $" + f.addComma(user.balance) + "*"
+            "`$" + f.addComma(userBalanceTemp/100) + "` - `$" + f.addComma(totalCost/100) + 
+            "` = `$" + f.addComma(user.balance/100) + "`"
             );
 
             message.channel.send(storageEmbed);
@@ -120,7 +131,7 @@ module.exports = {
         // Amry Efficiency
         else if (message.content.startsWith(prefix + "upgrade eff") || message.content.startsWith(prefix + "up eff")) {
             if (user.balance < efficiencyCost) {
-                message.reply("You can't afford that!\n You need $" + f.addComma(efficiencyCost - user.balance) + " more!");
+                message.reply("You can't afford that!\n You need $" + f.addComma(efficiencyCost - (user.balance / 100)) + " more!");
                 return;
             }
 
@@ -129,7 +140,7 @@ module.exports = {
 
             // turn string into an array seperated by spaces, return last element (amount);
             upgradeAmount = message.content.split(" ").pop();
-            if (message.content.split(" ").length == 2) upgradeAmount = 1; 
+            if (message.content.split(" ").length == 2) upgradeAmount = 1;  // if length is 2, no amount has been defined, only command and upgrade
 
             if (upgradeAmount == "max") { max = true; upgradeAmount = 0; }
             else if (upgradeAmount == false) upgradeAmount = 1; // if it is an emptry string, it will be false (checking for empty string doesnt work ¯\_(ツ)_/¯)
@@ -143,34 +154,42 @@ module.exports = {
             // upgrading magic happens here
             if (!max) {
                 while(upgradeAmount > 0) {
-                    if ((user.balance - efficiencyCost) < 0) break;
+                    if (user.balance - (efficiencyCost*100) < 0) break;
 
 
                     user.armyEfficiency++;
                     user.efficiencyLevel++;
 
-                    user.balance -= efficiencyCost;
-                    efficiencyCost *= 1.1
+                    user.balance -= (efficiencyCost * 100); // user balance is stored in cents
+                    user.balance = f.truncate(user.balance, 2)
+ 
+                    totalCost += efficiencyCost*100;
 
-                    totalCost += efficiencyCost;
+                    efficiencyCost *= 1.1
+                    efficiencyCost = Math.floor(efficiencyCost)
+
                     upgradeAmount--;
                 }
             }
             else {
-                while(user.balance - efficiencyCost > 0) {
+                while(user.balance - (efficiencyCost*100) > 0) {
                     user.armyEfficiency++;
                     user.efficiencyLevel++;
 
-                    user.balance -= efficiencyCost;
-                    efficiencyCost *= 1.1
+                    user.balance -= (efficiencyCost * 100); // user balance is stored in cents
+                    user.balance = f.truncate(user.balance, 2)
 
-                    totalCost += efficiencyCost;
+                    totalCost += efficiencyCost*100;
+
+                    efficiencyCost *= 1.1
+                    efficiencyCost = Math.floor(efficiencyCost)
+                    
                 }
             }   
 
 
             totalCost = Math.round(totalCost);
-            user.balance = Math.round(user.balance);
+            user.balance = Math.round(user.balance*100) / 100;
 
             const effEmbed = new Discord.MessageEmbed()
             .setColor(botColour)
@@ -178,8 +197,8 @@ module.exports = {
             .setTimestamp()
             .setDescription("**Level [" + userLevelTemp + "] --> [" + user.efficiencyLevel + "]** \n" + 
             "You increased your efficiency by `" + (user.efficiencyLevel - userLevelTemp) + "`!\n" + 
-            "*$" + f.addComma(userBalanceTemp) + " - $" + f.addComma(totalCost - 300) + 
-            " = $" + f.addComma(user.balance) + "*"
+            "`$" + f.addComma(userBalanceTemp/100) + "` - `$" + f.addComma(totalCost/100) + 
+            "` = `$" + f.addComma(user.balance/100) + "`"
             );
 
             message.channel.send(effEmbed);

@@ -5,7 +5,7 @@ module.exports = {
     description: "See latency between your commands and the bot.",
     alias: "None",
     examples: ["ping"],
-    execute(message, args, client) {
+    execute(message, client) {
         message.channel.send(`PONG!\nLatency is ${Math.round(client.ws.ping)}ms`);
     }
 }

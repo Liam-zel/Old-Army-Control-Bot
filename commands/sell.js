@@ -11,11 +11,19 @@ module.exports = {
         "sell max rock shard",
         "sell half feather"
     ],
-    execute(message, args, Discord, f, user) {
+    execute(message, Discord, f, user) {
 
         var item = message.content.split(prefix + "sell ").pop();
         var amount = item.split(" ")[0];
         var amountInt = parseInt(amount, 10); // the 10 at the end refers to the radix (the base), base 10 is what we count in
+
+
+        // if they just say "sell" 
+        if (message.content.split(" ").length == 1) {
+            message.reply("You need to specify an amount and item to sell!\n" + 
+            "`" + prefix + "sell [amount] {Item Name}`");
+            return;
+        }
 
         // if Amount is specified (through an integer)
         // ------- This does mean items names cant start with a number would cause errors -------
@@ -85,7 +93,9 @@ module.exports = {
 
         // cant find item
         if (itemPos === undefined) {
-            message.reply("that's not a valid item!\nMake sure you've spelt it correctly!");
+            message.reply("that's not a valid item!\nMake sure you've spelt it correctly!\n" +
+            "You need to specify an amount and item to sell!\n" + 
+            "`" + prefix + "sell [amount] {Item Name}`");
             return;
         }
 
@@ -102,7 +112,9 @@ module.exports = {
         else if (max) { amount = foundItem.amount; }
 
         let earnings = foundItem.sellValue * amount;
-        user.balance += earnings;
+        user.balance += earnings * 100;
+        user.totalBalance += earnings * 100;
+
         foundItem.amount -= amount;
         
         // remove from inventory if run out

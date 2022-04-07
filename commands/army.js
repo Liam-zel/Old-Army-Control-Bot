@@ -7,7 +7,7 @@ module.exports = {
     description: "See your armies and some stats about them!",
     alias: "`a`",
     examples: ["army", "a"],
-    execute(message, args, Discord, f, user) {
+    execute(message, Discord, f, user) {
         const armyEmbed = new Discord.MessageEmbed()
         .setTimestamp()
         .setColor(botColour)
@@ -19,26 +19,31 @@ module.exports = {
 
         for (var i = 0; i < user.armies.length; i++) {
             var army = user.armies[i];
+            var goldEarn = army.lootGold / 100;
+            let image = f.findImage(user.areas[army.invadingArea].level + "_")     
 
             if ((i+1) % 2 == 0) {
                 army2 = "**__Army number:__** `" + army.number + "`\n" + 
-                "**Currently invading:** " + Areas[army.invadingArea].name + "\n" + 
-                "**Earnings: ** `$" + army.lootGold + "` | `" + army.lootXP + "xp`\n\n";
+                "**Currently invading:** " + Areas[army.invadingArea].name + "\u2800" + image + "\n" + 
+                "**Earnings: ** `$" + goldEarn + "` | `" + army.lootXP + "xp`\n\n";
 
                 armyEmbed.addField("\u200B", "\u200B", true);
                 armyEmbed.addField("\u200B", army2, true);
             }
             else {
                 army1 = "**__Army number:__** `" + army.number + "`\n" + 
-                "**Currently invading:** " + Areas[army.invadingArea].name + "\n" + 
-                "**Earnings: ** `$" + f.addComma(army.lootGold) + "` | `" + f.addComma(army.lootXP) + "xp`\n\n";
+                "**Currently invading:** " + Areas[army.invadingArea].name + "\u2800" + image + "\n" + 
+                "**Earnings: ** `$" + f.addComma(goldEarn) + "` | `" + f.addComma(army.lootXP) + "xp`\n\n";
 
                 armyEmbed.addField("\u200B", army1, true);
             }
         }
         armyEmbed.addField("\u200B", "\u200B", false);
-
-        var currentKills = (user.armies[0].total * user.armies.length);
+        
+        var currentKills = 0;
+        for (let i = 0; i < user.armies.length; i++) {
+            currentKills += user.armies[i].total;
+        }
 
         var redBar = f.createProgressBar(5, 25, currentKills, (user.enemyLimit * user.armies.length), "red");
 
@@ -52,6 +57,11 @@ module.exports = {
         if (hours > 0) timer = "**" + hours + " hours " + mins + " minutes " + secs + " seconds** until full";
         else if (mins > 0) timer = "**" + mins + " minutes " + secs + " seconds** until full";
         else timer = "**" + secs + " seconds** until full" 
+
+        // full bar
+        if (currentKills >= (user.enemyLimit * user.armies.length)) {
+            timer = "**FULL**"
+        }
 
         armyEmbed.addField("**Army kills: [Storage Level " + user.storageLevel + "]**",
         f.addComma(user.armies[0].total * user.armies.length) + " / " + f.addComma(user.enemyLimit * user.armies.length) + "\n" + 

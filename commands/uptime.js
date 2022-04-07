@@ -6,7 +6,7 @@ module.exports = {
     description: "Shows how long the bot has currently been online for",
     alias: "None",
     examples: ["uptime"],
-    execute(message, args, Discord, client) {
+    execute(message, Discord, client) {
 
         let totalSeconds = (client.uptime / 1000);
         let days = Math.floor(totalSeconds / 86400);

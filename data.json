@@ -3,8 +3,8 @@
         {
             "username": "GD JOE",
             "userID": "710412758541402234",
-            "daily": -6940,
-            "weekly": -6940,
+            "daily": -53390,
+            "weekly": -53390,
             "createdAt": "15/11/2021",
             "multiplier": 1,
             "armyEfficiency": 1,
@@ -195,8 +195,8 @@
         {
             "username": "amy <3",
             "userID": "707542668116492399",
-            "daily": -127,
-            "weekly": -127,
+            "daily": -46577,
+            "weekly": -46577,
             "createdAt": "25/12/2021",
             "multiplier": 1,
             "armyEfficiency": 1,
@@ -291,32 +291,32 @@
         {
             "username": "the funny one",
             "userID": "461059264388005889",
-            "daily": 85939,
-            "weekly": 85939,
-            "createdAt": "7/4/2022",
-            "multiplier": 1.02,
-            "armyEfficiency": 19,
-            "efficiencyLevel": 18,
+            "daily": -2305,
+            "weekly": -2305,
+            "createdAt": "8/4/2022",
+            "multiplier": 1.6,
+            "armyEfficiency": 1,
+            "efficiencyLevel": 0,
             "storageLevel": 0,
-            "enemyLimit": 10,
-            "balance": 23020,
-            "totalBalance": 3020,
-            "userLevel": 2,
-            "xp": 4,
+            "enemyLimit": 30,
+            "balance": 0,
+            "totalBalance": 3814646250,
             "totalXP": 0,
-            "xpToNext": 75,
-            "prestigeNum": 0,
-            "prestigeCoins": 0,
-            "lastLoot": 1649307388474,
-            "lootFull": 1649307392502,
+            "userLevel": 1,
+            "xp": 0,
+            "xpToNext": 30,
+            "prestigeNum": 3,
+            "prestigeCoins": 300,
+            "lastLoot": 1649572966509,
+            "lootFull": 1649573043732,
             "inventory": [],
             "trinkets": [],
             "armies": [
                 {
                     "number": 0,
                     "invadingArea": 0,
-                    "lootGold": 459,
-                    "lootXP": 57,
+                    "lootGold": 1240,
+                    "lootXP": 54,
                     "possibleEnemies": [
                         "Rock",
                         "Stick",
@@ -326,28 +326,49 @@
                         "Wolf"
                     ],
                     "enemiesSlain": [
-                        0,
-                        0,
-                        0,
-                        19,
+                        7,
+                        8,
+                        6,
+                        9,
                         0,
                         0
                     ],
-                    "total": 19
+                    "total": 30
                 }
             ],
             "areas": [
                 {
                     "name": "Forest",
-                    "upgradeCost": 6050,
-                    "level": 2,
-                    "miniBoss": true,
-                    "megaBoss": true,
+                    "upgradeCost": 1250,
+                    "level": 0,
+                    "miniBoss": false,
+                    "megaBoss": false,
                     "isMaxed": false,
                     "multiplier": 1
                 }
             ],
-            "monsterDrops": []
+            "monsterDrops": [
+                {
+                    "name": "Feather",
+                    "sellValue": 200,
+                    "amount": 2,
+                    "description": "Plucked from a helpless peaceful bird, you monster."
+                },
+                {
+                    "name": "Test Trinket",
+                    "bonus": 5,
+                    "bonusType": "Army kills",
+                    "strength": 2,
+                    "dropRate": 100,
+                    "max": 1000
+                },
+                {
+                    "name": "Rock shard",
+                    "sellValue": 1,
+                    "amount": 2,
+                    "description": "The rock had a family."
+                }
+            ]
         }
     ]
 }

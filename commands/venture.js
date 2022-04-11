@@ -32,10 +32,16 @@ module.exports = {
             for (var i = 0; i < user.areas.length; i++) {
                 var area = user.areas[i];
 
+                // shows what happens on level up
+                let levelEffect = "Unlocks this area's **Mini Boss**"
+                if (area.level === 1) levelEffect = "Unlocks this area's **Mega Boss**"
+                else if (area.level === 2) levelEffect = "This area earns `1.5x` more income and has `25%` increased drop rates!"
+
                 var image = f.findImage(area.level + "_");
 
                 if (area.level < 3) ventureEmbed.addField("**__" + area.name + "__**\u2000" + image, 
-                "Level: `" + area.level + "`\n\n" +
+                "Level: `" + area.level + "`\n" +
+                "Next Level: " + levelEffect + "\n\n" +
                 "Upgrade Cost: `$" + area.upgradeCost + 
                 "`", true);
 
@@ -53,11 +59,13 @@ module.exports = {
                 // check if they already have area unlocked
                 var unlocked = false;
                 for (var j = 0; j < user.areas.length; j++) {
-                    if (area.name == user.areas[j].name) unlocked = true; break; 
+                    if (area.name == user.areas[j].name) {
+                        unlocked = true; 
+                        break; 
+                    }
                 }
-                
-
-                if (!unlocked) {
+            
+                if (unlocked === false) {
                     ventureEmbed.addField("**__" + area.name + "__**\u2000", 
                     "**AREA LOCKED**" + "\n\n" + 
                     "Unlock Cost: `$" + area.upgradeCost + 
@@ -70,20 +78,21 @@ module.exports = {
         }
 
 
-        // venturing an area
+        // upgrading or unlocking area ===========================================================================
         else {
             const area = splitMessage.pop(); // turn into array and return last element (area)
 
 
             var isUpgrade = false;
             for (var i = 0; i < user.areas.length; i++) {
-                if (area.toLowerCase() == user.areas[i].name.toLowerCase()) {
+                if (area.toLowerCase() === user.areas[i].name.toLowerCase()) {
                     isUpgrade = true;
+                    break;
                 }
             }
 
             // upgrading the area ------------------------------
-            if (isUpgrade) {
+            if (isUpgrade === true) {
                 
                 var image;
                 var previousImage;
@@ -105,8 +114,8 @@ module.exports = {
                             return;
                         }
                         
-                        if (user.balance < user.areas[i].upgradeCost) {
-                            message.reply("You don't have that much money!\nYou need `$" + user.areas[i].upgradeCost + "` to venture here!");
+                        if (user.balance < user.areas[i].upgradeCost*100) { // money is stored in cents
+                            message.reply("You don't have that much money!\nYou need `$" + (user.areas[i].upgradeCost*100) - user.balance + "` more to venture here!");
                             return;
                         }
 

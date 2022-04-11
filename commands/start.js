@@ -20,8 +20,8 @@ module.exports = {
         client.data.users[client.data.users.length] = {
             username: message.author.username,
             userID: message.author.id,
-            daily: 86400, // a day in seconds
-            weekly: 86400, // a day in seconds as I dont want them to wait a whole week instantly
+            daily: 43200, // Half a day in seconds
+            weekly: 43200, // Half a day in seconds as I dont want them to wait a whole week instantly
             createdAt: newdate,
             multiplier: 1.00,
             armyEfficiency: 1,
@@ -30,10 +30,10 @@ module.exports = {
             enemyLimit: 10, // ENEMY LIMIT --------
             balance: 0,  
             totalBalance: 0,
+            totalXP: 0,
             userLevel: 1,  
             xp: 0,
-            totalXP: 0,
-            xpToNext: 50, // XP -------- 
+            xpToNext: 50, // XPTONEXT -------- 
             prestigeNum: 0,
             prestigeCoins: 0,
             lastLoot: Date.now(),

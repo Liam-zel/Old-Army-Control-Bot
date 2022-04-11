@@ -15,10 +15,10 @@ module.exports = {
     name: "help",
     category: "general",
     description: "Why do you need to know what the command does if you used it :thinking:",
-    alias: "None",
+    alias: "`h`, `commands`, `c`",
     examples: ["help [Command name]", 
     "help",
-    "help loot",
+    "commands loot",
     ],
     execute(message, Discord, f, commands, client) {
         const helpEmbed =  new Discord.MessageEmbed()
@@ -26,7 +26,7 @@ module.exports = {
         .setColor(botColour)
         .setTimestamp();
 
-        if (message.content === prefix + "help") {
+        if (message.content.split(" ").length === 1) { // if length is 1 no command has been specified
             // for comands of each category
             var generalCommands = "";
             var gameCommands = "";
@@ -78,7 +78,7 @@ module.exports = {
 
             else {
                 for (var [object, command] of commands) {
-                    if (message.content === prefix + "help " + command.name) {
+                    if (message.content.split(" ")[1] === command.name) {
                         helpEmbed.setFooter(footer);
                         helpEmbed.setTitle("**__" + command.name.toUpperCase() + "__**");
                         helpEmbed.addField("**Category**", command.category); // category

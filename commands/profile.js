@@ -78,7 +78,7 @@ module.exports = {
         "**__General:__**", 
         "**Balance:** $" + (user.balance / 100) + "\n\n" + 
         "**Prestige: **" + user.prestigeNum + "\n" + 
-        "**Prestige Coins: **" + user.prestigeCoins + "\n" + 
+        "**Prestige Coins:** `⟁ " + user.prestigeCoins + "`\n" + 
         "**Creation Date: **" + user.createdAt, true)
 
         // Level and xp

@@ -4,14 +4,14 @@ module.exports = {
     name: "accounts",
     category: "admin",
     description: "See all registered accounts **ADMIN**",
-    alias: "None",
+    alias: "`accounts`",
     examples: ["accounts [page num]", "accounts", "accounts 2"], 
     execute(message, Discord, client) {
         var accountList = ""
 
         const accountsPerPage = 10;
         var pageNum = parseInt(message.content.split(" ").pop());
-        var totalPages = Math.ceil(client.data.users.length / accountsPerPage)
+        const totalPages = Math.ceil(client.data.users.length / accountsPerPage)
 
         if (isNaN(pageNum)) {
             pageNum = 1;

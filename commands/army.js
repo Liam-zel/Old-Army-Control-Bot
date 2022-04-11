@@ -5,7 +5,7 @@ module.exports = {
     name: "army",
     category: "general",
     description: "See your armies and some stats about them!",
-    alias: "`a`",
+    alias: "`army`, `a`",
     examples: ["army", "a"],
     execute(message, Discord, f, user) {
         const armyEmbed = new Discord.MessageEmbed()
@@ -18,9 +18,9 @@ module.exports = {
         var army2 = "\u200B";
 
         for (var i = 0; i < user.armies.length; i++) {
-            var army = user.armies[i];
-            var goldEarn = army.lootGold / 100;
-            let image = f.findImage(user.areas[army.invadingArea].level + "_")     
+            const army = user.armies[i];
+            const goldEarn = army.lootGold / 100;
+            const image = f.findImage(user.areas[army.invadingArea].level + "_")     
 
             if ((i+1) % 2 == 0) {
                 army2 = "**__Army number:__** `" + army.number + "`\n" + 
@@ -45,7 +45,7 @@ module.exports = {
             currentKills += user.armies[i].total;
         }
 
-        var redBar = f.createProgressBar(5, 25, currentKills, (user.enemyLimit * user.armies.length), "red");
+        const redBar = f.createProgressBar(5, 25, currentKills, (user.enemyLimit * user.armies.length), "red");
 
         // very cool
         var estimatedTime = Math.ceil(((user.enemyLimit * user.armies.length) - currentKills) * (2.5 / (user.armies.length * user.armyEfficiency))); // it just works ok

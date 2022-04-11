@@ -4,7 +4,7 @@ module.exports = {
     name: "feedback",
     category: "misc",
     description: "for if you have any feedback to give or maybe a bug to report!",
-    alias: "None",
+    alias: "`feedback`",
     examples: ["feedback {message}", "feedback this bot is great!"],
     execute(message, feedbackList, fs) {
         console.log("\n--Feedback!--\n");

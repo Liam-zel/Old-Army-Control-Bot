@@ -4,7 +4,7 @@ module.exports = {
     name: "gift",
     category: "game",
     description: "Give an item to someone!",
-    alias: "None", 
+    alias: "`gift`", 
     examples: ["gift {user} {amount} {item}", 
     "gift <@!461059264388005889> 2 feather", 
     "gift <@!461059264388005889> max rock", 
@@ -12,6 +12,7 @@ module.exports = {
     ],
     execute(message, Discord, f, user, data) {
 
+        // incorrect command uses
         if (message.content.split(" ").length < 2) { // didnt mention users
             message.reply("Who do you want to gift to?\nTo gift go: `" + prefix + "gift {user} {amount} {item}`");
             return;

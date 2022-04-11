@@ -4,7 +4,7 @@ module.exports = {
     name: "invite",
     category: "misc",
     description: "Invite the bot to your own server!",
-    alias: "None",
+    alias: "`invite`",
     examples: ["invite"],
     execute(message, Discord, f, avatar) {
 

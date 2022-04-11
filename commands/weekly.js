@@ -6,7 +6,7 @@ module.exports = {
     name: "weekly",
     category: "game",
     description: "Gain a weekly reward of money and xp!",
-    alias: "None",
+    alias: "`weekly`",
     cooldowns: [],
     examples: ["weekly"],
     execute(message, Discord, f, o, user) {

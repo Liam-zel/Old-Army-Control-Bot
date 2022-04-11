@@ -4,7 +4,7 @@ module.exports = {
     name: "daily",
     category: "game",
     description: "Gain a daily reward of money and xp!",
-    alias: "none",
+    alias: "`daily`",
     examples: ["daily"],
     execute(message, Discord, f, o, user) {
         if (user.daily > 0) {
@@ -27,10 +27,10 @@ module.exports = {
             }
         }
 
-        var enemy = o.Areas[areaNum].monsters[o.Areas[areaNum].monsters.length - 1];
+        const enemy = o.Areas[areaNum].monsters[o.Areas[areaNum].monsters.length - 1];
 
-        var xpReward = Math.round(enemy.xpEarn * 10 * (user.multiplier + 0.1)); // reward from same enemy 10 times
-        var goldReward = Math.round(enemy.goldEarn * 40 * (user.multiplier + 0.25)); // reward from same enemy 40 times
+        const xpReward = Math.round(enemy.xpEarn * 10 * (user.multiplier + 0.1)); // reward from same enemy 10 times
+        const goldReward = Math.round(enemy.goldEarn * 40 * (user.multiplier + 0.25)); // reward from same enemy 40 times
 
         const xpBar = f.createProgressBar(5, 15, user.xp, user.xpToNext, "blue", xpReward); // min_length, max_length, current, goal, colour
 

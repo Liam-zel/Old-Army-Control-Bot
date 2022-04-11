@@ -15,7 +15,7 @@ module.exports = {
     name: "help",
     category: "general",
     description: "Why do you need to know what the command does if you used it :thinking:",
-    alias: "`h`, `commands`, `c`",
+    alias: "`help`, `h`, `commands`, `c`",
     examples: ["help [Command name]", 
     "help",
     "commands loot",

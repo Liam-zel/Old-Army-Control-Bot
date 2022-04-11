@@ -7,7 +7,7 @@ module.exports = {
     name: "venture",
     category: "game",
     description: "Explore new areas or venture deeper in current ones for new foes!",
-    alias: "`ven`",
+    alias: "`venture`, `ven`",
     examples: [
         "venture [area]",
         "venture",

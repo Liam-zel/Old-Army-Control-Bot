@@ -10566,6 +10566,13 @@
             "message": "ReferenceError: ventureCost is not defined",
             "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/venture.js:153:77)",
             "user": "the funny one"
+        },
+        {
+            "ErrorNum": 262,
+            "date": "04/11/2022",
+            "message": "TypeError: Assignment to constant variable.",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/accounts.js:17:21)",
+            "user": "the funny one"
         }
     ]
 }

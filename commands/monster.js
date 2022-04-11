@@ -4,7 +4,7 @@ module.exports = {
     name: "monster",
     category: "general",
     description: "See information and stats about a monster!",
-    alias: "`mob`",
+    alias: "`monster`, `mob`",
     examples: ["monster {monster name}", "monster rock", "mob bird"], 
     execute(message, Discord, f, o) {
 

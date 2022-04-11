@@ -57,7 +57,7 @@ module.exports = {
     name: "trinkets",
     category: "general",
     description: "Shows all of your trinkets!",
-    alias: "`tr`",
+    alias: "`trinkets`, `tr`",
     activeEmbeds: [],
     examples: [
         "trinkets [page number]", 

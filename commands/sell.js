@@ -4,7 +4,7 @@ module.exports = {
     name: "sell",
     category: "game",
     description: "Sell your items in return for money!",
-    alias: "None",
+    alias: "`sell`",
     examples: [
         "sell [amount] {Item Name}", 
         "sell 3 stick ", // NOT AN ITEM 

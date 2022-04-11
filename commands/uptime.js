@@ -4,7 +4,7 @@ module.exports = {
     name: "uptime",
     category: "misc",
     description: "Shows how long the bot has currently been online for",
-    alias: "None",
+    alias: "`uptime`",
     examples: ["uptime"],
     execute(message, Discord, client) {
 

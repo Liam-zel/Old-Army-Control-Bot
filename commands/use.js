@@ -4,7 +4,7 @@ module.exports = {
     name: "use",
     category: "game",
     description: "Use an item",
-    alias: "None",
+    alias: "`use`",
     examples: ["use {item name}", "use feather"], // CHANGE LATER TO AN ACTUAL ITEM
     execute(message, f, user) {
         var itemName = message.content.split(" ").pop();

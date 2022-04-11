@@ -4,7 +4,7 @@ module.exports = {
     name: "inventory",
     category: "general",
     description: "See whats in your inventory.",
-    alias: "`inv`",
+    alias: "`inventory`, `inv`",
     examples: ["inventory [page number]",
     "inventory",
     "inventory 3"

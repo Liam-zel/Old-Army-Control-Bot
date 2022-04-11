@@ -3,8 +3,8 @@
   {
    "username": "GD JOE",
    "userID": "710412758541402234",
-   "daily": -53387,
-   "weekly": -53387,
+   "daily": -54114,
+   "weekly": -54114,
    "createdAt": "15/11/2021",
    "multiplier": 1,
    "armyEfficiency": 1,
@@ -195,8 +195,8 @@
   {
    "username": "amy <3",
    "userID": "707542668116492399",
-   "daily": -46574,
-   "weekly": -46574,
+   "daily": -47301,
+   "weekly": -47301,
    "createdAt": "25/12/2021",
    "multiplier": 1,
    "armyEfficiency": 1,
@@ -291,8 +291,8 @@
   {
    "username": "the funny one",
    "userID": "461059264388005889",
-   "daily": -2302,
-   "weekly": -2302,
+   "daily": -3029,
+   "weekly": -3029,
    "createdAt": "8/4/2022",
    "multiplier": 1.6,
    "armyEfficiency": 1,

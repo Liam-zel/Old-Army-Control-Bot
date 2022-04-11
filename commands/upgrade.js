@@ -4,7 +4,7 @@ module.exports = {
     name: "upgrade",
     category: "game",
     description: "Upgrade your account and stats. Upgrades are essential to progress!",
-    alias: "`up`",
+    alias: "`upgrade`, `up`",
     examples: [
         "upgrade [upgrade tag] [amount (1 -> max)]",
         "upgrade",

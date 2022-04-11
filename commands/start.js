@@ -5,7 +5,7 @@ module.exports = {
     name: "start",
     category: "game",
     description: "Register your account!",
-    alias: "None",
+    alias: "`start`",
     examples: ["start"],
     execute(message, f, client, Discord, idleData) {
         // account creation date

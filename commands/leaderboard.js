@@ -18,7 +18,7 @@ module.exports = {
     name: "leaderboard",
     category: "general",
     description: "Look at the highest levels across all servers!",
-    alias: "`lb`",
+    alias: "`leaderboard`, `lb`",
     examples: ["leaderboard"],
     activeEmbeds: [],
 

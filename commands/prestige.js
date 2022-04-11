@@ -5,7 +5,7 @@ module.exports = {
     name: "prestige",
     category: "game",
     description: "Reset your progress for new rewards, foes and a special currency used to get powerful permanent upgrades!",
-    alias: "None",
+    alias: "`prestige`",
     examples: ["prestige"],
     execute(message, Discord, f, user, client) {
         var levelRequirement = 10 + (5 * user.prestigeNum);

@@ -4,7 +4,7 @@ module.exports = {
     name: "item",
     category: "general",
     description: "See information and stats about an item!",
-    alias: "None",
+    alias: "`item`",
     examples: ["item {item name}", "item feather"], 
     execute(message, Discord, f, o, command) {
 

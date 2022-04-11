@@ -23,7 +23,7 @@ module.exports = {
     name: "loot",
     category: "game",
     description: "Claim your stored loot earned by your armies!",
-    alias: "`l`",
+    alias: "`loot`, `l`",
     examples: ["loot", "l"],
     activeEmbeds: [],
 

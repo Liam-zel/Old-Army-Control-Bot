@@ -5,7 +5,7 @@ module.exports = {
     name: "train",
     category: "game",
     description: "Train your armies!\nGives xp and has a minute long second cooldown",
-    alias: "None",
+    alias: "`train`",
     cooldowns: [],
     examples: ["train"],
     execute(message, Discord, f, o, user) {

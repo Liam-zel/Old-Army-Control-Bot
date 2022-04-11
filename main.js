@@ -146,14 +146,15 @@ var idle = setInterval(async function() {
 
     console.time("idle");
 
-    for (var i = 0; i < client.data.users.length; i++) {
+    for (let i = 0; i < client.data.users.length; i++) {
         // const userIdle = idleData.users[i];
         const user = client.data.users[i];
 
-        for (var j = 0; j < user.armies.length; j++) {
-            var skip = false;
+        for (let j = 0; j < user.armies.length; j++) {
+            let skip = false;
 
-            while (user.armies[j].total >= user.enemyLimit)  { // Skip armies that have reached a limit
+            // Skip armies that have reached a limit
+            while (user.armies[j].total >= user.enemyLimit)  { 
                 j++; 
                 if (user.armies[j] == undefined) {
                     skip = true;
@@ -163,9 +164,9 @@ var idle = setInterval(async function() {
             }
             if (skip) break; // Skips user if all of their armies are at capacity
 
-            var army = user.armies[j];
-            var invadePos = army.invadingArea;
-            let enemyPos = Math.floor(Math.abs(Math.random() - Math.random()) * Areas[invadePos].monsters.length) 
+            const army = user.armies[j];
+            const invadePos = army.invadingArea;
+            const enemyPos = Math.floor(Math.abs(Math.random() - Math.random()) * Areas[invadePos].monsters.length) 
             /* No idea how it works, but it makes it so the higher the number, the lower the chance
             In this specific case, the chances SHOULD be around:
             enemy 1: 30.5%
@@ -177,28 +178,24 @@ var idle = setInterval(async function() {
             */
 
             // moves enemy to next strongest enemy if boss or mini boss isnt unlocked
-            if (user.areas[army.invadingArea].megaBoss == false && enemyPos == 5) enemyPos--;
-            if (user.areas[army.invadingArea].miniBoss == false && enemyPos == 4) enemyPos--;
+            if (user.areas[invadingPos].megaBoss == false && enemyPos == 5) enemyPos--;
+            if (user.areas[invadingPos].miniBoss == false && enemyPos == 4) enemyPos--;
 
             const enemy = Areas[invadePos].monsters[enemyPos];
 
 
-            // Update stats
-            var multiplier = user.multiplier;
-            if (user.areas[army.invadingArea].isMaxed) multiplier *= 1.5;
+            // Update stats =========
+            const multiplier = user.multiplier;
+            if (user.areas[invadePos].isMaxed) multiplier *= 1.5;
 
             army.lootGold += Math.round(enemy.goldEarn * Math.round(user.armyEfficiency/2) * multiplier);
             army.lootXP += Math.round(enemy.xpEarn * user.armyEfficiency); // multiplier doesnt affect xp
 
             army.enemiesSlain[enemyPos] += user.armyEfficiency;
             army.total += user.armyEfficiency; 
-
-            // scrapped having enemies be multiplied, but kept here because holy shit
-            //user.armies[j].enemiesSlain[enemyPos] += (Math.floor(1 * multiplier)); // am I fucking stupid
-            //user.armies[j].total += Math.floor(1 * multiplier); // I DID IT TWICE
-
             
-            // Drops 
+
+            // Drops  =========
             for (var k = 0; k < enemy.drops.length; k++) {
                 if (Math.random() * 100 < enemy.dropRates[k] + (user.armyEfficiency/4)) {
                     var exists = false;

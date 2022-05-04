@@ -3,7 +3,7 @@ module.exports = {
     category: "admin",
     description: "Removes users from data. **[ADMIN COMMAND]**",
     alias: "`remove`",
-    examples: ["remove {user}", "remove <@!461059264388005889>"],
+    examples: ["remove {user}", "remove `<@!461059264388005889> "],
     execute(message, client, f) {
         var user = message.mentions.users.first();
 

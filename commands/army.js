@@ -1,5 +1,5 @@
 const { botColour } = require("../main");
-const { Areas } = require("../objects");
+const { Areas } = require("../objects/combat.js");
 
 module.exports = {
     name: "army",
@@ -24,7 +24,7 @@ module.exports = {
 
             if ((i+1) % 2 == 0) {
                 army2 = "**__Army number:__** `" + army.number + "`\n" + 
-                "**Currently invading:** " + Areas[army.invadingArea].name + "\u2800" + image + "\n" + 
+                "**Currently invading:** " + Areas[army.invadingArea].name + "\u200B" + image + "\n" + 
                 "**Earnings: ** `$" + goldEarn + "` | `" + army.lootXP + "xp`\n\n";
 
                 armyEmbed.addField("\u200B", "\u200B", true);
@@ -32,7 +32,7 @@ module.exports = {
             }
             else {
                 army1 = "**__Army number:__** `" + army.number + "`\n" + 
-                "**Currently invading:** " + Areas[army.invadingArea].name + "\u2800" + image + "\n" + 
+                "**Currently invading:** " + Areas[army.invadingArea].name + "\u200B    " + image + "\n" + 
                 "**Earnings: ** `$" + f.addComma(goldEarn) + "` | `" + f.addComma(army.lootXP) + "xp`\n\n";
 
                 armyEmbed.addField("\u200B", army1, true);

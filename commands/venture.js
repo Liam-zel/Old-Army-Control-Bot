@@ -1,5 +1,5 @@
 const { prefix, botColour } = require("../main.js")
-const { Areas } = require("../objects.js")
+const { Areas } = require("../objects/combat")
 
 const costScale = 2.2;
 

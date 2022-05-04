@@ -1,4 +1,4 @@
-const { Areas } = require("../objects.js");
+const { Areas } = require("../objects/combat");
 const { botColour, prefix} = require("../main.js");
 
 module.exports = {

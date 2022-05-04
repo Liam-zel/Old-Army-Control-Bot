@@ -3,7 +3,7 @@ const { prefix, botColour } = require("../main.js")
 module.exports = {
     name: "accounts",
     category: "admin",
-    description: "See all registered accounts **ADMIN**",
+    description: "See all registered accounts **[ADMIN COMMAND]**",
     alias: "`accounts`",
     examples: ["accounts [page num]", "accounts", "accounts 2"], 
     execute(message, Discord, client) {

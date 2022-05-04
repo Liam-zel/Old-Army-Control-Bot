@@ -7,7 +7,7 @@ module.exports = {
     alias: "`profile`, `p`", 
     examples: ["profile [user]",
     "profile",
-    "profile @Coolkid92"
+    "profile` <@461059264388005889>`\u2800"
     ],
     execute(message, Discord, f, user, data) {
 

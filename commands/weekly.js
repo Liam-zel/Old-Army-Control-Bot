@@ -1,4 +1,4 @@
-const { Areas } = require("../objects");
+const { Areas } = require("../objects/combat");
 
 const { botColour } = require("../main");
 

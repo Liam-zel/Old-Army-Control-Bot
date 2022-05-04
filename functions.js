@@ -1,11 +1,11 @@
 const Discord = require('discord.js');
 var client = require('./main.js')
-const o = require('./objects.js');
+const o = require('./objects/combat.js');
 const p = require('./palletes.js');
 const fs = require('fs');
 
-const idleData = require("./idleData.json");
-client.data = require("./data.json"); 
+const idleData = require("./data/idleData.json");
+client.data = require("./data/data.json"); 
 
 // CREATE ARMY
 function createArmy(armyNum) {
@@ -66,14 +66,14 @@ function updateInvadingArea(armyNum, areaNum) {
 
 // UPDATE USER
 function updateUser() { // OPTIMIZATION: JSON.stringify(client.data) gets rid of spacing which speeds things up by a considerable amount (although less readable, so only do if necessary)
-    fs.writeFile("./data.json", JSON.stringify(client.data, null, 4), err => {
+    fs.writeFile("./data/data.json", JSON.stringify(client.data, null, 4), err => {
         if (err) throw err;
     });
 }
 
 // UPDATE IDLE
 function updateIdle() { // OPTIMIZATION: JSON.stringify(idleData) gets rid of spacing which speeds things up by a considerable amount (although less readable, so only do if necessary)
-    fs.writeFile("./idleData.json", JSON.stringify(idleData, null, 1), err => {
+    fs.writeFile("./data/idleData.json", JSON.stringify(idleData, null, 1), err => {
         if (err) throw err;
     });
 }
@@ -170,7 +170,7 @@ function createProgressBar(min_Length, max_length, current, goal, barColour, ear
         }
     }
     
-    // if the earnings variable is declared, for XP giving commands
+    // if the earnings variable is declared (for XP giving commands)
     else {
         // // funny story, I was always getting bugs when resting and training, it would always use the barcoulour and never make the green if statement go off
         // // turns out I was giving the progress as (user.xp + reward) the entire time. This could have been a much more readable working function

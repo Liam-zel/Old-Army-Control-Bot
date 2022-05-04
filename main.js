@@ -38,10 +38,10 @@ const client = new Discord.Client();
 
 const fs = require('fs'); 
 const f = require('./functions.js');
-const o = require('./objects.js');
+const o = require('./objects/combat.js');
 const p = require('./palletes.js')
 
-const { Areas } = require("./objects.js")
+const { Areas } = require("./objects/combat.js")
 
 const botColour = "#98c200"; // Lime
 
@@ -49,14 +49,10 @@ const botColour = "#98c200"; // Lime
 module.exports = {prefix, client, botColour};
 
 
-
-client.data = require("./data.json"); 
-
-const idleData = require("./idleData.json"); 
-
-const feedbackList = require("./feedbackList.json");
-
-const errorLog = require("./errorLog.json");                
+client.data = require("./data/data.json"); 
+const idleData = require("./data/idleData.json"); 
+const feedbackList = require("./data/feedbackList.json");
+const errorLog = require("./data/errorLog.json");                
 
 var randomColor = Math.floor(Math.random()*16777215).toString(16); // random Embed colour
 
@@ -126,7 +122,7 @@ var oneSecond = setInterval(function() {
 var backup = setInterval(() => {
     // upload backup
     if (client.data == undefined) {
-        var backup = require("./backup.txt")
+        var backup = require("./data/backup.txt")
 
         fs.writeFile(client.data, JSON.stringify(backup, null, 1), err => {
             if (err) throw err;
@@ -166,7 +162,7 @@ var idle = setInterval(async function() {
 
             const army = user.armies[j];
             const invadePos = army.invadingArea;
-            const enemyPos = Math.floor(Math.abs(Math.random() - Math.random()) * Areas[invadePos].monsters.length) 
+            let enemyPos = Math.floor(Math.abs(Math.random() - Math.random()) * Areas[invadePos].monsters.length) 
             /* No idea how it works, but it makes it so the higher the number, the lower the chance
             In this specific case, the chances SHOULD be around:
             enemy 1: 30.5%
@@ -178,8 +174,8 @@ var idle = setInterval(async function() {
             */
 
             // moves enemy to next strongest enemy if boss or mini boss isnt unlocked
-            if (user.areas[invadingPos].megaBoss == false && enemyPos == 5) enemyPos--;
-            if (user.areas[invadingPos].miniBoss == false && enemyPos == 4) enemyPos--;
+            if (user.areas[invadePos].megaBoss == false && enemyPos == 5) enemyPos--;
+            if (user.areas[invadePos].miniBoss == false && enemyPos == 4) enemyPos--;
 
             const enemy = Areas[invadePos].monsters[enemyPos];
 
@@ -405,6 +401,9 @@ client.on("message", async (message) => {
         }
         else if ((command === "accounts" || command === "acc") && message.author.id === "461059264388005889") { // my id :)
             client.commands.get("accounts").execute(message, Discord, client);
+        }
+        else if ((command === "admin") && message.author.id === "461059264388005889") { // my id :)
+            client.commands.get("admin").execute(message, Discord, client.commands);
         }
 
         // START

@@ -6,8 +6,8 @@ module.exports = {
     description: "Give specified account money. **[ADMIN COMMAND]**",
     alias: "`give`, `g`",
     examples: ["give {user} {amount}", 
-    "give <@!461059264388005889> 10000",
-    "give <@!461059264388005889> -250"
+    "give `<@!461059264388005889>` 10000",
+    "give `<@!461059264388005889>` -250"
     ],
     execute(message, client, f) {
         var user = message.mentions.users.first()

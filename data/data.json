@@ -3,8 +3,8 @@
         {
             "username": "GD JOE",
             "userID": "710412758541402234",
-            "daily": -54138,
-            "weekly": -54138,
+            "daily": -55654,
+            "weekly": -55654,
             "createdAt": "15/11/2021",
             "multiplier": 1,
             "armyEfficiency": 1,
@@ -195,8 +195,8 @@
         {
             "username": "amy <3",
             "userID": "707542668116492399",
-            "daily": -47325,
-            "weekly": -47325,
+            "daily": -48841,
+            "weekly": -48841,
             "createdAt": "25/12/2021",
             "multiplier": 1,
             "armyEfficiency": 1,
@@ -291,32 +291,54 @@
         {
             "username": "the funny one",
             "userID": "461059264388005889",
-            "daily": -3053,
-            "weekly": -3053,
-            "createdAt": "8/4/2022",
-            "multiplier": 1.6,
+            "daily": 42659,
+            "weekly": 42659,
+            "createdAt": "2/5/2022",
+            "multiplier": 1,
             "armyEfficiency": 1,
             "efficiencyLevel": 0,
             "storageLevel": 0,
-            "enemyLimit": 30,
-            "balance": 0,
-            "totalBalance": 3814646250,
+            "enemyLimit": 15,
+            "balance": 540,
+            "totalBalance": 540,
             "totalXP": 0,
             "userLevel": 1,
-            "xp": 0,
-            "xpToNext": 30,
-            "prestigeNum": 3,
-            "prestigeCoins": 300,
-            "lastLoot": 1649572966509,
-            "lootFull": 1649573043732,
-            "inventory": [],
-            "trinkets": [],
+            "xp": 40,
+            "xpToNext": 50,
+            "prestigeNum": 0,
+            "prestigeCoins": 0,
+            "lastLoot": 1651628951489,
+            "lootFull": 0,
+            "inventory": [
+                {
+                    "name": "Test",
+                    "sellValue": 1000,
+                    "amount": 4,
+                    "description": "HFDSKJFHDSLKFJHDSLFJDLZSFJASLIFJ SLDF OSDJF JSFSDOJHF"
+                },
+                {
+                    "name": "Rock shard",
+                    "sellValue": 1,
+                    "amount": 1,
+                    "description": "The rock had a family."
+                }
+            ],
+            "trinkets": [
+                {
+                    "name": "Test Trinket",
+                    "bonus": 5,
+                    "bonusType": "Army kills",
+                    "strength": 1,
+                    "dropRate": 100,
+                    "max": 1000
+                }
+            ],
             "armies": [
                 {
                     "number": 0,
                     "invadingArea": 0,
-                    "lootGold": 1240,
-                    "lootXP": 54,
+                    "lootGold": 45,
+                    "lootXP": 3,
                     "possibleEnemies": [
                         "Rock",
                         "Stick",
@@ -326,14 +348,14 @@
                         "Wolf"
                     ],
                     "enemiesSlain": [
-                        7,
-                        8,
-                        6,
-                        9,
+                        0,
+                        0,
+                        0,
+                        1,
                         0,
                         0
                     ],
-                    "total": 30
+                    "total": 1
                 }
             ],
             "areas": [
@@ -347,28 +369,7 @@
                     "multiplier": 1
                 }
             ],
-            "monsterDrops": [
-                {
-                    "name": "Feather",
-                    "sellValue": 200,
-                    "amount": 2,
-                    "description": "Plucked from a helpless peaceful bird, you monster."
-                },
-                {
-                    "name": "Test Trinket",
-                    "bonus": 5,
-                    "bonusType": "Army kills",
-                    "strength": 2,
-                    "dropRate": 100,
-                    "max": 1000
-                },
-                {
-                    "name": "Rock shard",
-                    "sellValue": 1,
-                    "amount": 2,
-                    "description": "The rock had a family."
-                }
-            ]
+            "monsterDrops": []
         }
     ]
 }

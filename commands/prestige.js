@@ -1,5 +1,5 @@
 const { botColour, prefix } = require("../main");
-const { Areas } = require("../objects.js");
+const { Areas } = require("../objects/combat");
 
 module.exports = {
     name: "prestige",
@@ -99,8 +99,8 @@ module.exports = {
                         .setTitle("__You Prestiged to Prestige Level " + user.prestigeNum + "!__")
 
                         .addField("**Prestige Earnings:**", "**Prestige Coins:** `⟁ " + prestigeReward * user.prestigeNum + "`\n" + 
-                                  "**Multiplier Bonus:** `" + (1 + user.prestigeNum/5) + "x` `[+ " + (user.prestigeNum/5) + "]`\n" + 
-                                  "**Enemy Limit:**` " + (user.enemyLimit - 10) + "` `[+ " + ((10 * user.prestigeNum) - 10) + "]`", false) // 10 is defulat enemylimit ------------------------------------ (adjust first and last 10 if enemy limit default is changed)
+                                  "**Multiplier Bonus:** `" + (1 + user.prestigeNum/5) + "x` **[+" + (user.prestigeNum/5) + "x]**\n" + 
+                                  "**Enemy Limit:** `" + (user.enemyLimit - 10) + "` **[+" + ((10 * user.prestigeNum) - 10) + "]**", false) // 10 is defulat enemylimit ------------------------------------ (adjust first and last 10 if enemy limit default is changed)
                       
                         .addField("**Next Prestige:**", "Your next prestige requires:\n" +
                                   "Level: `" + (10 + (5 * user.prestigeNum)) + "`\n" + // PRESTIGE LEVEL EQUATION

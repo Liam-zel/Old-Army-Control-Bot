@@ -12,7 +12,7 @@ module.exports = {
 
         for (let i = 0; i < user.inventory.length; i++) {
             // found item
-            if (itemName === user.inventory[i].name) { 
+            if (itemName.toLowerCase() === user.inventory[i].name.toLowerCase()) { 
                 console.log(itemName)
                 console.log(user.inventory[i])
 
@@ -21,13 +21,12 @@ module.exports = {
             }
         }
 
-        if (item = undefined) {
+        if (item == undefined) {
             message.reply("You don't have that item!");
             return;
         }
 
-        item.use();
-
+        item.use(user);
     }
 }
 

@@ -1,5 +1,5 @@
 const { botColour, prefix } = require("../main");
-const { Areas } = require("../objects");
+const { Areas } = require("../objects/combat.js");
 
 module.exports = {
     name: "assign",

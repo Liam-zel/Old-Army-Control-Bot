@@ -1,10 +1,10 @@
-const { Areas } = require("../objects");
+const { Areas } = require("../objects/combat");
 const { botColour, client } = require("../main")
 const disbut = require('discord-buttons');
 
 const { errorHandle } = require("../functions")
 
-const { item, trinket } = require("../objects")
+const { item, trinket } = require("../objects/items")
 
 
 class userEmbed {

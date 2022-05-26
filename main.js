@@ -192,61 +192,7 @@ var idle = setInterval(async function() {
             
 
             // Drops  =========
-            for (var k = 0; k < enemy.drops.length; k++) {
-                if (Math.random() * 100 < enemy.dropRates[k] + (user.armyEfficiency/4)) {
-                    var exists = false;
-
-                    // I have to set these values to 1, as editing the amount (such as stacking them in the users inventory)
-                    // edits the actual object's amount
-
-                    // NOTE: there shouldnt be any problems if you just make it when you get a drop that doesnt already exist in the
-                    // inventory, the amount isnt '*=' but '= 1 *' ( e.g user.monsterDrops[user.monsterDrops.length - 1].amount = 1 * Math.round(multiplier) )
-                    if (enemy.drops[k].bonus === undefined) { // has to be an item if it has no bonus
-                        enemy.drops[k].amount = 1;
-                    }
-                    else enemy.drops[k].strength = 1;
-
-                    // Item
-                    if (enemy.drops[k] instanceof o.item) { // checks to see if drop is from the item class
-
-                        for (var x = 0; x < user.monsterDrops.length; x++) { // 4 layers of for loops, cool
-                            if (enemy.drops[k].name == user.monsterDrops[x].name) {
-                                user.monsterDrops[x].amount += Math.round(multiplier + (user.armyEfficiency - 1));
-                                exists = true;
-                            }
-                        }
-                        if (!exists) {
-                            user.monsterDrops[user.monsterDrops.length] = enemy.drops[k];
-
-                            user.monsterDrops[user.monsterDrops.length - 1].amount *= Math.round(multiplier);
-                            user.monsterDrops[user.monsterDrops.length - 1].amount += user.armyEfficiency -1;
-
-                        }
-                    }
-
-                    // Trinket
-                    else { // if the drop isnt from the item class, must be a trinket
-                        // checks if trinket is already in monsterDrops[] and stacks it if so
-                        for (var x = 0; x < user.monsterDrops.length; x++) {
-                            if (user.monsterDrops[x].name == enemy.drops[k].name) {
-                                user.monsterDrops[x].strength += Math.round(multiplier + (user.armyEfficiency - 1));
-
-                                exists = true; 
-                            }
-
-                        }
-                        // otherwise, add it to monsterDrops[] (and for some reason we dont care about multis or army efficiency)
-                        if (!exists) {
-                            user.monsterDrops[user.monsterDrops.length] = enemy.drops[k];
-
-                            user.monsterDrops[user.monsterDrops.length - 1].strength *= Math.round(multiplier); 
-                            user.monsterDrops[user.monsterDrops.length - 1].strength += user.armyEfficiency - 1;
-
-                        }
-
-                    }
-                }
-            } 
+            f.checkDrops(enemy, user)
         }
     }
     console.timeEnd("idle");

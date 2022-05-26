@@ -38,8 +38,8 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');
 
-client.data = require("./data.json"); 
-var _UserNum = fs.readFileSync('./UserNum.txt', 'utf8');
+client.data = require("./old_data.json"); // updated 4/5/2022
+var _UserNum = fs.readFileSync('./unused/old bot/UserNum.txt', 'utf8');
 var hasAccount = false;
 var profileNum;
 const maxArmies = 6; // SUBJECT TO CHANGE (maybe)
@@ -48,7 +48,7 @@ var randomColor = Math.floor(Math.random()*16777215).toString(16); // random Emb
 
 let prefix = '+';
 
-client.login('ODEyNjc0MzM4MTEyMjc0NDUz.YDEL9A.t39rKXi8RSKm27UUkwWqKSj3pkE');
+client.login('ODEyNjc0MzM4MTEyMjc0NDUz.YDEL9A.TKfyBIygQmJSM0M23FiOjwCWQ9U');
 
 const q_cooldown = new Set();
 
@@ -151,7 +151,7 @@ client.on("message", (message) => {
     
     // START
     if (message.content.startsWith(prefix + "start") && !hasAccount) {
-        client.data.users[_UserNum] = {
+        client.data.users[client.data.users.length] = { // changed 4/5/2022 (orignal was: client.data.users[_UserNum] = {)
             username: message.author.username,
             userID: message.author.id,
             balance: 0,
@@ -176,12 +176,12 @@ client.on("message", (message) => {
                 }
             ]
         }
-        _UserNum++;
-        fs.writeFileSync('./UserNum.txt', _UserNum);
+        // _UserNum++;
+        // fs.writeFileSync('./UserNum.txt', _UserNum);
 
-        client.data.userNum = _UserNum
+        // client.data.userNum = _UserNum
 
-        fs.writeFile("./data.json", JSON.stringify(client.data, null, 4), err => {
+        fs.writeFile("./unused/old bot/old_data.json", JSON.stringify(client.data, null, 4), err => {
             if (err) throw err;
             message.channel.send("Account created!");
         });
@@ -426,8 +426,8 @@ client.on("message", (message) => {
             else user.armies[armyPos].defense += "+";
         }
 
-        // write to JSON
-        fs.writeFile("./data.json", JSON.stringify(client.data, null, 4), err => {
+        // write to json
+        fs.writeFile("./unused/old bot/old_data.json", JSON.stringify(client.data, null, 4), err => {
             if (err) throw err;
         });
 
@@ -491,8 +491,8 @@ client.on("message", (message) => {
 
                     user.inventory[user.inventory.length] = items[i];
 
-                    // write to JSON
-                    fs.writeFile("./data.json", JSON.stringify(client.data, null, 4), err => {
+                    // write to json
+                    fs.writeFile("./unused/old bot/old_data.json", JSON.stringify(client.data, null, 4), err => {
                         if (err) throw err;
                     });
 
@@ -526,8 +526,8 @@ client.on("message", (message) => {
 
                 user.inventory.splice(i, 1);
 
-                // write to JSON
-                fs.writeFile("./data.json", JSON.stringify(client.data, null, 4), err => {
+                // write to json
+                fs.writeFile("./unused/old bot/old_data.json", JSON.stringify(client.data, null, 4), err => {
                     if (err) throw err;
                 });
 
@@ -577,8 +577,8 @@ client.on("message", (message) => {
             item: ""
         }
 
-        // write to JSON
-        fs.writeFile("./data.json", JSON.stringify(client.data, null, 4), err => {
+        // write to json
+        fs.writeFile("./unused/old bot/old_data.json", JSON.stringify(client.data, null, 4), err => {
             if (err) throw err;
         });
 
@@ -648,10 +648,10 @@ client.on("message", (message) => {
 
                 user.inventory.splice(i, 1);
 
-                // write to JSON
-                fs.writeFile("./data.json", JSON.stringify(client.data, null, 4), err => {
-                    if (err) throw err;
-                });
+            // write to json
+            fs.writeFile("./unused/old bot/old_data.json", JSON.stringify(client.data, null, 4), err => {
+                if (err) throw err;
+            });
             }
             if (foundItem) break;
         }

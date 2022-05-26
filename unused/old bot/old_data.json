@@ -1,0 +1,114 @@
+{
+    "users": [
+        {
+            "username": "the funny one",
+            "userID": "461059264388005889",
+            "balance": 984120,
+            "winIncrease": 2.0500000000000003,
+            "multiChance": 2.15,
+            "multiMin": 2.8000000000000003,
+            "multiMax": 4.55,
+            "hand": {
+                "i_name": "Iron Gauntlets",
+                "i_multiChance": 0.35,
+                "i_multiMin": 0.25,
+                "i_multiMax": 0.45,
+                "i_winIncrease": 0.3,
+                "tier": 2,
+                "tag": "hand",
+                "buyValue": 85,
+                "sellValue": 29
+            },
+            "foot": {
+                "i_name": "Iron Greaves",
+                "i_multiChance": 0.45,
+                "i_multiMin": 0.25,
+                "i_multiMax": 0.55,
+                "i_winIncrease": 0.45,
+                "tier": 2,
+                "tag": "foot",
+                "buyValue": 100,
+                "sellValue": 34
+            },
+            "head": {
+                "i_name": "Iron Helmets",
+                "i_multiChance": 0.5,
+                "i_multiMin": 0.35,
+                "i_multiMax": 0.65,
+                "i_winIncrease": 0.55,
+                "tier": 2,
+                "tag": "head",
+                "buyValue": 120,
+                "sellValue": 40
+            },
+            "chest": {
+                "i_name": "Iron Armour",
+                "i_multiChance": 0.6,
+                "i_multiMin": 0.45,
+                "i_multiMax": 0.8,
+                "i_winIncrease": 0.65,
+                "tier": 2,
+                "tag": "chest",
+                "buyValue": 160,
+                "sellValue": 54
+            },
+            "inventory": [],
+            "armies": [
+                {
+                    "number": 0,
+                    "level": 2,
+                    "xp": 2,
+                    "xpToNext": 18,
+                    "attack": "",
+                    "defense": "+",
+                    "item": ""
+                },
+                {
+                    "number": 1,
+                    "level": 1,
+                    "xp": 3,
+                    "xpToNext": 15,
+                    "attack": "",
+                    "defense": "",
+                    "item": ""
+                },
+                {
+                    "number": 2,
+                    "level": 1,
+                    "xp": 7,
+                    "xpToNext": 15,
+                    "attack": "",
+                    "defense": "",
+                    "item": ""
+                },
+                {
+                    "number": 3,
+                    "level": 1,
+                    "xp": 3,
+                    "xpToNext": 15,
+                    "attack": "",
+                    "defense": "",
+                    "item": ""
+                },
+                {
+                    "number": 4,
+                    "level": 1,
+                    "xp": 9,
+                    "xpToNext": 15,
+                    "attack": "",
+                    "defense": "",
+                    "item": ""
+                },
+                {
+                    "number": 5,
+                    "level": 1,
+                    "xp": 4,
+                    "xpToNext": 15,
+                    "attack": "",
+                    "defense": "",
+                    "item": ""
+                }
+            ]
+        }
+    ]
+}

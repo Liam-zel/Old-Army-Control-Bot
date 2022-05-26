@@ -461,9 +461,69 @@ function findImage(string) {
     return image;
 }
 
+function checkDrops(enemy, user) {
+
+    for (let i = 0; i < enemy.drops.length; i++) {
+        if (Math.random() * 100 < enemy.dropRates[i] + (user.armyEfficiency/4)) {
+            console.log("item")
+            let exists = false;
+
+            // Item
+            if (enemy.drops[i] instanceof o.item) { // checks to see if drop is from the item class
+
+                // I have to set these values to 1, as editing the amount (such as stacking them in the users inventory)
+                // edits the actual object's amount
+                enemy.drops[i].amount = 1;
+
+                // stack item if already in inventory
+                for (let j = 0; j < user.monsterDrops.length; j++) { // 4 layers of for loops, cool
+                    if (enemy.drops[i].name == user.monsterDrops[j].name) {
+                        user.monsterDrops[j].amount += Math.round(multiplier + (user.armyEfficiency - 1));
+                        exists = true;
+                    }
+                }
+                if (!exists) {
+                    user.monsterDrops[user.monsterDrops.length] = enemy.drops[i];
+
+                    user.monsterDrops[user.monsterDrops.length - 1].amount *= Math.round(multiplier);
+                    user.monsterDrops[user.monsterDrops.length - 1].amount += user.armyEfficiency -1;
+
+                }
+            }
+
+            // Trinket
+            else { // if the drop isnt from the item class, must be a trinket
+
+                // I have to set these values to 1, as editing the amount (such as stacking them in the users inventory)
+                // edits the actual object's amount
+                enemy.drops[i].strength = 1;
+
+                // checks if trinket is already in monsterDrops[] and stacks it if so
+                for (let j = 0; j < user.monsterDrops.length; j++) {
+                    if (user.monsterDrops[j].name == enemy.drops[i].name) {
+                        user.monsterDrops[j].strength += Math.round(multiplier + (user.armyEfficiency - 1));
+
+                        exists = true; 
+                    }
+
+                }
+                // else, add it to monsterDrops[]
+                if (!exists) {
+                    user.monsterDrops[user.monsterDrops.length] = enemy.drops[i];
+
+                    user.monsterDrops[user.monsterDrops.length - 1].strength *= Math.round(multiplier); 
+                    user.monsterDrops[user.monsterDrops.length - 1].strength += user.armyEfficiency - 1;
+
+                }
+
+            }
+        }
+    } 
+}
+
 
 // EXPORTS
 module.exports = {createArmy, createArea, updateInvadingArea, updateUser, 
                 updateIdle,  truncate, moneyTrunc, createProgressBar, findUser, findIdle, randomColor, 
                 addComma, updateLevel, shortenString, calculateAverageEarnings, addBonus, errorHandle, 
-                findImage};
+                findImage, checkDrops};

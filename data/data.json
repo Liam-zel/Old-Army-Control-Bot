@@ -3,8 +3,8 @@
         {
             "username": "GD JOE",
             "userID": "710412758541402234",
-            "daily": -55654,
-            "weekly": -55654,
+            "daily": -55758,
+            "weekly": -55758,
             "createdAt": "15/11/2021",
             "multiplier": 1,
             "armyEfficiency": 1,
@@ -195,8 +195,8 @@
         {
             "username": "amy <3",
             "userID": "707542668116492399",
-            "daily": -48841,
-            "weekly": -48841,
+            "daily": -48945,
+            "weekly": -48945,
             "createdAt": "25/12/2021",
             "multiplier": 1,
             "armyEfficiency": 1,
@@ -291,23 +291,23 @@
         {
             "username": "the funny one",
             "userID": "461059264388005889",
-            "daily": 42659,
-            "weekly": 42659,
+            "daily": 42555,
+            "weekly": 42555,
             "createdAt": "2/5/2022",
-            "multiplier": 1,
+            "multiplier": 1.02,
             "armyEfficiency": 1,
             "efficiencyLevel": 0,
             "storageLevel": 0,
             "enemyLimit": 15,
-            "balance": 540,
-            "totalBalance": 540,
+            "balance": 3565,
+            "totalBalance": 3565,
             "totalXP": 0,
-            "userLevel": 1,
-            "xp": 40,
-            "xpToNext": 50,
+            "userLevel": 2,
+            "xp": 25,
+            "xpToNext": 75,
             "prestigeNum": 0,
             "prestigeCoins": 0,
-            "lastLoot": 1651628951489,
+            "lastLoot": 1653438221218,
             "lootFull": 0,
             "inventory": [
                 {
@@ -337,8 +337,8 @@
                 {
                     "number": 0,
                     "invadingArea": 0,
-                    "lootGold": 45,
-                    "lootXP": 3,
+                    "lootGold": 351,
+                    "lootXP": 23,
                     "possibleEnemies": [
                         "Rock",
                         "Stick",
@@ -349,13 +349,13 @@
                     ],
                     "enemiesSlain": [
                         0,
-                        0,
-                        0,
-                        1,
+                        7,
+                        2,
+                        4,
                         0,
                         0
                     ],
-                    "total": 1
+                    "total": 13
                 }
             ],
             "areas": [

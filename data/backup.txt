@@ -3,8 +3,8 @@
   {
    "username": "GD JOE",
    "userID": "710412758541402234",
-   "daily": -65042,
-   "weekly": -65042,
+   "daily": -65132,
+   "weekly": -65132,
    "createdAt": "15/11/2021",
    "multiplier": 1,
    "armyEfficiency": 1,
@@ -195,8 +195,8 @@
   {
    "username": "amy <3",
    "userID": "707542668116492399",
-   "daily": -58229,
-   "weekly": -58229,
+   "daily": -58319,
+   "weekly": -58319,
    "createdAt": "25/12/2021",
    "multiplier": 1,
    "armyEfficiency": 1,
@@ -285,8 +285,8 @@
   {
    "username": "the funny one",
    "userID": "461059264388005889",
-   "daily": 85966,
-   "weekly": 604343,
+   "daily": 85876,
+   "weekly": 604253,
    "createdAt": "22/7/2022",
    "multiplier": 1.15,
    "armyEfficiency": 24,
@@ -336,8 +336,8 @@
     {
      "number": 0,
      "invadingArea": 0,
-     "lootGold": 20907,
-     "lootXP": 2544,
+     "lootGold": 31878,
+     "lootXP": 3912,
      "possibleEnemies": [
       "Rock",
       "Stick",
@@ -347,14 +347,14 @@
       "Wolf"
      ],
      "enemiesSlain": [
-      360,
-      264,
-      240,
-      480,
+      648,
+      552,
+      312,
+      696,
       0,
       0
      ],
-     "total": 1344
+     "total": 2208
     }
    ],
    "areas": [

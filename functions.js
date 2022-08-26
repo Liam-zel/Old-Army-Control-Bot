@@ -4,7 +4,7 @@ var client = require('./main.js')
 const o = require('./objects/combat.js');
 
 
-const p = require('./palletes.js');
+const p = require('./unused/palletes.js');
 const fs = require('fs');
 
 const idleData = require("./data/idleData.json");

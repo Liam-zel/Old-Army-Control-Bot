@@ -3,8 +3,8 @@
         {
             "username": "GD JOE",
             "userID": "710412758541402234",
-            "daily": -64826,
-            "weekly": -64826,
+            "daily": -65135,
+            "weekly": -65135,
             "createdAt": "15/11/2021",
             "multiplier": 1,
             "armyEfficiency": 1,
@@ -195,8 +195,8 @@
         {
             "username": "amy <3",
             "userID": "707542668116492399",
-            "daily": -58013,
-            "weekly": -58013,
+            "daily": -58322,
+            "weekly": -58322,
             "createdAt": "25/12/2021",
             "multiplier": 1,
             "armyEfficiency": 1,
@@ -285,47 +285,59 @@
         {
             "username": "the funny one",
             "userID": "461059264388005889",
-            "daily": 86182,
-            "weekly": 604559,
+            "daily": 85873,
+            "weekly": 604250,
             "createdAt": "22/7/2022",
-            "multiplier": 1.14,
+            "multiplier": 1.15,
             "armyEfficiency": 24,
             "efficiencyLevel": 2,
             "storageLevel": 0,
-            "enemyLimit": 750,
-            "balance": 105658,
-            "totalBalance": 103658,
+            "enemyLimit": 3750,
+            "balance": 125813,
+            "totalBalance": 123813,
             "totalXP": 0,
-            "userLevel": 7,
-            "xp": 41,
-            "xpToNext": 575,
+            "userLevel": 8,
+            "xp": 840,
+            "xpToNext": 863,
             "prestigeNum": 0,
             "prestigeCoins": 0,
-            "lastLoot": 1658464389522,
-            "lootFull": 1658464517747,
+            "lastLoot": 1661483185877,
+            "lootFull": 0,
             "inventory": [
                 {
                     "name": "Test",
                     "sellValue": 1000,
                     "description": "HFDSKJFHDSLKFJHDSLFJDLZSFJASLIFJ SLDF OSDJF JSFSDOJHF",
+                    "amount": 50
+                },
+                {
+                    "name": "Rock shard",
+                    "sellValue": 550,
+                    "description": "The rock had a family.",
+                    "amount": 25
+                },
+                {
+                    "name": "Feather",
+                    "sellValue": 200,
+                    "description": "Plucked from a helpless peaceful bird, you monster.",
                     "amount": 25
                 }
             ],
             "trinkets": [
                 {
                     "name": "Test trinket",
-                    "bonus": 120,
+                    "bonus": 3120,
                     "bonusType": "Army kills",
                     "max": 1000,
-                    "strength": 25
+                    "strength": 50
                 }
             ],
             "armies": [
                 {
                     "number": 0,
                     "invadingArea": 0,
-                    "lootGold": 10155,
-                    "lootXP": 1374,
+                    "lootGold": 32637,
+                    "lootXP": 4008,
                     "possibleEnemies": [
                         "Rock",
                         "Stick",
@@ -335,14 +347,14 @@
                         "Wolf"
                     ],
                     "enemiesSlain": [
-                        216,
-                        135,
-                        174,
-                        225,
+                        672,
+                        552,
+                        312,
+                        720,
                         0,
                         0
                     ],
-                    "total": 750
+                    "total": 2256
                 }
             ],
             "areas": [
@@ -358,20 +370,20 @@
             ],
             "monsterDrops": [
                 {
-                    "name": "Rock shard",
-                    "sellValue": 550,
-                    "description": "The rock had a family.",
-                    "amount": 25
-                },
-                {
                     "name": "Test",
                     "sellValue": 1000,
                     "description": "HFDSKJFHDSLKFJHDSLFJDLZSFJASLIFJ SLDF OSDJF JSFSDOJHF",
                     "amount": 25
                 },
                 {
+                    "name": "Rock shard",
+                    "sellValue": 550,
+                    "description": "The rock had a family.",
+                    "amount": 25
+                },
+                {
                     "name": "Test trinket",
-                    "bonus": 120,
+                    "bonus": 5,
                     "bonusType": "Army kills",
                     "max": 1000,
                     "strength": 25
@@ -380,7 +392,7 @@
                     "name": "Feather",
                     "sellValue": 200,
                     "description": "Plucked from a helpless peaceful bird, you monster.",
-                    "amount": 25
+                    "amount": 24
                 }
             ]
         }

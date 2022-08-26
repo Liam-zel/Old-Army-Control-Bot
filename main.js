@@ -19,7 +19,7 @@ const client = new Discord.Client();
 const fs = require('fs'); 
 const f = require('./functions.js');
 var o = require('./objects/combat.js');
-const p = require('./palletes.js')
+const p = require('./unused/palletes.js')
 
 var Areas = o.Areas;
 // o.loadObjects().then(loaded => {
@@ -40,7 +40,7 @@ const errorLog = require("./data/errorLog.json");
 
 var randomColor = Math.floor(Math.random()*16777215).toString(16); // random Embed colour
 
-client.login('ODEyNjc0MzM4MTEyMjc0NDUz');
+client.login('ODEyNjc0MzM4MTEyMjc0NDUz.GATSDg.2I-tiROqWR7QN2pFvJCYfVFH3O2vrbzaEUIhcY');
 
 // load commands into collection
 client.commands = new Discord.Collection();
@@ -137,7 +137,7 @@ var backup = setInterval(() => {
 
 
     // write to backup file
-    fs.writeFile("backup.txt", JSON.stringify(client.data, null, 1), err => {
+    fs.writeFile("./data/backup.txt", JSON.stringify(client.data, null, 1), err => {
         if (err) throw err;
     });
 }, 30000) // 30 secs

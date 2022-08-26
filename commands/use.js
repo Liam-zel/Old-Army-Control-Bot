@@ -6,17 +6,20 @@ module.exports = {
     description: "Use an item",
     alias: "`use`",
     examples: ["use {item name}", "use feather"], // CHANGE LATER TO AN ACTUAL ITEM
-    execute(message, f, user) {
+    execute(message, f, o, user) {
         var itemName = message.content.split(" ").pop();
         var item = undefined;
 
         for (let i = 0; i < user.inventory.length; i++) {
             // found item
             if (itemName.toLowerCase() === user.inventory[i].name.toLowerCase()) { 
-                console.log(itemName)
-                console.log(user.inventory[i])
-
-                item = user.inventory[i]
+                for (let j = 0; j < o.items.length; j++) {
+                    if (o.items[j].name.toLowerCase() === itemName.toLowerCase()) {
+                        item = o.items[j];
+                        break;
+                    }
+                }
+            
                 break; 
             }
         }

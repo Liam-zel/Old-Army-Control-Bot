@@ -1,0 +1,66 @@
+{
+    "errors": [
+        {
+            "ErrorNum": 0,
+            "date": "05/02/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'execute')",
+            "line": "Client.<anonymous> (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/main.js:410:42)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 1,
+            "date": "05/02/2022",
+            "message": "ReferenceError: botColour is not defined",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/admin.js:16:19)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 2,
+            "date": "05/04/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'use')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/use.js:29:14)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 3,
+            "date": "05/04/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'use')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/use.js:29:14)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 4,
+            "date": "05/04/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading 'use')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/use.js:31:14)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 5,
+            "date": "05/04/2022",
+            "message": "ReferenceError: print is not defined",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/use.js:19:17)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 6,
+            "date": "05/04/2022",
+            "message": "TypeError: item.use is not a function",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/use.js:29:14)",
+            "user": "the funny one"
+        },
+        {
+            "ErrorNum": 7,
+            "date": "05/04/2022",
+            "message": "TypeError: item.use is not a function",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/use.js:29:14)",
+            "user": "the funny one"
+        },
+        {
+            "date": "07/22/2022",
+            "message": "TypeError: Cannot read properties of undefined (reading '0')",
+            "line": "Object.execute (/Users/liamzelmanowski/Desktop/Discord Bots/Army Control Bot/Army-Control-Bot/commands/daily.js:26:46)",
+            "user": "the funny one"
+        }
+    ]
+}

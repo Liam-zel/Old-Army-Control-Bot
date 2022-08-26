@@ -46,6 +46,11 @@ module.exports = {
 
             }
 
+            // removes last comma (substring returns the characters within the two given positions)
+            generalCommands = generalCommands.substring(0, generalCommands.length - 2)
+            gameCommands = gameCommands.substring(0, gameCommands.length - 2)
+            miscCommands = miscCommands.substring(0, miscCommands.length - 2)
+
             var me = client.users.cache.get('461059264388005889');
             var mehaha = me.username + "#" + me.discriminator;
 

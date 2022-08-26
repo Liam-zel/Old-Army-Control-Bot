@@ -24,16 +24,16 @@ module.exports = {
 
             if ((i+1) % 2 == 0) {
                 army2 = "**__Army number:__** `" + army.number + "`\n" + 
-                "**Currently invading:** " + Areas[army.invadingArea].name + "\u200B" + image + "\n" + 
-                "**Earnings: ** `$" + goldEarn + "` | `" + army.lootXP + "xp`\n\n";
+                "**Currently invading:** " + Areas[army.invadingArea].name + "\u200B" + image + "\n";
+                //"**Earnings: ** `$" + goldEarn + "` | `" + army.lootXP + "xp`\n\n";
 
                 armyEmbed.addField("\u200B", "\u200B", true);
                 armyEmbed.addField("\u200B", army2, true);
             }
             else {
                 army1 = "**__Army number:__** `" + army.number + "`\n" + 
-                "**Currently invading:** " + Areas[army.invadingArea].name + "\u200B    " + image + "\n" + 
-                "**Earnings: ** `$" + f.addComma(goldEarn) + "` | `" + f.addComma(army.lootXP) + "xp`\n\n";
+                "**Currently invading:** " + Areas[army.invadingArea].name + "\u200B    " + image + "\n"    ;
+                //"**Earnings: ** `$" + f.addComma(goldEarn) + "` | `" + f.addComma(army.lootXP) + "xp`\n\n";
 
                 armyEmbed.addField("\u200B", army1, true);
             }

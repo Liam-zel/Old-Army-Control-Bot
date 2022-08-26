@@ -19,9 +19,9 @@ module.exports = {
 
         // REWARD
         var areaNum = 0;
-        for (var i = 0; i < o.Areas.length; i++) {
-            // finding highest unlocked area
-            if (o.Areas[i].name === user.area[user.areas.length - 1]) {
+        for (let i = 0; i < o.Areas.length; i++) {
+            // finding highest unlocked area     
+            if (o.Areas[i].name === user.areas[user.areas.length - 1]) {
                 areaNum = i;
                 break;
             }

@@ -1,22 +1,4 @@
 /*
-TODO:
-- buy
-- raid boss
-- side tasks
-- ways for members to interact with eachother
-- reinforce trinkets (upgrading them)
-- fix trinkets
-- Add image to start embed
-- Personalisation (little emojis that can be changed for profiles or something, embed colours)
-- Make starter earnings go to down to cents
-
-- change item objects to store their functions there and not activate them on 'use' command (although use command allows for more control)
-- Update items with descriptions
-- update ITEM command to show if an item is usable
-- Make distinction between item and trinket drops through header    
-- Update inventory command with buttons
-- Unique mob drop percentages?? (make array [item, droprate])
-
 COLOUR: #ecf23f (lime)
 
 INVITE LINK: https://discord.com/oauth2/authorize?client_id=812674338112274453&scope=bot&permissions=1342491737
@@ -27,9 +9,7 @@ INVITE LINK: https://discord.com/oauth2/authorize?client_id=812674338112274453&s
 
 var prefix = '+';
 
-const Discord = require('discord.js');
-
-// const client = new Discord.Client({ 
+const Discord = require('discord.js');  
 //     intents: ["GUILDS", "GUILD_MESSAGES", "DIRECT_MESSAGES", "GUILD_MEMBERS", "GUILD_EMOJIS_AND_STICKERS", "GUILD_INVITES"], 
 //     partials: ["CHANNEL"] 
 // });
@@ -38,10 +18,14 @@ const client = new Discord.Client();
 
 const fs = require('fs'); 
 const f = require('./functions.js');
-const o = require('./objects/combat.js');
+var o = require('./objects/combat.js');
 const p = require('./palletes.js')
 
-const { Areas } = require("./objects/combat.js")
+var Areas = o.Areas;
+// o.loadObjects().then(loaded => {
+//     o = loaded
+//     Areas = o.Areas;
+// })
 
 const botColour = "#98c200"; // Lime
 
@@ -56,7 +40,7 @@ const errorLog = require("./data/errorLog.json");
 
 var randomColor = Math.floor(Math.random()*16777215).toString(16); // random Embed colour
 
-client.login('ODEyNjc0MzM4MTEyMjc0NDUz.YDEL9A.TKfyBIygQmJSM0M23FiOjwCWQ9U');
+client.login('ODEyNjc0MzM4MTEyMjc0NDUz');
 
 // load commands into collection
 client.commands = new Discord.Collection();
@@ -84,6 +68,28 @@ client.on("ready", ()=> {
             type: "PLAYING"
         }
     });
+
+
+    let ts2 = client.guilds.cache.get('777787396833542185');
+    let todo = ts2.channels.cache.get('988050684425424956');    
+    let messages = todo.messages.fetch({ limit: 20 }).then(msgCollection => {
+
+        let wordNum = 0;
+
+        msgCollection.forEach(message => {
+            let words = message.content.split(" ")
+
+            for (let i = 0; i < words.length; i++) {
+
+                if (words[i].includes('<:cross:911257876268474479>')) {
+                    wordNum++;
+                }
+            }
+        });
+
+        let botmsg = msgCollection.first()
+        botmsg.edit(wordNum + " tasks left")
+    })
 })
 
 
@@ -162,6 +168,7 @@ var idle = setInterval(async function() {
 
             const army = user.armies[j];
             const invadePos = army.invadingArea;
+
             let enemyPos = Math.floor(Math.abs(Math.random() - Math.random()) * Areas[invadePos].monsters.length) 
             /* No idea how it works, but it makes it so the higher the number, the lower the chance
             In this specific case, the chances SHOULD be around:
@@ -192,7 +199,7 @@ var idle = setInterval(async function() {
             
 
             // Drops  =========
-            f.checkDrops(enemy, user)
+            f.checkDrops(enemy, user, multiplier)
         }
     }
     console.timeEnd("idle");
@@ -257,7 +264,7 @@ client.on("message", async (message) => {
         }
         // USE
         else if (command === "use") {
-            client.commands.get("use").execute(message, f, user);
+            client.commands.get("use").execute(message, f, o, user);
         }
         // INVITE
         else if (command === "invite") { 
@@ -334,7 +341,7 @@ client.on("message", async (message) => {
         
         // ADMIN COMMANDS -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
         // REMOVE
-        else if ((command === "remove" || command === "re")&& message.author.id === "461059264388005889") { // my id :)
+        else if ((command === "remove" || command === "re") && message.author.id === "461059264388005889") { // my id :)
             client.commands.get("remove").execute(message, client, f);
         }
         // LEVELUP
@@ -350,6 +357,9 @@ client.on("message", async (message) => {
         }
         else if ((command === "admin") && message.author.id === "461059264388005889") { // my id :)
             client.commands.get("admin").execute(message, Discord, client.commands);
+        }
+        else if ((command === "error") && message.author.id === "461059264388005889") { // my id :)
+            client.commands.get("error").execute(message, f);
         }
 
         // START

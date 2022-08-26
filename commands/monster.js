@@ -42,7 +42,7 @@ module.exports = {
         .setAuthor(message.author.username + "#" + message.author.discriminator, message.author.avatarURL())
         .setColor(botColour)
         .setTimestamp()
-        .setTitle(monsterImage + "\u2800__**" + monsterData.eName + " Information!**__\u2800" + monsterImage);
+        .setTitle(monsterImage + "\u0020__**" + monsterData.eName + " Information!**__\u0020" + monsterImage);
 
         let drops = "\u200B"
         for (let i = 0; i < monsterData.drops.length; i++) {
@@ -55,11 +55,11 @@ module.exports = {
         let tag = "\u200B"
 
         if (mobPos === o.Areas[areaPos].monsters.length - 2) {
-            areaLevel = "Level 1\u2800" + f.findImage("1_") // miniboss
+            areaLevel = "Level 1\u0020" + f.findImage("1_") // miniboss
             tag = "**[Mini Boss]**"
         }
         else if (mobPos === o.Areas[areaPos].monsters.length - 1) {
-            areaLevel = "Level 2\u2800" + f.findImage("2_") // boss
+            areaLevel = "Level 2\u0020" + f.findImage("2_") // boss
             tag = "**[Boss]**"
         }
 

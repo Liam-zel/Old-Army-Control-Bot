@@ -4,7 +4,7 @@ module.exports = {
     name: "levelup",
     category: "admin",
     description: "levels up specified user from data. **[ADMIN COMMAND]**",
-    alias: "`levelup`",
+    alias: "`levelup`, 'lu'",
     examples: ["levelup {user} {amount}", "levelup `<@!461059264388005889>` 10`"],
     execute(message, client, f) {
         var user = message.mentions.users.first();

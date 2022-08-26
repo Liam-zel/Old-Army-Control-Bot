@@ -4,7 +4,7 @@ module.exports = {
     name: "accounts",
     category: "admin",
     description: "See all registered accounts **[ADMIN COMMAND]**",
-    alias: "`accounts`",
+    alias: "`accounts`, 'acc'",
     examples: ["accounts [page num]", "accounts", "accounts 2"], 
     execute(message, Discord, client) {
         var accountList = ""

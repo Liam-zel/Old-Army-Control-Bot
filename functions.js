@@ -1,6 +1,9 @@
 const Discord = require('discord.js');
 var client = require('./main.js')
+
 const o = require('./objects/combat.js');
+
+
 const p = require('./palletes.js');
 const fs = require('fs');
 
@@ -411,7 +414,7 @@ function addBonus(trinket, user) {
 function errorHandle(error, username, message) {
     console.log(error)
 
-    var errorLog = require("./errorLog.json")
+    var errorLog = require("./data/errorLog.json")
 
     var errorString = error.toString();
 
@@ -430,7 +433,6 @@ function errorHandle(error, username, message) {
     var errorNum = errorLog.errors.length;
 
     errorLog.errors[errorNum] = {
-        ErrorNum: errorNum,
         date: today,
         message: errorString,
         line: errorLine,
@@ -461,15 +463,15 @@ function findImage(string) {
     return image;
 }
 
-function checkDrops(enemy, user) {
+function checkDrops(enemy, user, multiplier) {
 
     for (let i = 0; i < enemy.drops.length; i++) {
         if (Math.random() * 100 < enemy.dropRates[i] + (user.armyEfficiency/4)) {
-            console.log("item")
+
             let exists = false;
 
             // Item
-            if (enemy.drops[i] instanceof o.item) { // checks to see if drop is from the item class
+            if (enemy.drops[i].strength === undefined) { // checks to see if drop is an item (no defined strength)
 
                 // I have to set these values to 1, as editing the amount (such as stacking them in the users inventory)
                 // edits the actual object's amount
@@ -496,6 +498,7 @@ function checkDrops(enemy, user) {
 
                 // I have to set these values to 1, as editing the amount (such as stacking them in the users inventory)
                 // edits the actual object's amount
+
                 enemy.drops[i].strength = 1;
 
                 // checks if trinket is already in monsterDrops[] and stacks it if so

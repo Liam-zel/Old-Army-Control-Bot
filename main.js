@@ -40,7 +40,8 @@ const errorLog = require("./data/errorLog.json");
 
 var randomColor = Math.floor(Math.random()*16777215).toString(16); // random Embed colour
 
-client.login('ODEyNjc0MzM4MTEyMjc0NDUz.GATSDg.2I-tiROqWR7QN2pFvJCYfVFH3O2vrbzaEUIhcY');
+require('dotenv').config()
+client.login(process.env.TOKEN);
 
 // load commands into collection
 client.commands = new Discord.Collection();

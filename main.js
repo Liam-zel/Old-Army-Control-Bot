@@ -1,13 +1,5 @@
-/*
-COLOUR: #ecf23f (lime)
-
-INVITE LINK: https://discord.com/oauth2/authorize?client_id=812674338112274453&scope=bot&permissions=1342491737
-*/
-
-
-//===========================================================================================
-
-var prefix = '+';
+const settings = require("./bot-settings.json")
+const prefix = settings.PREFIX
 
 const Discord = require('discord.js');  
 //     intents: ["GUILDS", "GUILD_MESSAGES", "DIRECT_MESSAGES", "GUILD_MEMBERS", "GUILD_EMOJIS_AND_STICKERS", "GUILD_INVITES"], 
@@ -27,7 +19,7 @@ var Areas = o.Areas;
 //     Areas = o.Areas;
 // })
 
-const botColour = "#98c200"; // Lime
+const botColour = settings.BOTCOLOUR; // Lime
 
 
 module.exports = {prefix, client, botColour};
@@ -40,8 +32,8 @@ const errorLog = require("./data/errorLog.json");
 
 var randomColor = Math.floor(Math.random()*16777215).toString(16); // random Embed colour
 
-require('dotenv').config()
-client.login(process.env.TOKEN);
+
+client.login(settings.TOKEN);
 
 // load commands into collection
 client.commands = new Discord.Collection();
@@ -53,7 +45,6 @@ for(const file of commandFiles) {
 }
 
 require('discord-buttons')(client);
-const { MessageActionRow, MessageButton } = require('discord-buttons');
 
 //===========================================================================================
 

@@ -450,7 +450,8 @@ function errorHandle(error, username, message) {
 // FIND IMAGE
 function findImage(string) {
     var { client } = require("./main.js");
-    const imageGuild = client.guilds.cache.get('766586576230154270'); // Test Server
+    const { EMOTESERVER } = require("./bot-settings.json")
+    const imageGuild = client.guilds.cache.get(EMOTESERVER); // Test Server
     const images = imageGuild.emojis.cache;
 
     try {
